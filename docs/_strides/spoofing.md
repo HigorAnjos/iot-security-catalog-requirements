@@ -4,9 +4,9 @@ Ameaças relacionadas à falsificação de identidade e autenticação inadequad
 
 ---
 
-## NFRP#01. Autenticação Forte
+## NFR-SEC-001: Autenticação Forte
 
-**Categoria STRIDE**: Spoofing
+<!-- **Categoria STRIDE**: Spoofing -->
 
 **Descrição**
 
