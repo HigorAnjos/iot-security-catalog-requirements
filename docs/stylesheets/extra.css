@@ -1,0 +1,14 @@
+/* Hide the site name/title in the navigation sidebar */
+.md-nav__title[for="__drawer"] {
+    display: none;
+}
+
+/* Alternative selector if the above doesn't work */
+.md-nav__title--site {
+    display: none;
+}
+
+/* Hide the site title in the navigation drawer */
+.md-nav__source {
+    display: none;
+}

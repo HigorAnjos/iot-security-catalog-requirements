@@ -1,10 +1,28 @@
-site_name: Catálogos de Requisitos de Seguranca para Internet das Coisas (IoT)
-# nav:
-#   - Home: index.md
-#   - Markdown: basic_markdown.md
+site_name: Catálogo de Padrões de Requisitos de Segurança para Internet das Coisas (IoT)
+site_author: Higor, Enersto
+site_description: Catálogo de Padrões de Requisitos de Segurança para IoT, cobrindo as categorias STRIDE e considerando as restrições particulares desse ambiente.
+
+nav:
+  - Sobre: index.md
+  - STRIDE:
+    - Spoofing: _strides/spoofing.md
+    - Tampering: _strides/tampering.md
+    - Repudiation: _strides/repudiation.md
+    - Information Disclosure: _strides/information_disclosure.md
+    - Denial of Service: _strides/denial_of_service.md
+    - Elevation of Privilege: _strides/elevation_of_privilege.md
+
+plugins:
+  - search
 
 theme:
   name: material
+  features:
+    - navigation.expand
+    - navigation.sections
+    - navigation.top
+    - header.autohide
+
   palette:
     - scheme: default
       primary: purple
@@ -28,9 +46,10 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_div_format
+          format: pymdownx.superfences.fence_div_format
 
 extra_css:
   - https://unpkg.com/mermaid@8.5.1/dist/mermaid.css
+  - stylesheets/extra.css
 extra_javascript:
   - https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js
