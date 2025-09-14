@@ -47,6 +47,12 @@ Padrões complementares ou dependentes.
 
 > **Exemplo**: Relacionado a "Gerenciamento de Chaves" e "Controle de Acesso Baseado em Funções".
 
+### **Considerações de Implementação e Teste**
+
+> Implementação: protocolos recomendados, limitações (ex.: impacto em dispositivos de baixo consumo).
+
+> Teste: como validar (ex.: testes de penetração para bypass de autenticação, cenários de falha de chave).
+
 ---
 <!-- 
 ## 📋 Catálogo de Requisitos de Segurança
