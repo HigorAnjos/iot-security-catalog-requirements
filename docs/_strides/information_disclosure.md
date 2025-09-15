@@ -136,3 +136,73 @@ A ausência ou fraqueza de criptografia em dispositivos IoT permite que atacante
 
 ---
 
+
+# Rede
+
+## FRP-SEC-033: Proteção contra Vazamento ou Violação de Dados
+
+**Descrição**
+O sistema deve proteger dados sensíveis em redes IoT contra vazamento, violação ou acesso não autorizado, assegurando confidencialidade, integridade e disponibilidade das informações em trânsito e em repouso.
+
+**Racional**
+Vazamentos de dados comprometem diretamente a privacidade de usuários e a segurança operacional do ecossistema IoT. Brechas de configuração, APIs inseguras, armazenamento desprotegido e falhas em criptografia são vetores comuns de exploração que permitem acesso indevido a dados críticos.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve aplicar **criptografia robusta** em dados em trânsito e em repouso.
+* O sistema deve garantir **configuração segura** (senhas fortes, desativação de portas, permissões limitadas).
+* O sistema deve implementar **controles de acesso rigorosos**, seguindo o princípio do menor privilégio.
+* O sistema deve adotar **monitoramento contínuo e IDS/IPS** para detectar violações.
+* O sistema deve proteger **APIs e interfaces** com autenticação forte, criptografia e validação de entradas.
+* O sistema deve aplicar **armazenamento seguro** com criptografia e controles de acesso.
+* O sistema deve realizar **avaliações e auditorias periódicas** de segurança.
+* O sistema deve utilizar **fornecedores confiáveis** que sigam boas práticas e conformidade regulatória.
+
+**Exemplos de Aplicação**
+
+* Plataformas de casa inteligente que criptografam comunicações entre dispositivos e nuvem.
+* Soluções de saúde IoT que armazenam registros médicos criptografados em conformidade com a LGPD/HIPAA.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** TLS 1.3, AES-256, RBAC/ABAC, APIs com OAuth2 e validação de entrada, auditorias regulares.
+>
+> **Teste:** pentests de APIs, testes de extração de dados em repouso, simulação de ataque de *data breach*, varredura de configurações inseguras.
+
+---
+
+## FRP-SEC-034: Proteção contra Escuta Clandestina
+
+**Descrição**
+O sistema deve proteger as comunicações IoT contra interceptações não autorizadas, garantindo que dados transmitidos permaneçam confidenciais e inacessíveis a atacantes, mesmo que capturados durante a transmissão.
+
+**Racional**
+Dispositivos IoT utilizam principalmente canais sem fio, tornando-os suscetíveis à interceptação de sinais. Sem criptografia e autenticação robustas, adversários podem monitorar comunicações, obter informações sensíveis e preparar ataques mais complexos, como homem-no-meio (MitM).
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve aplicar **criptografia de ponta a ponta** em todas as comunicações IoT.
+* O sistema deve implementar **autenticação forte de dispositivos e usuários** para evitar MitM.
+* O sistema deve realizar **monitoramento contínuo da rede** para identificar padrões suspeitos.
+* O sistema deve manter **atualizações regulares de segurança** em dispositivos e sistemas de gerenciamento.
+* O sistema deve promover **conscientização dos usuários** sobre riscos e boas práticas.
+* O sistema deve aplicar **segmentação de rede** para isolar dispositivos IoT de outras partes da rede.
+
+**Exemplos de Aplicação**
+
+* Smart homes que utilizam TLS em todas as comunicações entre sensores e servidores na nuvem.
+* Redes corporativas que isolam dispositivos IoT críticos em VLANs protegidas contra sniffing.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** TLS 1.3, DTLS para dispositivos leves, autenticação mútua com certificados digitais, segmentação em VLANs.
+>
+> **Teste:** simulação de sniffing de tráfego sem fio, testes de MitM, auditorias de logs de rede, verificação da aplicação correta da criptografia.
+
+---

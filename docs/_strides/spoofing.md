@@ -134,6 +134,72 @@ Senhas fracas, padrão ou mal armazenadas são um dos vetores mais comuns de ata
 >
 > **Teste:** tentativas de login com senhas fracas, auditorias de armazenamento de senha, testes de força bruta e dicionário, verificação de expiração/reuso de senha.
 
+---
+
+## FRP-SEC-040: Autenticação Robusta em IoT
+
+**Descrição**
+O sistema deve implementar mecanismos adequados e robustos de autenticação para garantir que apenas dispositivos, usuários e serviços autorizados tenham acesso a recursos e funcionalidades da rede IoT.
+
+**Racional**
+A ausência ou inadequação de mecanismos de autenticação expõe a rede IoT a ataques de falsificação de identidade. Isso permite que atacantes assumam o papel de dispositivos ou usuários legítimos, acessem dados sensíveis ou manipulem serviços críticos.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve implementar **autenticação forte de dispositivos**, com uso de chaves criptográficas ou certificados digitais.
+* O sistema deve exigir **senhas complexas ou credenciais seguras** para usuários e serviços.
+* O sistema deve aplicar **controle físico** nos dispositivos para prevenir acesso local não autorizado.
+* O sistema deve estar em **conformidade com normas e regulamentos de segurança** (ex.: GDPR, LGPD, ISO 27001).
+
+**Exemplos de Aplicação**
+
+* Gateways IoT que validam certificados digitais de todos os dispositivos conectados antes de liberar comunicação.
+* Plataformas em nuvem que exigem autenticação multifator para administradores e operadores.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** uso de PKI para autenticação de dispositivos, MFA para usuários, cofres de credenciais, integração com IAM.
+>
+> **Teste:** simulação de falsificação de dispositivos, tentativas de acesso com credenciais fracas, auditorias de conformidade regulatória.
+
+---
+
+## FRP-SEC-041: Exigência de Senhas Fortes
+
+**Descrição**
+O sistema deve exigir o uso de senhas fortes e exclusivas para autenticação de usuários, dispositivos e serviços em ambientes IoT, prevenindo que credenciais frágeis sejam exploradas por atacantes.
+
+**Racional**
+Senhas fracas ou padrão são facilmente adivinhadas ou obtidas em ataques de força bruta e dicionário. Em IoT, onde muitos dispositivos permanecem acessíveis via rede, essa vulnerabilidade pode comprometer rapidamente não apenas o dispositivo, mas toda a infraestrutura conectada.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve exigir **senhas fortes** (mínimo de 12 caracteres, incluindo maiúsculas, minúsculas, números e símbolos).
+* O sistema deve **obrigar a alteração de senhas padrão** na configuração inicial do dispositivo.
+* O sistema deve implementar **políticas de senha**, incluindo expiração periódica e prevenção de reutilização de senhas antigas.
+* O sistema deve suportar **autenticação multifator (MFA)** sempre que possível.
+* O sistema deve promover **educação dos usuários** sobre boas práticas de senhas.
+* O sistema deve oferecer ou recomendar **ferramentas de gerenciamento de senhas** seguras.
+
+**Exemplos de Aplicação**
+
+* Câmeras IoT que não permitem login com senhas fracas e exigem troca imediata da senha padrão.
+* Gateways de rede que exigem MFA além de senha para acesso administrativo.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** aplicação de políticas de complexidade de senha, MFA via TOTP ou biometria, integração com cofres de credenciais.
+>
+> **Teste:** tentativas de login com senhas fracas, auditorias de senhas padrão em dispositivos, simulação de ataques de força bruta e dicionário.
+
+---
+
 
 
 # Rede 
@@ -167,6 +233,73 @@ Na falsificação de dispositivo, atacantes manipulam identificadores como ender
 > **Implementação:** autenticação baseada em PKI, uso de TLS/DTLS, integração com sistemas de IAM (Identity and Access Management).
 >
 > **Teste:** simulações de spoofing de MAC/IP, injeção de dispositivos falsos na rede, testes de penetração para validação das políticas de identidade.
+
+---
+
+## FRP-SEC-035: Proteção contra Nós Falsos ou Maliciosos
+
+**Descrição**
+O sistema deve proteger redes IoT contra a inserção de nós falsos ou maliciosos, garantindo que apenas dispositivos autenticados e autorizados possam participar da comunicação e do fluxo de dados.
+
+**Racional**
+Nós maliciosos podem ser introduzidos em redes IoT para coletar, manipular ou redirecionar dados entre dispositivos legítimos. Sem autenticação forte e monitoramento, esses nós podem comprometer a confidencialidade, a integridade e a confiabilidade do ecossistema IoT.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve implementar **autenticação robusta de nós** (ex.: certificados digitais, MFA).
+* O sistema deve aplicar **criptografia forte** em todos os dados em trânsito.
+* O sistema deve realizar **monitoramento contínuo da rede** para identificar comportamentos anômalos.
+* O sistema deve usar **listas de controle de acesso (ACLs)** para definir permissões de comunicação.
+* O sistema deve garantir que nós executem apenas **software/firmware verificado e assinado**.
+* O sistema deve aplicar **segmentação de rede** para limitar o impacto de possíveis nós maliciosos.
+* O sistema deve manter **atualizações e patches regulares** em todos os dispositivos.
+
+**Exemplos de Aplicação**
+
+* Redes de sensores em malha que validam certificados digitais de cada nó antes de permitir comunicação.
+* Gateways industriais que rejeitam conexões de dispositivos com firmware não verificado.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** uso de PKI, TLS/DTLS, segmentação lógica (VLANs), ACLs de rede, validação de firmware assinado.
+>
+> **Teste:** simulações de inserção de nós falsos, auditoria de tráfego anômalo, verificação de políticas de ACL, validação de logs de autenticação de nós.
+
+---
+
+## FRP-SEC-044: Proteção contra Falsificação de Sinal
+
+**Descrição**
+O sistema deve proteger dispositivos IoT contra sinais falsificados ou manipulados, garantindo que apenas transmissões legítimas sejam aceitas e utilizadas para controle ou troca de informações.
+
+**Racional**
+A falsificação de sinais permite que atacantes transmitam comandos não autorizados ou manipulem dados recebidos por dispositivos IoT. Sem autenticação robusta e mecanismos de validação, a rede pode ser enganada a executar ações incorretas ou expor informações sensíveis.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve implementar **autenticação forte de sinais e dispositivos** (certificados digitais, criptografia, verificação de integridade).
+* O sistema deve realizar **monitoramento contínuo da rede** para identificar padrões de tráfego suspeitos.
+* O sistema deve empregar **filtros de sinal** para bloquear transmissões não autorizadas e implementar **detecção de jamming**.
+* O sistema deve adotar **mecanismos redundantes e validação cruzada** entre dispositivos/sensores para confirmar autenticidade dos sinais.
+
+**Exemplos de Aplicação**
+
+* Drones que validam criptograficamente sinais de comando para evitar sequestro por spoofing.
+* Sistemas de medidores inteligentes que rejeitam sinais sem certificados digitais válidos.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** uso de PKI para autenticação de sinais, criptografia em camadas, IDS/IPS para análise de tráfego, filtros RF.
+>
+> **Teste:** simulações de spoofing de sinais, auditorias de logs de tráfego, testes de validação cruzada em sensores redundantes.
+
+
 
 ---
 

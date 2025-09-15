@@ -169,6 +169,40 @@ Dispositivos de baixo custo frequentemente sacrificam práticas de segurança em
 >
 > **Teste:** auditorias de firmware de dispositivos baratos, testes de penetração focados em bypass de autenticação, verificação da disponibilidade de atualizações de fabricante.
 
+---
+
+## FRP-SEC-039: Mecanismos Seguros de Atualização
+
+**Descrição**
+O sistema deve garantir que atualizações de firmware e software em dispositivos IoT sejam realizadas de forma segura, prevenindo adulterações, injeções maliciosas e a instalação de componentes não autorizados.
+
+**Racional**
+Atualizações são essenciais para corrigir vulnerabilidades e manter dispositivos IoT seguros. No entanto, mecanismos inseguros podem ser explorados para introduzir código malicioso ou corromper o dispositivo. Além disso, falhas de rede durante o processo podem introduzir riscos de integridade e disponibilidade.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* Todas as atualizações devem ser **assinadas digitalmente**, garantindo autenticidade e integridade.
+* Os dispositivos devem **verificar autenticidade e integridade** antes da instalação.
+* As atualizações devem ser transmitidas por **protocolos criptografados** (TLS, HTTPS).
+* O sistema deve possuir **controle e monitoramento das atualizações**, aplicando apenas pacotes autorizados.
+* O sistema deve seguir **políticas de atualização segura**, incluindo testes prévios em ambientes controlados.
+* O sistema deve mitigar impactos de latência ou falhas de rede durante o processo de atualização.
+
+**Exemplos de Aplicação**
+
+* Câmeras IP que instalam apenas firmware assinado digitalmente pelo fabricante.
+* Gateways IoT que baixam atualizações via TLS e validam integridade antes da aplicação.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** uso de assinaturas digitais (RSA/ECC), verificação de hash (SHA-256), OTA seguro com TLS, pipelines de testes antes da liberação.
+>
+> **Teste:** simulação de injeção de firmware malicioso, auditoria de logs de atualização, testes de rollback seguro em caso de falha.
+
+---
 
 
 ---
@@ -236,5 +270,233 @@ Dados manipulados ou expostos em dispositivos IoT podem comprometer decisões cr
 > **Implementação:** uso de TLS 1.3, criptografia de disco AES-256, HSMs para proteção de chaves, autenticação mútua com certificados digitais.
 >
 > **Teste:** testes de injeção de dados falsos em sensores, auditorias de segurança de armazenamento, inspeção de pacotes para verificar criptografia ponta a ponta.
+
+---
+
+
+## FRP-SEC-032: Configuração Segura de Rede
+
+**Descrição**
+O sistema deve proteger o processo de configuração de rede em dispositivos IoT, prevenindo alterações não autorizadas, inconsistentes ou repetidas que possam introduzir vulnerabilidades e comprometer a integridade da rede.
+
+**Racional**
+Configurações de rede aplicadas de forma repetitiva ou inadequada podem resultar em falhas de segurança, exposição de portas, permissões incorretas e risco de acessos indevidos. Em ambientes IoT, onde a comunicação é crítica, a proteção da configuração é essencial para manter a integridade e a confiabilidade da rede.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve exigir **autenticação e autorização robustas** para qualquer alteração de configuração.
+* O sistema deve aplicar **monitoramento contínuo** de atividades de configuração e detectar tentativas suspeitas.
+* O sistema deve implementar **automação segura de reconfiguração**, garantindo verificações de integridade antes da aplicação.
+* O sistema deve manter os dispositivos **atualizados com firmware seguro** que corrija vulnerabilidades conhecidas.
+* O sistema deve promover **educação e conscientização do usuário** sobre práticas seguras de configuração.
+
+**Exemplos de Aplicação**
+
+* Gateways IoT que só aceitam alterações de rede mediante autenticação multifator de administradores.
+* Sensores em malhas industriais que validam automaticamente a integridade das configurações antes de aplicá-las.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** autenticação multifator para acesso administrativo, controle de versões de configuração, validação criptográfica em automações.
+>
+> **Teste:** simulação de alterações maliciosas de rede, auditorias de logs de configuração, testes de rollback automático em reconfigurações falhas.
+
+---
+
+## FRP-SEC-036: Comunicação Segura em Ambientes Heterogêneos
+
+
+**Descrição**
+O sistema deve garantir que a comunicação entre dispositivos e sistemas heterogêneos em redes IoT seja realizada de forma segura, prevenindo manipulações, inconsistências e vulnerabilidades decorrentes do uso de diferentes protocolos e padrões.
+
+**Racional**
+A interoperabilidade entre dispositivos de diferentes fabricantes é fundamental para o ecossistema IoT, mas também introduz riscos: traduções de protocolo mal implementadas ou políticas inconsistentes podem abrir brechas de segurança. Sem padronização e mecanismos robustos de proteção, a rede pode se tornar vulnerável a manipulações e ataques.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve utilizar **gateways e middleware seguros** para traduzir protocolos e manter interoperabilidade.
+* O sistema deve aplicar **políticas de segurança uniformes** (criptografia, autenticação e controle de acesso) em toda a rede.
+* O sistema deve adotar **protocolos abertos e padrões amplamente aceitos** para reduzir vulnerabilidades.
+* O sistema deve validar e registrar **todas as comunicações interprotocolo** para garantir integridade.
+
+**Exemplos de Aplicação**
+
+* Gateways industriais que traduzem entre protocolos Modbus, OPC-UA e MQTT com criptografia TLS.
+* Redes de smart cities que utilizam middleware para integrar dispositivos BLE, Wi-Fi e LoRaWAN com políticas de segurança unificadas.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** uso de gateways com TLS, middleware seguro, adoção de protocolos padronizados como CoAP e MQTT, políticas de segurança uniformes.
+>
+> **Teste:** simulação de ataques em traduções de protocolo, auditoria de consistência de políticas de segurança, testes de interoperabilidade com múltiplos fabricantes.
+
+---
+
+## FRP-SEC-038: Controle Seguro de Tráfego
+
+**Descrição**
+O sistema deve proteger o tráfego de dados entre dispositivos IoT, gateways, servidores e serviços em nuvem contra interceptação, manipulação e uso não autorizado, garantindo a integridade e a confidencialidade da comunicação.
+
+**Racional**
+Comunicações IoT inseguras podem ser interceptadas, manipuladas ou redirecionadas, permitindo que adversários modifiquem dados, obtenham acesso não autorizado ou comprometam serviços críticos. A falta de protocolos seguros e monitoramento adequado expõe a rede a riscos de ataques de homem-no-meio (MitM) e adulteração de pacotes.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve aplicar **criptografia de ponta a ponta** em todas as comunicações.
+* O sistema deve utilizar **protocolos seguros** (ex.: HTTPS, TLS/DTLS).
+* O sistema deve implementar **autenticação e autorização robustas** em canais de comunicação.
+* O sistema deve realizar **monitoramento contínuo de tráfego** para identificar padrões suspeitos.
+* O sistema deve aplicar **atualizações regulares de segurança** em dispositivos e infraestrutura de rede.
+
+**Exemplos de Aplicação**
+
+* Sensores IoT que transmitem dados criptografados via TLS para servidores em nuvem.
+* Gateways industriais que rejeitam tráfego sem autenticação mútua.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** uso de TLS 1.3, DTLS para dispositivos leves, autenticação baseada em certificados digitais, monitoramento IDS/IPS.
+>
+> **Teste:** simulação de ataques MitM, auditoria de pacotes em trânsito, verificação de uso de protocolos seguros em toda a cadeia de comunicação.
+
+---
+
+## FRP-SEC-042: Adoção de Protocolos de Comunicação Seguros
+
+**Descrição**
+O sistema deve utilizar protocolos de comunicação seguros para proteger os dados transmitidos entre dispositivos IoT, serviços e sistemas de back-end, garantindo confidencialidade, integridade e autenticidade.
+
+**Racional**
+A ausência ou o uso inadequado de protocolos seguros permite que atacantes interceptem, modifiquem ou falsifiquem dados em trânsito. Isso compromete não apenas a privacidade, mas também a integridade das decisões automatizadas que dependem dessas informações.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve implementar **criptografia forte** (TLS/SSL) em todas as comunicações IoT.
+* O sistema deve exigir **autenticação robusta** das partes envolvidas (certificados digitais, MFA).
+* O sistema deve aplicar **verificação de integridade** com assinaturas digitais ou checksums.
+* O sistema deve adotar **políticas de gerenciamento seguro de chaves e certificados**, incluindo rotação periódica.
+
+**Exemplos de Aplicação**
+
+* Dispositivos médicos conectados que transmitem dados de pacientes via TLS 1.3.
+* Gateways industriais que validam certificados digitais de servidores antes de iniciar comunicações.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** uso de TLS 1.3 ou DTLS para dispositivos leves, certificados digitais X.509, gerenciamento centralizado de chaves.
+>
+> **Teste:** simulações de ataques de *man-in-the-middle*, auditorias de tráfego de rede para verificar criptografia, inspeção de políticas de rotação de chaves.
+
+---
+
+## FRP-SEC-046: Proteção contra Redes Inseguras
+
+**Descrição**
+O sistema deve proteger dispositivos IoT contra os riscos de operar em redes inseguras, prevenindo interceptação, manipulação de tráfego e propagação de malware por meio da aplicação de mecanismos robustos de segurança em nível de rede.
+
+**Racional**
+Dispositivos IoT muitas vezes se conectam a redes públicas ou mal segmentadas, tornando-se pontos de entrada para atacantes explorarem falhas, interceptarem comunicações ou espalharem malware. A proteção contra redes inseguras envolve não apenas criptografia e autenticação, mas também segmentação, monitoramento e controle de tráfego.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve implementar **criptografia forte** (TLS/SSL) em todas as comunicações.
+* O sistema deve exigir **autenticação forte** (MFA, certificados digitais) para acesso à rede.
+* O sistema deve aplicar **controles de acesso rigorosos**, limitando recursos críticos a entidades autorizadas.
+* A rede IoT deve ser **segmentada em zonas de segurança**, isolando dispositivos críticos.
+* O sistema deve usar **VPNs** para comunicação em redes públicas.
+* A rede deve ter **monitoramento contínuo e análise de tráfego** para identificar anomalias.
+* O sistema deve usar **firewalls e IDS/IPS** para filtrar tráfego malicioso.
+* O sistema deve aplicar **políticas de senha forte** em todos os dispositivos.
+
+**Exemplos de Aplicação**
+
+* Dispositivos de saúde conectados a VLANs isoladas em hospitais.
+* Sensores urbanos que transmitem dados por VPN quando conectados a redes públicas.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** TLS 1.3, VPNs (IPsec, WireGuard), segmentação em VLANs, firewalls de camada 7, IDS/IPS com análise de tráfego.
+>
+> **Teste:** auditorias de segmentação de rede, simulações de tráfego malicioso, testes de penetração em redes públicas, verificação de conformidade com políticas de senha.
+
+---
+
+## FRP-SEC-047: Desativação de Portas Não Utilizadas
+
+**Descrição**
+O sistema deve garantir que todas as portas de rede não utilizadas em dispositivos IoT e infraestrutura associada sejam desativadas, prevenindo que se tornem pontos de entrada para acessos não autorizados ou manipulação de tráfego.
+
+**Racional**
+Portas abertas e desnecessárias expõem dispositivos IoT a riscos adicionais, permitindo que atacantes explorem serviços não protegidos. Essa vulnerabilidade aumenta a superfície de ataque e pode comprometer diretamente a integridade, a confidencialidade e a disponibilidade dos sistemas.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve **desativar todas as portas de rede não utilizadas** por padrão.
+* O sistema deve aplicar **configuração segura** desde a implantação inicial do dispositivo.
+* A rede deve ser submetida a **monitoramento e auditorias regulares** para identificar portas abertas.
+* O sistema deve utilizar **firewalls e ACLs** para restringir tráfego apenas às portas essenciais.
+* Os dispositivos devem estar sempre com **atualizações e patches de segurança aplicados**.
+* Devem ser realizados **testes de penetração** para identificar vulnerabilidades relacionadas a portas abertas.
+
+**Exemplos de Aplicação**
+
+* Câmeras IP configuradas para expor apenas a porta HTTPS, com todas as demais desativadas.
+* Gateways IoT industriais com firewalls internos bloqueando portas não essenciais.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** hardening de dispositivos, firewalls integrados, configuração de ACLs, aplicação de patches.
+>
+> **Teste:** varredura de portas com ferramentas como Nmap, auditorias de segurança regulares, testes de penetração em dispositivos IoT.
+
+---
+
+## FRP-SEC-048: Criptografia Robusta na Comunicação
+
+**Descrição**
+O sistema deve utilizar criptografia forte e atualizada em todas as comunicações de dispositivos IoT, prevenindo interceptação, adulteração e acesso não autorizado a dados em trânsito.
+
+**Racional**
+Sem criptografia adequada, os dados transmitidos em redes IoT podem ser interceptados e modificados por atacantes. Isso compromete não apenas a confidencialidade, mas também a integridade e autenticidade das comunicações, possibilitando ataques de *man-in-the-middle* e injeção de pacotes maliciosos.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve implementar **criptografia moderna e segura** (TLS/SSL, DTLS).
+* O sistema deve usar **certificados digitais confiáveis** emitidos por autoridades certificadoras reconhecidas.
+* O sistema deve aplicar **gerenciamento seguro de chaves criptográficas** (armazenamento seguro, rotação periódica, uso de HSMs).
+* O sistema deve realizar **verificação de integridade dos dados** (assinaturas digitais, checksums).
+* O sistema deve passar por **auditorias e atualizações regulares** para manter a criptografia resistente a novas ameaças.
+
+**Exemplos de Aplicação**
+
+* Sensores ambientais que enviam dados via MQTT protegido com TLS e certificados X.509.
+* Dispositivos médicos que usam DTLS para proteger pacotes UDP de telemetria.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** TLS 1.3, DTLS para IoT de baixo consumo, PKI para autenticação de dispositivos, armazenamento seguro de chaves.
+>
+> **Teste:** simulação de ataques *man-in-the-middle*, auditoria de protocolos utilizados, verificação da rotação periódica de chaves, inspeção de certificados digitais.
 
 ---

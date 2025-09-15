@@ -169,6 +169,39 @@ Dispositivos IoT dependentes de bateria são alvos fáceis para ataques de priva
 
 ---
 
+## NFRP-SEC-043: Resiliência Física do Sistema de Energia
+
+**Descrição**
+O sistema deve garantir resiliência da infraestrutura energética que suporta dispositivos IoT, prevenindo interrupções no fornecimento de energia e protegendo contra ataques, falhas ou desastres que possam comprometer a disponibilidade.
+
+**Racional**
+Dispositivos IoT dependem de fornecimento contínuo de energia elétrica. Vulnerabilidades no sistema de energia, como falhas físicas, flutuações de voltagem ou ataques, podem causar indisponibilidade e perda de confiabilidade dos serviços. Estratégias de redundância, eficiência e proteção física são essenciais para mitigar esse risco.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve possuir **fontes de energia redundantes** (baterias, geradores).
+* O sistema deve utilizar **reguladores de voltagem e UPS** para proteção contra flutuações.
+* O sistema deve adotar **monitoramento de energia em tempo real** para detectar anomalias.
+* A infraestrutura de energia deve ser **fisicamente protegida** contra vandalismo e desastres.
+* Os dispositivos devem ser projetados com **eficiência energética** e modos de baixo consumo.
+* O sistema deve realizar **manutenção preventiva e inspeções regulares**.
+* O sistema deve incorporar **armazenamento avançado de energia** (baterias de longa duração, sistemas em rede).
+
+**Exemplos de Aplicação**
+
+* Estações de sensores ambientais em áreas remotas alimentadas por painéis solares com baterias de backup.
+* Infraestruturas críticas (ex.: hospitais) que utilizam UPS e geradores redundantes para manter dispositivos IoT funcionando em emergências.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** uso de UPS e geradores redundantes, integração com sistemas SCADA de energia, design de hardware eficiente.
+>
+> **Teste:** simulações de queda de energia, auditorias de consumo, testes de failover para fontes redundantes.
+
+
 
 
 # Rede
@@ -204,3 +237,135 @@ Dispositivos com alcance limitado de transmissão estão mais suscetíveis a ata
 >
 > **Teste:** medição da cobertura em diferentes cenários físicos, testes de resiliência contra interferências, simulação de ataques de proximidade para avaliar impacto na disponibilidade.
 
+---
+
+## NFRP-SEC-029: Mitigação de Riscos em Arquitetura Centralizada
+
+**Descrição**
+O sistema deve reduzir a dependência de arquiteturas centralizadas, garantindo resiliência e continuidade de operação mesmo em caso de falhas ou ataques ao servidor central de controle.
+
+**Racional**
+A centralização do controle e processamento em um único ponto cria vulnerabilidades críticas: ataques ao servidor central podem paralisar toda a rede, comprometer dados ou impedir a execução de serviços essenciais. Distribuir funções, segmentar redes e adotar redundância são medidas essenciais para manter disponibilidade e confiabilidade.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve **distribuir funcionalidades de controle e processamento** entre dispositivos ou nós intermediários.
+* O sistema deve implementar **redundância e failover** para o servidor central.
+* O sistema deve aplicar **segmentação de rede** com firewalls e ACLs para limitar exposição do ponto central.
+* O sistema deve utilizar **criptografia e autenticação fortes** na comunicação entre dispositivos e o servidor central.
+* O sistema deve manter **monitoramento contínuo** e capacidade de resposta rápida a incidentes no ponto central.
+
+**Exemplos de Aplicação**
+
+* Redes de smart cities que usam múltiplos gateways descentralizados para processar dados localmente.
+* Sistemas industriais que mantêm servidores redundantes para controle de equipamentos críticos.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** uso de arquiteturas distribuídas (fog/edge computing), clusters redundantes, redes segmentadas, TLS 1.3 para comunicações seguras.
+>
+> **Teste:** simulação de falha do servidor central, auditorias de disponibilidade de failover, testes de resiliência contra ataques DDoS.
+
+---
+
+
+## NFRP-SEC-030: Mitigação de Interferência de Canal
+
+**Descrição**
+O sistema deve proteger os canais de comunicação sem fio contra interferências intencionais ou acidentais, garantindo a integridade e a disponibilidade das comunicações entre dispositivos IoT.
+
+**Racional**
+Dispositivos IoT que dependem de canais sem fio são suscetíveis a interferências eletromagnéticas e ataques de jamming, que podem bloquear ou degradar a comunicação. Sem mitigação, a rede IoT pode sofrer interrupções críticas, comprometendo sua confiabilidade e disponibilidade.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve identificar e utilizar **canais de comunicação livres e menos congestionados**.
+* O sistema deve aplicar **técnicas de mitigação**, como seleção dinâmica de canais, controle adaptativo de potência e protocolos de correção de erros.
+* O dispositivo deve suportar **diversidade de antenas e MIMO** para maior resiliência contra interferência.
+* O sistema deve implementar **isolamento físico e blindagem** para reduzir exposição a interferências externas.
+* O sistema deve realizar **monitoramento contínuo dos canais** para detectar e diagnosticar interferências.
+
+**Exemplos de Aplicação**
+
+* Redes Zigbee em casas inteligentes que trocam automaticamente de canal quando detectam interferência.
+* Dispositivos industriais que usam antenas MIMO para manter estabilidade mesmo em ambientes ruidosos.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** integração de análise de espectro, protocolos adaptativos, hardware com múltiplas antenas, blindagem EM.
+>
+> **Teste:** simulação de ataques de jamming, medição de desempenho sob interferências, validação da eficácia de failover entre canais.
+
+---
+
+## NFRP-SEC-031: Mitigação de Sobrecarga de Comunicação
+
+
+**Descrição**
+O sistema deve prevenir e mitigar situações de sobrecarga de comunicação em redes IoT, garantindo desempenho estável, baixa latência e disponibilidade mesmo sob tráfego intenso ou ataques de inundação.
+
+**Racional**
+Quando a quantidade de pacotes transmitidos excede a capacidade da rede ou dos servidores, o sistema sofre degradação de desempenho, perda de pacotes e até indisponibilidade. Além de problemas operacionais, a sobrecarga pode ser explorada por atacantes em ataques de negação de serviço.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve utilizar **protocolos de comunicação eficientes** que minimizem overhead.
+* O sistema deve aplicar **compressão de dados** antes da transmissão.
+* O sistema deve implementar **limitação de taxa de transmissão** (rate limiting) para evitar saturação da rede.
+* O sistema deve usar **cache distribuído** para reduzir tráfego redundante.
+* O sistema deve adotar **monitoramento de tráfego e detecção de anomalias** para prever sobrecargas.
+* O sistema deve implementar **medidas de resiliência a ataques DoS**, como firewalls, filtragem de pacotes e IDS/IPS.
+
+**Exemplos de Aplicação**
+
+* Dispositivos de telemetria que utilizam MQTT com compressão e controle de taxa para evitar congestionamento.
+* Gateways industriais que fazem cache local de dados antes de enviá-los para a nuvem.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** uso de protocolos leves (CoAP, MQTT-SN), compressão adaptativa, rate limiting no firmware, integração com IDS/IPS.
+>
+> **Teste:** simulações de tráfego intenso, testes de carga em gateways IoT, auditorias de resiliência contra ataques de flooding e DoS.
+
+---
+
+## NFRP-SEC-049: Mitigação de Ataques de Desautenticação de Wi-Fi
+
+**Descrição**
+O sistema deve proteger dispositivos IoT contra ataques de desautenticação em redes Wi-Fi, garantindo conectividade contínua e resiliência mesmo diante de tentativas maliciosas de desconexão forçada.
+
+**Racional**
+Em ambientes domésticos ou corporativos, a desautenticação de Wi-Fi pode desconectar dispositivos IoT de suas redes, causando perda de serviço e expondo a rede a acessos indevidos. A mitigação exige o uso de protocolos modernos, monitoramento ativo e, quando possível, alternativas de comunicação redundantes.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve utilizar **Wi-Fi com WPA3**, resistente a ataques de desautenticação.
+* A rede deve implementar **monitoramento de tentativas de desautenticação** e alertas em tempo real.
+* O sistema deve aplicar **gerenciamento robusto de chaves**, incluindo renovação periódica e uso de certificados digitais.
+* O sistema deve adotar **separação de rede** para isolar dispositivos IoT críticos.
+* O sistema deve considerar **redes alternativas** (cabeadas, Zigbee, Z-Wave) como redundância.
+
+**Exemplos de Aplicação**
+
+* Casas inteligentes com roteadores WPA3 que bloqueiam ataques de deauth.
+* Ambientes industriais que usam Zigbee como fallback caso o Wi-Fi seja derrubado.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** adoção de WPA3, monitoramento IDS/IPS para tráfego Wi-Fi, segregação de VLANs para IoT, chaves digitais renováveis.
+>
+> **Teste:** simulação de ataques de desautenticação, auditorias de robustez de protocolos Wi-Fi, validação de failover em redes alternativas.
+
+---

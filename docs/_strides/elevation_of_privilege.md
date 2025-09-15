@@ -167,3 +167,71 @@ Controles de acesso fracos permitem que invasores explorem lacunas na autentica�
 > **Implementação:** uso de RBAC ou ABAC, autenticação federada, integração com cofres de identidade, descentralização via blockchain em redes IoT críticas.
 >
 > **Teste:** tentativas de acesso não autorizado, auditoria de logs de controle de acesso, testes de bypass de autenticação e autorização.
+
+---
+
+## FRP-SEC-037: Proteção de Servidores IoT
+
+**Descrição**
+O sistema deve proteger servidores IoT e infraestrutura de back-end contra configurações inseguras, vulnerabilidades e acessos não autorizados, garantindo que dados e dispositivos conectados permaneçam íntegros e confiáveis.
+
+**Racional**
+Servidores IoT são alvos críticos, pois concentram processamento, armazenamento e coordenação de dispositivos. Um servidor inseguro permite que atacantes elevem privilégios, obtenham acesso a dados confidenciais e manipulem dispositivos da rede, comprometendo a operação de todo o ecossistema.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O servidor deve estar configurado com **parâmetros de segurança fortes** (desativar serviços desnecessários, remover credenciais padrão, aplicar políticas restritivas).
+* O sistema deve aplicar **criptografia forte** para dados em trânsito e em repouso (TLS/SSL, AES).
+* O servidor deve estar sempre com **atualizações e patches de segurança aplicados**.
+* O sistema deve exigir **autenticação forte** (MFA) para acessos administrativos.
+* O servidor deve ser **segmentado em rede isolada** de redes públicas.
+* O sistema deve aplicar **monitoramento contínuo e auditoria de logs** para detectar incidentes.
+* O sistema deve realizar **backups regulares** para garantir resiliência em caso de ataque.
+
+**Exemplos de Aplicação**
+
+* Servidores de nuvem que processam dados de sensores industriais isolados em VPCs privadas.
+* Gateways IoT que exigem MFA para acesso de administradores e aplicam TLS 1.3 em todas as conexões.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** aplicação de hardening em servidores, criptografia ponta a ponta, autenticação federada, monitoramento SIEM.
+>
+> **Teste:** auditorias de configuração de servidor, testes de penetração em APIs de back-end, simulação de ataque de escalonamento de privilégios.
+
+---
+
+## FRP-SEC-045: Prevenção de Acesso Não Autorizado
+
+**Descrição**
+O sistema deve prevenir que entidades não autorizadas acessem recursos de dispositivos e redes IoT, garantindo que apenas usuários e dispositivos autenticados e autorizados tenham acesso aos recursos que lhes são atribuídos.
+
+**Racional**
+O acesso não autorizado a sistemas IoT compromete dados sensíveis, dispositivos e a própria rede. Sem autenticação forte, segmentação adequada e auditoria contínua, atacantes podem assumir privilégios de usuários legítimos, explorando dispositivos de forma indevida.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve implementar **autenticação forte** (senhas robustas, 2FA, certificados digitais).
+* O sistema deve aplicar **segmentação de rede** (VLANs, redes isoladas para IoT).
+* O sistema deve manter **auditoria e monitoramento contínuos** para identificar acessos suspeitos.
+* O sistema deve adotar **gerenciamento de identidades e privilégios** (IAM) para controlar acessos.
+
+**Exemplos de Aplicação**
+
+* Sistemas de automação residencial que exigem 2FA para controle remoto de dispositivos críticos.
+* Redes corporativas IoT isoladas em VLANs, com monitoramento ativo de tentativas de intrusão.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** integração com sistemas IAM, aplicação de RBAC/ABAC, uso de 2FA, segmentação de rede em VLANs.
+>
+> **Teste:** simulação de invasões internas e externas, testes de escalonamento de privilégios, auditorias de logs de acesso.
+
+---
+
