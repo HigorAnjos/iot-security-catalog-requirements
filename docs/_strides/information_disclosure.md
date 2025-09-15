@@ -35,6 +35,107 @@ Links maliciosos são um vetor comum de ataques. Em ambientes IoT, dispositivos 
 >
 > **Teste**: simulação de phishing com links encurtados/redirecionados, verificação de bloqueio em tempo real, análise de geração de logs.
 
+---
+
+# Aplicação
+
+## FRP-SEC-057: Gestão Segura de Dados
+
+**Descrição**
+O sistema deve garantir que os dados coletados, processados e armazenados por dispositivos e serviços IoT sejam tratados com segurança durante todo o seu ciclo de vida, prevenindo vazamentos e acessos não autorizados.
+
+**Racional**
+A falta de boas práticas de gestão de dados pode expor informações pessoais ou sensíveis, resultando em violações de privacidade, perdas financeiras e comprometimento de confiança. É essencial aplicar segurança desde a coleta até o armazenamento e o compartilhamento dos dados.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve adotar **práticas de coleta mínima de dados**, limitando-se ao estritamente necessário.
+* O sistema deve aplicar **criptografia de ponta a ponta** para dados transmitidos entre dispositivos e back-end.
+* O sistema deve implementar **armazenamento seguro de dados**, com criptografia e controle de acesso.
+* O sistema deve adotar **mecanismos de autenticação e autorização robustos** para acesso aos dados.
+* O sistema deve realizar **auditorias regulares** para verificar conformidade com regulamentações de privacidade.
+
+**Exemplos de Aplicação**
+
+* Dispositivos de saúde que coletam apenas sinais vitais relevantes e armazenam os dados criptografados em nuvem.
+* Plataformas de cidades inteligentes que aplicam controles de acesso estritos a dados de tráfego e transporte.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** criptografia AES-256 para armazenamento, TLS 1.3 para transmissão, RBAC/ABAC para acesso, conformidade com LGPD/GDPR.
+>
+> **Teste:** auditorias de privacidade, testes de fuga de dados (*data leakage*), simulações de acesso indevido, inspeção de políticas de minimização de dados.
+
+---
+
+## FRP-SEC-065: Prevenção de Enumeração de Usuários
+
+**Descrição**
+O sistema deve proteger os mecanismos de autenticação e APIs contra a enumeração de nomes de usuários, evitando que atacantes identifiquem contas válidas por meio de mensagens de erro, respostas diferenciadas ou padrões de comportamento do sistema.
+
+**Racional**
+Quando um sistema expõe, ainda que de forma indireta, a existência de usuários válidos, facilita ataques de força bruta, phishing direcionado ou exploração de credenciais. Essa falha é crítica em IoT, onde dispositivos e serviços muitas vezes têm autenticação simplificada.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve exibir **mensagens de erro genéricas** em tentativas de login falhas (“Credenciais inválidas”).
+* O sistema deve aplicar **mecanismos de proteção contra força bruta** (rate limiting, bloqueios temporários, MFA).
+* O sistema deve realizar **monitoramento e alertas** de tentativas de login suspeitas.
+* O sistema deve aplicar **proteção de dados sensíveis**, como criptografia ou anonimização de nomes de usuário.
+* O sistema deve promover **educação dos usuários** sobre criação e proteção de credenciais.
+
+**Exemplos de Aplicação**
+
+* APIs de dispositivos inteligentes que sempre retornam a mesma resposta para falha de login.
+* Serviços em nuvem para IoT que aplicam bloqueio automático após múltiplas tentativas inválidas.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** padronizar mensagens de erro, configurar rate limiting, aplicar MFA em sistemas críticos, criptografar identificadores de usuário.
+>
+> **Teste:** simular ataques de enumeração (diferenciação de mensagens, tempos de resposta), testes de força bruta, análise de logs para detecção de tentativas automatizadas.
+
+---
+
+## FRP-SEC-066: Criptografia Robusta na Aplicação IoT
+
+**Descrição**
+O sistema deve implementar criptografia forte e adequada em nível de aplicação para proteger dados em trânsito e em repouso, garantindo que não sejam expostos ou manipulados por atacantes devido a algoritmos obsoletos ou ausência de mecanismos criptográficos.
+
+**Racional**
+Sem criptografia robusta, dados sensíveis transmitidos ou armazenados em dispositivos IoT podem ser interceptados, modificados ou utilizados de forma maliciosa. Em sistemas distribuídos e altamente conectados, como IoT, isso aumenta o risco de espionagem, fraude e perda de confiança.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve adotar **algoritmos modernos de criptografia** (AES, RSA, SHA-256).
+* O sistema deve aplicar **gerenciamento seguro de chaves**, incluindo rotação e armazenamento protegido.
+* O sistema deve utilizar **protocolos seguros de comunicação** (TLS/SSL, DTLS em dispositivos leves).
+* O sistema deve **criptografar dados sensíveis em repouso** em dispositivos e servidores.
+* O sistema deve realizar **auditorias e atualizações regulares** de seus mecanismos criptográficos.
+
+**Exemplos de Aplicação**
+
+* Aplicativos de monitoramento de saúde que criptografam dados do paciente no dispositivo e durante a transmissão para a nuvem.
+* Sistemas de casas inteligentes que utilizam TLS 1.3 e certificados digitais para proteger comandos enviados a dispositivos.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** uso de HSMs para chaves, TLS 1.3, bibliotecas criptográficas confiáveis, descontinuação de algoritmos fracos (MD5, SHA-1).
+>
+> **Teste:** auditorias de configuração criptográfica, testes de downgrade de protocolos, simulações de ataque *man-in-the-middle*, inspeção de dados em repouso.
+
+---
+
+
 
 # Dispositivo
 

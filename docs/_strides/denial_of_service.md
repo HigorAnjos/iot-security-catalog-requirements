@@ -5,6 +5,39 @@ Ameaças relacionadas à interrupção ou degradação da disponibilidade de ser
 
 ---
 
+# Aplicação
+
+## NFRP-SEC-050: Políticas Seguras de Bloqueio de Conta
+
+**Descrição**
+O sistema deve implementar mecanismos robustos de bloqueio de conta para proteger contra ataques de força bruta sem comprometer a disponibilidade de usuários legítimos, prevenindo que o recurso seja explorado como forma de ataque de negação de serviço.
+
+**Racional**
+Tentativas de login excessivas podem indicar ataques de força bruta, mas políticas mal configuradas de bloqueio de conta também podem ser exploradas para impedir que usuários legítimos acessem seus dispositivos e serviços. O equilíbrio entre segurança e disponibilidade exige monitoramento, limitação de taxa e opções de recuperação de acesso.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve aplicar **políticas de bloqueio robustas** (ex.: bloqueio após 3–5 tentativas inválidas, desbloqueio temporizado).
+* O sistema deve **registrar e monitorar atividades de autenticação** para identificar padrões suspeitos.
+* O sistema deve adotar **mitigações contra DoS**, como rate limiting e filtragem de tráfego.
+* O sistema deve fornecer **recursos seguros de recuperação de conta** (redefinição de senha, validação de identidade).
+
+**Exemplos de Aplicação**
+
+* Plataformas IoT em nuvem que bloqueiam login após tentativas consecutivas inválidas e notificam o usuário.
+* Gateways de rede que implementam rate limiting para evitar bloqueios em massa por força bruta.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** políticas de bloqueio progressivo, rate limiting, monitoramento SIEM, mecanismos de recuperação baseados em MFA.
+>
+> **Teste:** simulação de ataques de força bruta, auditoria de logs de autenticação, validação de processos de desbloqueio e recuperação de conta.
+
+---
+
 # Dispositivo
 
 ## NFRP-SEC-003: Restrições de Energia

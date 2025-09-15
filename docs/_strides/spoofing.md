@@ -200,6 +200,39 @@ Senhas fracas ou padrão são facilmente adivinhadas ou obtidas em ataques de fo
 
 ---
 
+## FRP-SEC-051: Mitigação de Quebra de Autenticação
+
+**Descrição**
+O sistema deve implementar mecanismos robustos para prevenir a quebra de autenticação, garantindo que apenas usuários, dispositivos e serviços devidamente verificados tenham acesso aos recursos da rede IoT.
+
+**Racional**
+A falta de autenticação forte ou políticas adequadas expõe dispositivos IoT a ataques em que adversários assumem identidades legítimas, explorando falhas de segurança e comprometendo dados e serviços. Isso pode incluir força bruta, credenciais padrão ou injeção de código para burlar autenticação.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve aplicar **autenticação multifator (MFA)** para acesso de usuários e dispositivos.
+* O sistema deve exigir **senhas fortes** e aplicar **políticas de bloqueio de conta** contra tentativas de força bruta.
+* O sistema deve exigir a **alteração de credenciais padrão** e permitir personalização de credenciais pelos usuários.
+* O sistema deve realizar **validação de entradas de usuário** para evitar injeções que comprometam a autenticação.
+* O sistema deve **monitorar e registrar atividades de autenticação** para identificar tentativas de ataque.
+
+**Exemplos de Aplicação**
+
+* Sistemas de automação residencial que exigem MFA para administração remota.
+* Gateways industriais que rejeitam credenciais padrão e aplicam bloqueio de conta após múltiplas falhas de login.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** MFA (senha + token ou biometria), bloqueio progressivo de conta, personalização de credenciais, WAF para validação de entradas.
+>
+> **Teste:** simulações de ataques de força bruta, auditorias de credenciais padrão, testes de injeção SQL/XSS em fluxos de autenticação, análise de logs de tentativas de login.
+
+---
+
+
 
 
 # Rede 

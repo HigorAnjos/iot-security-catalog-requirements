@@ -4,6 +4,172 @@ Ameaças relacionadas à modificação não autorizada de dados ou sistemas.
 
 ---
 
+# Aplicação
+
+## FRP-SEC-053: Garantia de Consistência de Dados
+
+**Descrição**
+O sistema deve proteger contra inconsistências de dados em ambientes IoT, assegurando a integridade, precisão e confiabilidade das informações coletadas, processadas e armazenadas.
+
+**Racional**
+Dados corrompidos, contraditórios ou incompletos comprometem a confiabilidade de sistemas IoT, podendo levar a falhas operacionais, decisões incorretas ou até riscos à segurança. Estratégias de validação, redundância e monitoramento contínuo são necessárias para garantir a consistência.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve implementar **validação e verificação de dados recebidos** de dispositivos IoT.
+* O sistema deve utilizar **múltiplos sensores ou fontes redundantes** para assegurar consistência.
+* O sistema deve realizar **monitoramento contínuo** de dados para detectar e corrigir inconsistências em tempo real.
+* O sistema deve possuir **estratégias de backup e recuperação** para restaurar dados perdidos ou corrompidos.
+* O sistema deve usar **protocolos de comunicação robustos** com detecção/correção de erros.
+
+**Exemplos de Aplicação**
+
+* Sistemas de saúde que cruzam dados de sensores redundantes para validar sinais vitais de pacientes.
+* Indústrias que utilizam CRC ou assinaturas digitais para validar integridade de dados coletados por sensores.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** uso de protocolos como MQTT com QoS, CRCs, checksums, validações de integridade e redundância de sensores.
+>
+> **Teste:** simulação de falhas de sensores, auditoria de logs de dados, injeção de dados corrompidos para avaliar capacidade de detecção.
+
+---
+
+## FRP-SEC-060: Garantia de Qualidade de Código em IoT
+
+**Descrição**
+O sistema deve ser desenvolvido com práticas de codificação seguras e robustas, garantindo que o código-fonte não introduza vulnerabilidades decorrentes de má estruturação, falta de validação de entrada ou uso inadequado de recursos críticos.
+
+**Racional**
+Código mal estruturado, sem revisões e sem validações adequadas, aumenta a superfície de ataque e pode facilitar falhas como estouro de buffer, injeções de código, manipulação de credenciais e uso de criptografia fraca. Em IoT, onde os dispositivos são limitados e muitas vezes expostos, essas falhas podem comprometer toda a rede.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve adotar **práticas de desenvolvimento seguro**, usando frameworks e bibliotecas confiáveis.
+* O sistema deve implementar **revisões de código regulares** (peer review ou análise estática).
+* O sistema deve passar por **testes rigorosos** (unidade, integração, segurança, penetração).
+* O sistema deve receber **atualizações e patches de segurança regulares**.
+
+**Exemplos de Aplicação**
+
+* Firmware IoT que utiliza bibliotecas de criptografia robustas e segue padrões de codificação segura.
+* Dispositivos de automação residencial cujo software passa por revisões formais de código antes da liberação.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** integração de ferramentas SAST/DAST em CI/CD, uso de guias como OWASP Secure Coding, automação de revisão de código.
+>
+> **Teste:** fuzzing de entradas, auditorias regulares de código-fonte, simulação de ataques de injeção em protótipos, validação de patches aplicados.
+
+---
+
+## FRP-SEC-061: Prevenção de Código Malicioso em Aplicativos IoT
+
+**Descrição**
+O sistema deve prevenir a introdução e execução de código malicioso em aplicações IoT, assegurando que apenas software legítimo e verificado seja implantado e executado nos dispositivos e sistemas relacionados.
+
+**Racional**
+A inclusão de código malicioso em aplicativos IoT pode resultar em vazamento de dados, espionagem, indisponibilidade de serviços e até controle remoto por adversários. Como dispositivos IoT geralmente não têm defesas robustas, é essencial garantir a integridade do software desde o desenvolvimento até a execução.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve implementar **processos rigorosos de verificação e validação de código** (revisão, SAST, DAST, testes automatizados).
+* O sistema deve aplicar **isolamento de componentes críticos** para limitar impactos de código malicioso.
+* O sistema deve utilizar **segmentação de rede** para impedir a propagação de malware.
+* O sistema deve promover **educação e conscientização de desenvolvedores e usuários** sobre riscos de software não confiável.
+* O sistema deve garantir que **apenas fontes confiáveis de software e atualização** sejam utilizadas.
+
+**Exemplos de Aplicação**
+
+* Gateways IoT que só aceitam instalação de pacotes assinados digitalmente pelo fabricante.
+* Dispositivos inteligentes que validam integridade de aplicativos antes da execução.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** uso de pipelines CI/CD seguros, assinatura digital de software, segmentação lógica de aplicações críticas, whitelisting de executáveis.
+>
+> **Teste:** auditoria de código, varredura de pacotes em busca de backdoors, testes de execução controlada em sandbox, simulação de ataques com aplicativos maliciosos.
+
+---
+
+## FRP-SEC-063: Redução da Superfície de Ataque em IoT
+
+**Descrição**
+O sistema deve reduzir a superfície de ataque disponível, limitando funcionalidades, serviços e pontos de entrada apenas ao necessário para a operação segura dos dispositivos e aplicações IoT.
+
+**Racional**
+Quanto maior a superfície de ataque, maior a probabilidade de vulnerabilidades exploráveis. Em IoT, onde dispositivos frequentemente interagem com múltiplos serviços e nuvem, essa complexidade cria vetores adicionais para adulteração e ataques. Reduzir a superfície exposta melhora significativamente a segurança geral do sistema.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve **remover funcionalidades desnecessárias** e simplificar o design do software IoT.
+* O sistema deve **desativar interfaces e recursos não utilizados**.
+* O sistema deve implementar **controles de acesso rigorosos em todos os pontos de entrada**.
+* O sistema deve realizar **monitoramento contínuo** de acessos e tentativas de exploração.
+* O sistema deve aplicar **segmentação de rede** para isolar componentes críticos.
+* O sistema deve realizar **auditorias periódicas de segurança** para identificar pontos vulneráveis.
+* O sistema deve usar apenas **bibliotecas e APIs seguras e atualizadas**.
+* O sistema deve empregar **firewalls e filtros de rede** para limitar acessos indevidos.
+
+**Exemplos de Aplicação**
+
+* Dispositivos domésticos inteligentes que desabilitam serviços de depuração em produção.
+* Gateways IoT industriais que expõem apenas APIs estritamente necessárias e auditadas.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** aplicar *hardening* de dispositivos IoT, configurar firewalls e IDS, utilizar *secure by design* eliminando recursos supérfluos.
+>
+> **Teste:** testes de penetração para mapear a superfície de ataque, varredura de portas e serviços habilitados, auditorias de dependências externas.
+
+---
+
+## FRP-SEC-064: Prevenção de Injeção em Banco de Dados
+
+**Descrição**
+O sistema deve proteger-se contra injeções em banco de dados, garantindo que comandos maliciosos não possam ser inseridos ou executados por meio de entradas de usuário, preservando a integridade e a confidencialidade dos dados.
+
+**Racional**
+Ataques de injeção em SQL exploram falhas na manipulação de entradas, permitindo que atacantes leiam, modifiquem ou apaguem registros. Em ambientes IoT, isso pode comprometer desde dados sensíveis até o funcionamento de dispositivos críticos conectados a sistemas de back-end.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve utilizar **consultas parametrizadas/prepared statements** em todas as interações com o banco.
+* O sistema deve aplicar **validação e saneamento de todas as entradas de dados**.
+* O sistema deve utilizar **ORMs seguros** para abstrair consultas e minimizar riscos de injeção.
+* O banco de dados deve adotar **controle de acesso mínimo**, evitando permissões excessivas.
+* O sistema deve realizar **auditoria e monitoramento contínuos** para detectar tentativas de injeção.
+* Os desenvolvedores devem receber **treinamento em segurança contra injeção de SQL**.
+
+**Exemplos de Aplicação**
+
+* Plataforma de casa inteligente que utiliza *prepared statements* para registrar eventos em banco relacional.
+* Sistemas industriais IoT que monitoram logs de consultas SQL em tempo real para detectar injeções.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** uso de *prepared statements*, ORMs confiáveis, políticas de privilégios mínimos, integração de ferramentas de SAST para detectar vulnerabilidades de injeção.
+>
+> **Teste:** execução de testes de penetração (SQLi), fuzzing em inputs, validação de logs de auditoria, simulação de ataques automatizados (ex.: SQLMap).
+
+---
+
+
 # Dispositivo
 
 ## FRP-SEC-010: Firmware Seguro 
@@ -203,6 +369,73 @@ Atualizações são essenciais para corrigir vulnerabilidades e manter dispositi
 > **Teste:** simulação de injeção de firmware malicioso, auditoria de logs de atualização, testes de rollback seguro em caso de falha.
 
 ---
+
+## FRP-SEC-052: Prevenção de Estouro de Buffer
+
+**Descrição**
+O sistema deve prevenir vulnerabilidades de estouro de buffer em software embarcado de dispositivos IoT, garantindo que dados de entrada não corrompam a memória nem permitam execução de código malicioso.
+
+**Racional**
+Em dispositivos IoT, a exploração de estouros de buffer pode permitir que atacantes assumam controle do dispositivo, executem código arbitrário ou corrompam dados críticos. Como esses sistemas muitas vezes não possuem proteções modernas de hardware, boas práticas de programação e validação de entradas são essenciais.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve aplicar **verificação de limites** em todas as operações de entrada e escrita em buffers.
+* O sistema deve utilizar **funções seguras de manipulação de memória** (ex.: `strncpy`, `memcpy_s`) em vez de funções inseguras.
+* O sistema deve preferir **linguagens com segurança de memória embutida** (ex.: Java, Rust, Python) quando aplicável.
+* O sistema deve realizar **testes de segurança e revisões de código** para detectar estouros de buffer.
+* O sistema deve aplicar **ferramentas de análise estática e dinâmica** para detectar vulnerabilidades em tempo de desenvolvimento.
+
+**Exemplos de Aplicação**
+
+* Firmwares escritos em C que utilizam `strncpy` em vez de `strcpy` para prevenir escrita fora do limite de buffers.
+* Dispositivos médicos que usam Rust em módulos críticos para evitar falhas de segurança relacionadas à memória.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** programação defensiva em C/C++, uso de compiladores com proteções (Stack Canaries, ASLR), adoção de linguagens seguras.
+>
+> **Teste:** fuzzing de entradas, auditoria de código C/C++, testes de penetração em firmwares, análise estática (ex.: Coverity, SonarQube).
+
+---
+
+## FRP-SEC-058: Garantia de Software Seguro em IoT
+
+**Descrição**
+O sistema deve garantir que o software embarcado em dispositivos IoT seja desenvolvido, distribuído e atualizado de forma segura, prevenindo adulterações, vulnerabilidades e uso de componentes inseguros ou desatualizados.
+
+**Racional**
+O software é o núcleo de funcionamento dos dispositivos IoT. Se vulnerável, desatualizado ou manipulado, ele abre espaço para ataques críticos, desde execução de código malicioso até perda de integridade do sistema. É essencial aplicar desenvolvimento seguro, atualizações regulares e mecanismos de validação de autenticidade.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve adotar **práticas de desenvolvimento seguro** (revisões de código, testes de segurança, padrões de codificação).
+* O sistema deve realizar **auditorias e testes de penetração periódicos** no software.
+* O software e bibliotecas de terceiros devem estar sempre **atualizados com patches de segurança**.
+* O sistema deve usar **criptografia forte** para proteger dados em trânsito e em repouso.
+* O sistema deve implementar **verificação de autenticidade** em todos os componentes e atualizações (assinaturas digitais, checksums).
+* O sistema deve utilizar **mecanismos de atualização segura** (canais criptografados, validação de pacotes).
+* O software deve aplicar **controle de permissões** seguindo o princípio do menor privilégio.
+
+**Exemplos de Aplicação**
+
+* Dispositivos IoT que recebem atualizações OTA assinadas digitalmente e transmitidas por TLS.
+* Gateways industriais que passam por auditorias semestrais de segurança de software e código.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** uso de CI/CD com análise estática e dinâmica, assinatura digital (RSA/ECC), TLS 1.3 para OTA, controle de permissões em software embarcado.
+>
+> **Teste:** fuzzing de software IoT, simulação de adulteração de pacotes de atualização, auditorias de bibliotecas de terceiros, testes de rollback seguro.
+
+---
+
 
 
 ---

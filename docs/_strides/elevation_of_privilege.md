@@ -235,3 +235,101 @@ O acesso não autorizado a sistemas IoT compromete dados sensíveis, dispositivo
 
 ---
 
+## FRP-SEC-054: Gerenciamento Seguro de Acesso
+
+**Descrição**
+O sistema deve implementar controles de acesso robustos para garantir que apenas entidades autenticadas e autorizadas possam acessar os recursos apropriados, aplicando rigorosamente o princípio do menor privilégio.
+
+**Racional**
+Sem gerenciamento adequado de acesso, usuários ou dispositivos podem obter permissões excessivas ou não autorizadas, comprometendo dados, funcionalidades e até a integridade da rede IoT. Um controle fraco de APIs, credenciais mal gerenciadas e ausência de monitoramento são vetores comuns de ataque.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve exigir **autenticação forte** (senhas robustas, MFA).
+* O sistema deve aplicar o **princípio do menor privilégio** para todos os usuários e dispositivos.
+* O sistema deve implementar **controles de acesso rigorosos em APIs**, incluindo autenticação baseada em tokens seguros.
+* O sistema deve realizar **gerenciamento seguro de credenciais** (hashing, criptografia, rotação).
+* O sistema deve aplicar **segregação de funções e dados**.
+* O sistema deve realizar **monitoramento e registro contínuos de acessos**.
+* O sistema deve **revisar periodicamente políticas de acesso** e atualizar conforme mudanças de função.
+* O sistema deve oferecer **treinamento de segurança** para administradores e usuários.
+
+**Exemplos de Aplicação**
+
+* Plataformas de nuvem IoT que utilizam RBAC/ABAC para restringir privilégios de usuários e dispositivos.
+* APIs de gerenciamento de dispositivos protegidas por OAuth2 e tokens de acesso limitados.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** IAM com RBAC/ABAC, segregação de funções, autenticação federada, cofre de credenciais.
+>
+> **Teste:** auditoria de permissões excessivas, simulação de escalonamento de privilégios, revisão de logs de API, testes de credenciais revogadas.
+
+---
+
+## FRP-SEC-055: Gestão Segura de Componentes de Terceiros
+
+**Descrição**
+O sistema deve avaliar, monitorar e manter seguros os componentes de terceiros utilizados em dispositivos e serviços IoT, prevenindo que vulnerabilidades externas introduzam riscos à segurança geral do ecossistema.
+
+**Racional**
+Muitos ataques a dispositivos IoT exploram falhas já conhecidas em bibliotecas, módulos ou serviços de terceiros. Se não forem avaliados e atualizados, esses componentes tornam-se pontos fracos críticos, facilitando a escalada de privilégios, manipulação de dados e comprometimento de sistemas inteiros.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve realizar **avaliações de segurança** antes da integração de qualquer componente de terceiros.
+* O sistema deve **manter todos os componentes atualizados** com patches e correções de segurança.
+* O sistema deve aplicar **controles adicionais de segurança** (firewalls, criptografia, monitoramento).
+* O sistema deve adotar **processos de gerenciamento de fornecedores**, selecionando apenas parceiros confiáveis.
+* O sistema deve estabelecer **contratos de conformidade** que exijam padrões mínimos de segurança de fornecedores.
+
+**Exemplos de Aplicação**
+
+* Um fabricante de câmeras IoT que audita bibliotecas de criptografia de terceiros antes da integração.
+* Gateways IoT que monitoram e atualizam automaticamente drivers fornecidos por fabricantes externos.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** SBOM (Software Bill of Materials), scanners de vulnerabilidades (ex.: OWASP Dependency-Check), acordos de nível de segurança com fornecedores.
+>
+> **Teste:** auditorias de bibliotecas usadas, testes de integração em sandbox, simulações de exploração de CVEs conhecidos em componentes de terceiros.
+
+---
+
+## FRP-SEC-056: Configuração Segura de Interfaces IoT
+
+**Descrição**
+O sistema deve proteger interfaces de administração e configuração de dispositivos IoT, garantindo que apenas usuários autenticados e autorizados possam acessar funções críticas, prevenindo falhas de autenticação, uso de credenciais padrão ou exposição de portas desnecessárias.
+
+**Racional**
+Interfaces de configuração inseguras são frequentemente exploradas como porta de entrada para ataques, permitindo controle indevido sobre dispositivos e comprometendo todo o ecossistema IoT. Sem autenticação forte, criptografia adequada e controles de acesso rigorosos, atacantes podem assumir privilégios administrativos e manipular dispositivos.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve implementar **autenticação forte** (MFA, senhas complexas) em interfaces web.
+* O sistema deve aplicar **controle de acesso baseado em funções (RBAC)** para limitar permissões.
+* O sistema deve garantir **criptografia de dados em trânsito** com TLS/SSL.
+* O sistema deve **desativar credenciais padrão e portas administrativas expostas**.
+* O sistema deve manter **atualizações de segurança regulares** no software de interfaces.
+
+**Exemplos de Aplicação**
+
+* Roteadores IoT que exigem MFA e bloqueiam credenciais padrão em interfaces web de administração.
+* Câmeras IP que criptografam todo o tráfego de configuração e segmentam acessos por função (admin, operador, visualizador).
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+### **Considerações de Implementação e Teste**
+
+> **Implementação:** MFA obrigatório, TLS 1.3, RBAC granular, desativação automática de credenciais padrão, hardening de interfaces administrativas.
+>
+> **Teste:** varredura de portas expostas, simulação de ataques de força bruta em interfaces web, auditorias de permissões RBAC, testes de penetração em painéis administrativos.
+
+---
