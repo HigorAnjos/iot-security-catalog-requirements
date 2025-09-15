@@ -1,6 +1,6 @@
 # Repudiation
 
-Ameaças relacionadas à negação de ações realizadas ou falta de não-repúdio.
+Associado aos usuários que negam a execução de uma ação sem ter alguma maneira de provar o contrário — por exemplo, um usuário executa uma operação ilegal em um sistema que não tem capacidade para rastrear as operações proibidas. Não repúdio refere-se à capacidade de um sistema para combater ameaças de repúdio. Por exemplo, um usuário que adquire um item pode ter que inscrever o item após o recebimento. O vendedor pode usar o recibo assinado como prova de que o usuário recebeu o pacote
 
 ---
 

@@ -1,6 +1,6 @@
 # Spoofing
 
-Ameaças relacionadas à falsificação de identidade e autenticação inadequada.
+Envolve acessar ilegalmente e, em seguida, usando as informações de autenticação de outro usuário, como nome de usuário e senha
 
 ---
 

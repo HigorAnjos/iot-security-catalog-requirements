@@ -1,6 +1,6 @@
 # Tampering
 
-Ameaças relacionadas à modificação não autorizada de dados ou sistemas.
+Envolve a modificação mal-intencionada de dados. Os exemplos incluem alterações não autorizadas feitas em dados persistentes, como as mantidas em um banco de dados e a alteração de dados enquanto estão fluindo entre dois computadores em uma rede aberta, como a Internet
 
 ---
 

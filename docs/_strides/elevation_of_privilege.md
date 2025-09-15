@@ -1,6 +1,6 @@
 # Elevation of Privilege
 
-Ameaças relacionadas ao ganho não autorizado de privilégios ou acesso elevado.
+Um usuário sem privilégios obtém acesso privilegiado e, portanto, tem acesso suficiente para comprometer ou destruir todo o sistema. Elevação de ameaças de privilégios incluem situações em que um invasor penetra de forma eficaz todas as defesas do sistema e se tornam parte do sistema confiável em si, uma situação perigosa, de fato
 
 ---
 

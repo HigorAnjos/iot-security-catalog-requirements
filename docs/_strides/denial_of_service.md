@@ -1,7 +1,6 @@
 # Denial of Service
 
-Ameaças relacionadas à interrupção ou degradação da disponibilidade de serviços.
-
+Ataques negação de serviço (DoS) negar serviços a usuários válidos — por exemplo, fazendo um servidor Web temporariamente indisponível ou inutilizável. Você deve se proteger contra determinados tipos de ameaças DoS simplesmente para melhorar a confiabilidade e disponibilidade do sistema
 
 ---
 

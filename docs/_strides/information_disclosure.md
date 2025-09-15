@@ -1,6 +1,6 @@
 # Information Disclosure
 
-Ameaças relacionadas à exposição não autorizada de informações confidenciais.
+Envolve a exposição de informações para os indivíduos que não devem para ter acesso a ele — por exemplo, a capacidade dos usuários para ler um arquivo que não tem permissão de acesso para ou a capacidade de um intruso ler dados em trânsito entre dois computadores
 
 ---
 
