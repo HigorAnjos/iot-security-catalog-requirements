@@ -39,39 +39,6 @@ A ausência de autenticação forte permite que atacantes falsifiquem identidade
 ## FRP-SEC-004: Canal de Voz Seguro
 
 **Descrição**
-O sistema deve proteger os canais de voz em dispositivos IoT contra interceptação, falsificação e uso não autorizado, garantindo a autenticidade dos comandos de voz e a confidencialidade das comunicações.
-
-**Racional**
-Dispositivos IoT com microfones integrados (assistentes virtuais, brinquedos inteligentes, eletrodomésticos de voz) podem ser explorados para capturar informações privadas ou executar comandos falsificados. Ataques como voz intrusa ou mascaramento de voz podem comprometer a segurança e a privacidade do usuário.
-
-**Requisitos Concretos (Instanciados para IoT)**
-
-* O sistema deve utilizar criptografia de ponta a ponta nas comunicações de voz.
-* O sistema deve implementar autenticação robusta de voz para validar a identidade do usuário.
-* O sistema deve monitorar tráfego de voz em rede para identificar atividades suspeitas.
-* O sistema deve aplicar atualizações de segurança regularmente para corrigir vulnerabilidades conhecidas.
-* O sistema deve aplicar controle de acesso para restringir a interação apenas a usuários autorizados.
-
-**Exemplos de Aplicação**
-
-* Smart speakers (Google Home, Amazon Echo) que validam comandos de voz antes da execução.
-* Brinquedos infantis conectados que usam autenticação de voz para evitar interação de estranhos.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
-### **Considerações de Implementação e Teste**
-
-> **Implementação:** criptografia TLS para tráfego de voz, integração com biometria de voz, políticas de acesso baseadas em identidade.
->
-> **Teste:** cenários de spoofing de voz, testes de comando falso por gravação, simulação de interceptação de tráfego.
-
----
-
-
-## FRP-SEC-004: Canal de Voz Seguro
-
-**Descrição**
 O sistema deve proteger canais de voz em dispositivos IoT contra interceptação, falsificação e uso não autorizado, garantindo a autenticidade dos comandos de voz e a confidencialidade das comunicações de áudio.
 
 **Racional**
