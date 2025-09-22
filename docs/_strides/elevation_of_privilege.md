@@ -30,7 +30,7 @@ Controles de acesso fracos permitem que invasores explorem lacunas na autentica�
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de RBAC ou ABAC, autenticação federada, integração com cofres de identidade, descentralização via blockchain em redes IoT críticas.
 >
@@ -64,7 +64,7 @@ Servidores IoT são alvos críticos, pois concentram processamento, armazenament
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** aplicação de hardening em servidores, criptografia ponta a ponta, autenticação federada, monitoramento SIEM.
 >
@@ -95,7 +95,7 @@ O acesso não autorizado a sistemas IoT compromete dados sensíveis, dispositivo
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** integração com sistemas IAM, aplicação de RBAC/ABAC, uso de 2FA, segmentação de rede em VLANs.
 >
@@ -130,7 +130,7 @@ Sem gerenciamento adequado de acesso, usuários ou dispositivos podem obter perm
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** IAM com RBAC/ABAC, segregação de funções, autenticação federada, cofre de credenciais.
 >
@@ -162,7 +162,7 @@ Muitos ataques a dispositivos IoT exploram falhas já conhecidas em bibliotecas,
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** SBOM (Software Bill of Materials), scanners de vulnerabilidades (ex.: OWASP Dependency-Check), acordos de nível de segurança com fornecedores.
 >
@@ -194,7 +194,7 @@ Interfaces de configuração inseguras são frequentemente exploradas como porta
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** MFA obrigatório, TLS 1.3, RBAC granular, desativação automática de credenciais padrão, hardening de interfaces administrativas.
 >
@@ -228,7 +228,7 @@ Configurações padrão em dispositivos IoT (como senhas de fábrica ou serviço
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** exigir tela de alteração de senha obrigatória, provisionamento seguro de firmware, integração com frameworks de segurança (ex.: NIST).
 >
@@ -260,7 +260,7 @@ Interfaces físicas desprotegidas representam um vetor direto de ataque: advers�
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de portas seladas ou tampadas, autenticação multifator em consoles de configuração, gabinetes com sensores de violação.
 >
@@ -294,7 +294,7 @@ Interfaces de console (ex.: UART, JTAG) são frequentemente negligenciadas em di
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** desabilitar JTAG/UART em produção, uso de gabinetes selados, exigência de MFA em consoles administrativos, criptografia em canais de debug.
 >
@@ -326,7 +326,7 @@ Dispositivos IoT muitas vezes operam em locais de fácil acesso ao público, tor
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de lacres anti-violação, sensores de intrusão, TPMs ou Secure Elements, criptografia AES em dados locais.
 >
