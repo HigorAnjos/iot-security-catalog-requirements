@@ -217,7 +217,7 @@ A fase de inicialização é crítica: qualquer comprometimento nesse estágio p
 * O sistema deve realizar **verificação de integridade do firmware** a cada boot.
 * O sistema deve proteger as **configurações de inicialização** contra modificações não autorizadas (ex.: assinaturas digitais, chaves criptográficas).
 * O sistema deve aplicar **autenticação de hardware** no processo de inicialização para validar a legitimidade dos componentes.
-* O sistema deve garantir **atualizações e patches regulares** para firmware e software relacionados ao boot.
+* O sistema deve garantir **atualizações regulares de segurança** para firmware e software relacionados ao boot.
 
 **Exemplos de Aplicação**
 
@@ -315,7 +315,7 @@ Dispositivos de baixo custo frequentemente sacrificam práticas de segurança em
 * O sistema deve priorizar **dispositivos com certificações de segurança reconhecidas**.
 * O sistema deve adotar **medidas adicionais de proteção** para dispositivos de baixo custo (ex.: firewalls, segmentação de rede, VPNs).
 * O sistema deve realizar **monitoramento contínuo** para identificar anomalias ou atividades suspeitas.
-* O sistema deve garantir **atualizações e patches regulares** para todos os dispositivos na rede.
+* O sistema deve garantir **atualizações de firmware e patches de segurança** sempre que disponíveis.
 * O sistema deve **isolar dispositivos críticos de dispositivos de baixo custo** em arquiteturas de rede.
 * O sistema deve realizar **avaliação de riscos periódica** sobre o uso de dispositivos de baixo custo em ambientes sensíveis.
 
@@ -602,12 +602,12 @@ Comunicações IoT inseguras podem ser interceptadas, manipuladas ou redireciona
 O sistema deve utilizar protocolos de comunicação seguros para proteger os dados transmitidos entre dispositivos IoT, serviços e sistemas de back-end, garantindo confidencialidade, integridade e autenticidade.
 
 **Racional**
-A ausência ou o uso inadequado de protocolos seguros permite que atacantes interceptem, modifiquem ou falsifiquem dados em trânsito. Isso compromete não apenas a privacidade, mas também a integridade e autenticidade das comunicações, possibilitando ataques de *man-in-the-middle* e injeção de pacotes maliciosos.
+A ausência ou o uso inadequado de protocolos seguros permite que atacantes interceptem, modifiquem ou falsifiquem dados em trânsito. Isso compromete não apenas a privacidade, mas também a integridade das decisões automatizadas que dependem dessas informações.
 
 **Requisitos Concretos (Instanciados para IoT)**
 
-* O sistema deve implementar **criptografia moderna e segura** (TLS/SSL, DTLS).
-* O sistema deve usar **certificados digitais confiáveis** emitidos por autoridades certificadoras reconhecidas.
+* O sistema deve implementar **criptografia forte** (TLS/SSL) em todas as comunicações IoT.
+* O sistema deve exigir **autenticação robusta** das partes envolvidas (certificados digitais, MFA).
 * O sistema deve aplicar **verificação de integridade** com assinaturas digitais ou checksums.
 * O sistema deve adotar **políticas de gerenciamento seguro de chaves e certificados**, incluindo rotação periódica.
 
@@ -701,14 +701,15 @@ Portas abertas e desnecessárias expõem dispositivos IoT a riscos adicionais, p
 O sistema deve utilizar criptografia forte e atualizada em todas as comunicações de dispositivos IoT, prevenindo interceptação, adulteração e acesso não autorizado a dados em trânsito.
 
 **Racional**
-Sem criptografia adequada, os dados transmitidos em redes IoT podem ser interceptados e modificados por atacantes. Isso compromete não apenas a privacidade, mas também a integridade e autenticidade das comunicações, possibilitando ataques de *man-in-the-middle* e injeção de pacotes maliciosos.
+Sem criptografia adequada, os dados transmitidos em redes IoT podem ser interceptados e modificados por atacantes. Isso compromete não apenas a confidencialidade, mas também a integridade e autenticidade das comunicações, possibilitando ataques de *man-in-the-middle* e injeção de pacotes maliciosos.
 
 **Requisitos Concretos (Instanciados para IoT)**
 
 * O sistema deve implementar **criptografia moderna e segura** (TLS/SSL, DTLS).
 * O sistema deve usar **certificados digitais confiáveis** emitidos por autoridades certificadoras reconhecidas.
-* O sistema deve aplicar **verificação de integridade** com assinaturas digitais ou checksums.
-* O sistema deve adotar **políticas de gerenciamento seguro de chaves e certificados**, incluindo rotação periódica.
+* O sistema deve aplicar **gerenciamento seguro de chaves criptográficas** (armazenamento seguro, rotação periódica, uso de HSMs).
+* O sistema deve realizar **verificação de integridade dos dados** (assinaturas digitais, checksums).
+* O sistema deve passar por **auditorias e atualizações regulares** para manter a criptografia resistente a novas ameaças.
 
 **Exemplos de Aplicação**
 

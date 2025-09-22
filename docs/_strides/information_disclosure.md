@@ -4,7 +4,7 @@ Envolve a exposição de informações para os indivíduos que não devem para t
 
 ---
 
-## Requisitos por Categoria
+## Aplicação
 
 ### FRP-SEC-002: Proteção contra Links Maliciosos
 
@@ -37,8 +37,6 @@ Links maliciosos são um vetor comum de ataques. Em ambientes IoT, dispositivos 
 > **Teste**: simulação de phishing com links encurtados/redirecionados, verificação de bloqueio em tempo real, análise de geração de logs.
 
 ---
-
-## Aplicação
 
 ### FRP-SEC-057: Gestão Segura de Dados
 

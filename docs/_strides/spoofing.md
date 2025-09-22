@@ -198,6 +198,41 @@ A falta de autenticação forte ou políticas adequadas expõe dispositivos IoT 
 
 ---
 
+
+## Dispositivo
+
+### FRP-SEC-025: Proteção contra Clonagem de Etiquetas
+
+**Descrição**
+O sistema deve proteger contra clonagem de etiquetas de identificação em dispositivos IoT, garantindo que apenas etiquetas legítimas e não replicadas sejam aceitas em processos de autenticação, rastreamento e controle de acesso.
+
+**Racional**
+A clonagem de etiquetas RFID/NFC permite que atacantes falsifiquem identidades e obtenham acesso não autorizado a sistemas ou recursos. Isso compromete a confiança em processos baseados em etiquetas, como rastreamento logístico, controle de ativos e autenticação de usuários.
+
+**Requisitos Concretos (Instanciados para IoT)**
+
+* O sistema deve utilizar **etiquetas RFID/NFC com criptografia** para proteger dados transmitidos.
+* O sistema deve implementar **métodos de autenticação avançada**, como multifator ou biometria associada à etiqueta.
+* O sistema deve adotar **monitoramento de acessos e detecção de anomalias** para identificar tentativas de uso de etiquetas clonadas.
+* O sistema deve utilizar **etiquetas dinâmicas**, que mudam dados de identificação periodicamente.
+* O sistema deve proteger canais de comunicação entre leitores e etiquetas com **protocolos criptográficos robustos**.
+
+**Exemplos de Aplicação**
+
+* Controle de acesso físico com etiquetas NFC dinâmicas que alteram periodicamente sua chave de autenticação.
+* Rastreamento de cargas logísticas com etiquetas RFID criptografadas que resistem à clonagem.
+
+**Relacionamentos com Outros Padrões**
+*Não aplicável no momento.*
+
+**Considerações de Implementação e Teste**
+
+> **Implementação:** uso de RFID/NFC criptografado, integração de autenticação multifator, implementação de tags dinâmicas.
+>
+> **Teste:** simulações de clonagem de etiquetas, análise de logs de acesso, auditoria de protocolos criptográficos de comunicação entre leitores e tags.
+
+---
+
 ## Rede
 
 ### FRP-SEC-006: Proteção contra Falsificação de Dispositivo
@@ -298,35 +333,3 @@ A falsificação de sinais permite que atacantes transmitam comandos não autori
 
 
 ---
-
-## Dispositivo
-
-### FRP-SEC-025: Proteção contra Clonagem de Etiquetas
-
-**Descrição**
-O sistema deve proteger contra clonagem de etiquetas de identificação em dispositivos IoT, garantindo que apenas etiquetas legítimas e não replicadas sejam aceitas em processos de autenticação, rastreamento e controle de acesso.
-
-**Racional**
-A clonagem de etiquetas RFID/NFC permite que atacantes falsifiquem identidades e obtenham acesso não autorizado a sistemas ou recursos. Isso compromete a confiança em processos baseados em etiquetas, como rastreamento logístico, controle de ativos e autenticação de usuários.
-
-**Requisitos Concretos (Instanciados para IoT)**
-
-* O sistema deve utilizar **etiquetas RFID/NFC com criptografia** para proteger dados transmitidos.
-* O sistema deve implementar **métodos de autenticação avançada**, como multifator ou biometria associada à etiqueta.
-* O sistema deve adotar **monitoramento de acessos e detecção de anomalias** para identificar tentativas de uso de etiquetas clonadas.
-* O sistema deve utilizar **etiquetas dinâmicas**, que mudam dados de identificação periodicamente.
-* O sistema deve proteger canais de comunicação entre leitores e etiquetas com **protocolos criptográficos robustos**.
-
-**Exemplos de Aplicação**
-
-* Controle de acesso físico com etiquetas NFC dinâmicas que alteram periodicamente sua chave de autenticação.
-* Rastreamento de cargas logísticas com etiquetas RFID criptografadas que resistem à clonagem.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
-**Considerações de Implementação e Teste**
-
-> **Implementação:** uso de RFID/NFC criptografado, integração de autenticação multifator, implementação de tags dinâmicas.
->
-> **Teste:** simulações de clonagem de etiquetas, análise de logs de acesso, auditoria de protocolos criptográficos de comunicação entre leitores e tags.

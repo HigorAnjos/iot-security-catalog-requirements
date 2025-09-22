@@ -42,34 +42,32 @@ Tentativas de login excessivas podem indicar ataques de força bruta, mas polít
 ### NFRP-SEC-003: Restrições de Energia
 
 **Descrição**
-Dispositivos IoT devem ser projetados para operar de forma eficiente sob restrições de energia, de modo que a limitação de consumo não comprometa a disponibilidade ou provoque falhas que resultem em indisponibilidade do serviço.
+O sistema deve garantir que dispositivos IoT operem de forma eficiente sob restrições de energia, evitando que limitações de consumo provoquem falhas ou indisponibilidade dos serviços.
 
 **Racional**
-A escassez de energia pode causar interrupções no funcionamento de dispositivos IoT, resultando em degradação de desempenho, falhas de comunicação ou até paralisação total. Em ambientes críticos, isso equivale a uma forma de negação de serviço, mesmo que causada por limitações operacionais e não diretamente por um ataque.
+Sensores e atuadores IoT frequentemente funcionam em ambientes com energia limitada (bateria, energia solar). O consumo ineficiente pode causar interrupções, degradação de desempenho ou até paralisação total, o que equivale a uma forma de negação de serviço mesmo sem ataque direto.
 
 **Requisitos Concretos (Instanciados para IoT)**
 
 * O sistema deve otimizar o consumo de energia em operações de comunicação e processamento.
 * O sistema deve utilizar protocolos de baixo consumo, como **BLE, Zigbee ou LPWAN**.
-* O sistema deve implementar gerenciamento de energia adaptativo, ajustando consumo conforme condições de operação.
-* O sistema deve suportar técnicas de recuperação de energia (solar, cinética etc.).
+* O sistema deve implementar gerenciamento de energia adaptativo, ajustando consumo conforme as condições de operação.
+* O sistema deve suportar técnicas de recuperação de energia (ex.: solar, cinética).
 * O sistema deve monitorar periodicamente o estado de energia e acionar manutenção preventiva quando necessário.
 
 **Exemplos de Aplicação**
 
-* Redes de sensores ambientais em áreas remotas, que precisam operar meses sem intervenção.
-* Dispositivos de rastreamento logístico que mantêm disponibilidade por longos períodos sem recarga.
+* Redes de sensores ambientais em áreas remotas que precisam operar meses sem manutenção.
+* Dispositivos de rastreamento logístico que funcionam longos períodos sem recarga.
 
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
 **Considerações de Implementação e Teste**
 
-> **Implementação:** uso de protocolos otimizados para baixo consumo, algoritmos de duty cycle, integração com fontes de energia renovável (ex.: painéis solares).
+> **Implementação:** protocolos otimizados para baixo consumo, duty cycling, integração de módulos de recuperação de energia.
 >
-> **Teste:** medições de consumo sob diferentes cenários de carga, simulação de falhas de energia, verificação de tempo de operação e disponibilidade.
-
-
+> **Teste:** medições de consumo em cenários reais, simulação de falhas de energia, verificação da disponibilidade sob diferentes condições de carga.
 
 ---
 
@@ -218,7 +216,7 @@ Dispositivos com alcance limitado de transmissão estão mais suscetíveis a ata
 
 **Requisitos Concretos (Instanciados para IoT)**
 
-* O sistema deve utilizar **protocolos de comunicação eficientes** que minimizem overhead.
+* O sistema deve utilizar **protocolos de comunicação eficientes e resilientes** a perdas, como Zigbee, Z-Wave ou Thread.
 * O sistema deve realizar **planejamento de rede** considerando ambiente físico e interferências.
 * O sistema deve selecionar **tecnologias adequadas ao alcance necessário** (ex.: LoRaWAN, Sigfox, Wi-Fi, Bluetooth).
 * O sistema deve adotar **topologias de rede apropriadas**, como redes mesh para estender cobertura.
