@@ -4,8 +4,9 @@ Envolve a exposição de informações para os indivíduos que não devem para t
 
 ---
 
+## Requisitos por Categoria
 
-## FRP-SEC-002: Proteção contra Links Maliciosos
+### FRP-SEC-002: Proteção contra Links Maliciosos
 
 **Descrição**
 O sistema deve prevenir que usuários de dispositivos IoT acessem links maliciosos que possam resultar em vazamento de dados, instalação de malware ou exploração de vulnerabilidades conhecidas.
@@ -29,7 +30,7 @@ Links maliciosos são um vetor comum de ataques. Em ambientes IoT, dispositivos 
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação**: uso de filtragem DNS, listas de bloqueio de domínios, inspeção profunda de pacotes (DPI), atualizações OTA.
 >
@@ -37,9 +38,9 @@ Links maliciosos são um vetor comum de ataques. Em ambientes IoT, dispositivos 
 
 ---
 
-# Aplicação
+## Aplicação
 
-## FRP-SEC-057: Gestão Segura de Dados
+### FRP-SEC-057: Gestão Segura de Dados
 
 **Descrição**
 O sistema deve garantir que os dados coletados, processados e armazenados por dispositivos e serviços IoT sejam tratados com segurança durante todo o seu ciclo de vida, prevenindo vazamentos e acessos não autorizados.
@@ -63,7 +64,7 @@ A falta de boas práticas de gestão de dados pode expor informações pessoais 
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** criptografia AES-256 para armazenamento, TLS 1.3 para transmissão, RBAC/ABAC para acesso, conformidade com LGPD/GDPR.
 >
@@ -71,7 +72,7 @@ A falta de boas práticas de gestão de dados pode expor informações pessoais 
 
 ---
 
-## FRP-SEC-065: Prevenção de Enumeração de Usuários
+### FRP-SEC-065: Prevenção de Enumeração de Usuários
 
 **Descrição**
 O sistema deve proteger os mecanismos de autenticação e APIs contra a enumeração de nomes de usuários, evitando que atacantes identifiquem contas válidas por meio de mensagens de erro, respostas diferenciadas ou padrões de comportamento do sistema.
@@ -95,7 +96,7 @@ Quando um sistema expõe, ainda que de forma indireta, a existência de usuário
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** padronizar mensagens de erro, configurar rate limiting, aplicar MFA em sistemas críticos, criptografar identificadores de usuário.
 >
@@ -103,7 +104,7 @@ Quando um sistema expõe, ainda que de forma indireta, a existência de usuário
 
 ---
 
-## FRP-SEC-066: Criptografia Robusta na Aplicação IoT
+### FRP-SEC-066: Criptografia Robusta na Aplicação IoT
 
 **Descrição**
 O sistema deve implementar criptografia forte e adequada em nível de aplicação para proteger dados em trânsito e em repouso, garantindo que não sejam expostos ou manipulados por atacantes devido a algoritmos obsoletos ou ausência de mecanismos criptográficos.
@@ -127,7 +128,7 @@ Sem criptografia robusta, dados sensíveis transmitidos ou armazenados em dispos
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de HSMs para chaves, TLS 1.3, bibliotecas criptográficas confiáveis, descontinuação de algoritmos fracos (MD5, SHA-1).
 >
@@ -135,11 +136,9 @@ Sem criptografia robusta, dados sensíveis transmitidos ou armazenados em dispos
 
 ---
 
+## Dispositivo
 
-
-# Dispositivo
-
-## NFRP-SEC-007: Proteção contra Vazamento de Emanações Eletromagnéticas
+### NFRP-SEC-007: Proteção contra Vazamento de Emanações Eletromagnéticas
 
 **Descrição**
 O sistema deve proteger dispositivos IoT contra a exposição não intencional de informações por meio de emanações eletromagnéticas que possam ser exploradas por atacantes para inferir dados processados ou transmitidos.
@@ -163,7 +162,7 @@ Dispositivos IoT podem vazar informações através de campos eletromagnéticos 
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de filtros eletromagnéticos em hardware, isolamento físico, criptografia ponta a ponta, hardening de firmware.
 >
@@ -172,7 +171,7 @@ Dispositivos IoT podem vazar informações através de campos eletromagnéticos 
 
 ---
 
-## NFRP-SEC-015: Proteção contra Canais Laterais
+### NFRP-SEC-015: Proteção contra Canais Laterais
 
 **Descrição**
 O sistema deve prevenir o vazamento de informações sensíveis por meio de canais laterais, como padrões de consumo de energia, emissões eletromagnéticas ou tempos de resposta, que possam ser explorados para inferir dados confidenciais.
@@ -196,7 +195,7 @@ Ataques de canal lateral permitem que adversários obtenham informações valios
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de técnicas de *constant-time execution*, blindagem EM, variação controlada de consumo de energia, ruído aleatório em hardware/firmware.
 >
@@ -204,7 +203,7 @@ Ataques de canal lateral permitem que adversários obtenham informações valios
 
 ---
 
-## FRP-SEC-028: Criptografia Forte em Dispositivos IoT
+### FRP-SEC-028: Criptografia Forte em Dispositivos IoT
 
 **Descrição**
 O sistema deve proteger dados sensíveis em dispositivos IoT utilizando mecanismos de criptografia fortes, tanto para dados em repouso quanto em trânsito, prevenindo sua exposição ou uso indevido por adversários.
@@ -229,7 +228,7 @@ A ausência ou fraqueza de criptografia em dispositivos IoT permite que atacante
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de TLS 1.3, AES-256, RSA/ECC, integração com TPM/HSM, rotação automática de chaves.
 >
@@ -238,9 +237,9 @@ A ausência ou fraqueza de criptografia em dispositivos IoT permite que atacante
 ---
 
 
-# Rede
+## Rede
 
-## FRP-SEC-033: Proteção contra Vazamento ou Violação de Dados
+### FRP-SEC-033: Proteção contra Vazamento ou Violação de Dados
 
 **Descrição**
 O sistema deve proteger dados sensíveis em redes IoT contra vazamento, violação ou acesso não autorizado, assegurando confidencialidade, integridade e disponibilidade das informações em trânsito e em repouso.
@@ -267,7 +266,7 @@ Vazamentos de dados comprometem diretamente a privacidade de usuários e a segur
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** TLS 1.3, AES-256, RBAC/ABAC, APIs com OAuth2 e validação de entrada, auditorias regulares.
 >
@@ -275,7 +274,7 @@ Vazamentos de dados comprometem diretamente a privacidade de usuários e a segur
 
 ---
 
-## FRP-SEC-034: Proteção contra Escuta Clandestina
+### FRP-SEC-034: Proteção contra Escuta Clandestina
 
 **Descrição**
 O sistema deve proteger as comunicações IoT contra interceptações não autorizadas, garantindo que dados transmitidos permaneçam confidenciais e inacessíveis a atacantes, mesmo que capturados durante a transmissão.
@@ -300,7 +299,7 @@ Dispositivos IoT utilizam principalmente canais sem fio, tornando-os suscetívei
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** TLS 1.3, DTLS para dispositivos leves, autenticação mútua com certificados digitais, segmentação em VLANs.
 >

@@ -4,9 +4,9 @@ Envolve a modificação mal-intencionada de dados. Os exemplos incluem alteraç�
 
 ---
 
-# Aplicação
+## Aplicação
 
-## FRP-SEC-053: Garantia de Consistência de Dados
+### FRP-SEC-053: Garantia de Consistência de Dados
 
 **Descrição**
 O sistema deve proteger contra inconsistências de dados em ambientes IoT, assegurando a integridade, precisão e confiabilidade das informações coletadas, processadas e armazenadas.
@@ -30,7 +30,7 @@ Dados corrompidos, contraditórios ou incompletos comprometem a confiabilidade d
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de protocolos como MQTT com QoS, CRCs, checksums, validações de integridade e redundância de sensores.
 >
@@ -38,7 +38,7 @@ Dados corrompidos, contraditórios ou incompletos comprometem a confiabilidade d
 
 ---
 
-## FRP-SEC-060: Garantia de Qualidade de Código em IoT
+### FRP-SEC-060: Garantia de Qualidade de Código em IoT
 
 **Descrição**
 O sistema deve ser desenvolvido com práticas de codificação seguras e robustas, garantindo que o código-fonte não introduza vulnerabilidades decorrentes de má estruturação, falta de validação de entrada ou uso inadequado de recursos críticos.
@@ -61,7 +61,7 @@ Código mal estruturado, sem revisões e sem validações adequadas, aumenta a s
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** integração de ferramentas SAST/DAST em CI/CD, uso de guias como OWASP Secure Coding, automação de revisão de código.
 >
@@ -69,7 +69,7 @@ Código mal estruturado, sem revisões e sem validações adequadas, aumenta a s
 
 ---
 
-## FRP-SEC-061: Prevenção de Código Malicioso em Aplicativos IoT
+### FRP-SEC-061: Prevenção de Código Malicioso em Aplicativos IoT
 
 **Descrição**
 O sistema deve prevenir a introdução e execução de código malicioso em aplicações IoT, assegurando que apenas software legítimo e verificado seja implantado e executado nos dispositivos e sistemas relacionados.
@@ -93,7 +93,7 @@ A inclusão de código malicioso em aplicativos IoT pode resultar em vazamento d
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de pipelines CI/CD seguros, assinatura digital de software, segmentação lógica de aplicações críticas, whitelisting de executáveis.
 >
@@ -101,7 +101,7 @@ A inclusão de código malicioso em aplicativos IoT pode resultar em vazamento d
 
 ---
 
-## FRP-SEC-063: Redução da Superfície de Ataque em IoT
+### FRP-SEC-063: Redução da Superfície de Ataque em IoT
 
 **Descrição**
 O sistema deve reduzir a superfície de ataque disponível, limitando funcionalidades, serviços e pontos de entrada apenas ao necessário para a operação segura dos dispositivos e aplicações IoT.
@@ -128,7 +128,7 @@ Quanto maior a superfície de ataque, maior a probabilidade de vulnerabilidades 
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** aplicar *hardening* de dispositivos IoT, configurar firewalls e IDS, utilizar *secure by design* eliminando recursos supérfluos.
 >
@@ -136,7 +136,7 @@ Quanto maior a superfície de ataque, maior a probabilidade de vulnerabilidades 
 
 ---
 
-## FRP-SEC-064: Prevenção de Injeção em Banco de Dados
+### FRP-SEC-064: Prevenção de Injeção em Banco de Dados
 
 **Descrição**
 O sistema deve proteger-se contra injeções em banco de dados, garantindo que comandos maliciosos não possam ser inseridos ou executados por meio de entradas de usuário, preservando a integridade e a confidencialidade dos dados.
@@ -161,7 +161,7 @@ Ataques de injeção em SQL exploram falhas na manipulação de entradas, permit
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de *prepared statements*, ORMs confiáveis, políticas de privilégios mínimos, integração de ferramentas de SAST para detectar vulnerabilidades de injeção.
 >
@@ -169,10 +169,9 @@ Ataques de injeção em SQL exploram falhas na manipulação de entradas, permit
 
 ---
 
+## Dispositivo
 
-# Dispositivo
-
-## FRP-SEC-010: Firmware Seguro 
+### FRP-SEC-010: Firmware Seguro 
 
 **Descrição**
 O sistema deve garantir que o firmware de dispositivos IoT seja projetado, distribuído e mantido de forma segura, prevenindo exploração de vulnerabilidades que possam comprometer a integridade, a confidencialidade ou a disponibilidade do dispositivo e dos dados que ele manipula.
@@ -196,7 +195,7 @@ O firmware é o software de baixo nível que controla os dispositivos IoT. Vulne
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** assinar digitalmente o firmware, adotar boot seguro, mecanismos OTA (Over-The-Air) confiáveis, integração de análise estática e ferramentas SAST/DAST.
 >
@@ -204,7 +203,7 @@ O firmware é o software de baixo nível que controla os dispositivos IoT. Vulne
 
 ---
 
-## FRP-SEC-011: Inicialização Segura
+### FRP-SEC-011: Inicialização Segura
 
 **Descrição**
 O sistema deve garantir a integridade e a autenticidade do processo de inicialização dos dispositivos IoT, prevenindo que firmware adulterado, configurações modificadas ou hardware não autorizado sejam carregados durante o boot.
@@ -218,7 +217,7 @@ A fase de inicialização é crítica: qualquer comprometimento nesse estágio p
 * O sistema deve realizar **verificação de integridade do firmware** a cada boot.
 * O sistema deve proteger as **configurações de inicialização** contra modificações não autorizadas (ex.: assinaturas digitais, chaves criptográficas).
 * O sistema deve aplicar **autenticação de hardware** no processo de inicialização para validar a legitimidade dos componentes.
-* O sistema deve garantir **atualizações regulares de segurança** para firmware e software relacionados ao boot.
+* O sistema deve garantir **atualizações e patches regulares** para firmware e software relacionados ao boot.
 
 **Exemplos de Aplicação**
 
@@ -228,7 +227,7 @@ A fase de inicialização é crítica: qualquer comprometimento nesse estágio p
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de *secure boot*, assinaturas digitais de firmware, armazenamento seguro de chaves, módulos TPM/TEE para validação.
 >
@@ -236,8 +235,7 @@ A fase de inicialização é crítica: qualquer comprometimento nesse estágio p
 
 ---
 
-
-## FRP-SEC-019: Proteção contra Injeção de Código Malicioso
+### FRP-SEC-019: Proteção contra Injeção de Código Malicioso
 
 **Descrição**
 O sistema deve prevenir a injeção e execução de código malicioso em dispositivos IoT, garantindo que apenas software e firmware legítimos e íntegros possam ser instalados e executados.
@@ -262,7 +260,7 @@ A injeção de código malicioso pode dar controle remoto total ao atacante, com
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de assinaturas digitais em firmware, secure boot, hardening de software, práticas de programação segura (ex.: SAFE-C).
 >
@@ -270,7 +268,7 @@ A injeção de código malicioso pode dar controle remoto total ao atacante, com
 
 ---
 
-## FRP-SEC-022: Proteção contra Violação Física
+### FRP-SEC-022: Proteção contra Violação Física
 
 **Descrição**
 O sistema deve prevenir e detectar tentativas de violação física em dispositivos IoT, protegendo dados sensíveis, firmware e componentes de hardware contra adulteração, modificação ou uso malicioso.
@@ -296,7 +294,7 @@ A violação física permite que adversários manipulem dispositivos, insiram im
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de TPMs, firmware assinado, gabinetes selados, sensores anti-intrusão.
 >
@@ -304,7 +302,7 @@ A violação física permite que adversários manipulem dispositivos, insiram im
 
 ---
 
-## NFRP-SEC-024: Mitigação de Riscos em Sistemas de Baixo Custo
+### NFRP-SEC-024: Mitigação de Riscos em Sistemas de Baixo Custo
 
 **Descrição**
 O sistema deve considerar riscos adicionais ao utilizar dispositivos IoT de baixo custo, adotando medidas complementares para compensar a falta de proteções nativas, prevenindo adulterações, comprometimento de dados ou exploração por atacantes.
@@ -317,7 +315,7 @@ Dispositivos de baixo custo frequentemente sacrificam práticas de segurança em
 * O sistema deve priorizar **dispositivos com certificações de segurança reconhecidas**.
 * O sistema deve adotar **medidas adicionais de proteção** para dispositivos de baixo custo (ex.: firewalls, segmentação de rede, VPNs).
 * O sistema deve realizar **monitoramento contínuo** para identificar anomalias ou atividades suspeitas.
-* O sistema deve garantir **atualizações de firmware e patches de segurança** sempre que disponíveis.
+* O sistema deve garantir **atualizações e patches regulares** para todos os dispositivos na rede.
 * O sistema deve **isolar dispositivos críticos de dispositivos de baixo custo** em arquiteturas de rede.
 * O sistema deve realizar **avaliação de riscos periódica** sobre o uso de dispositivos de baixo custo em ambientes sensíveis.
 
@@ -329,7 +327,7 @@ Dispositivos de baixo custo frequentemente sacrificam práticas de segurança em
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de firewalls locais, segmentação VLAN, gateways seguros, isolamento físico/lógico de dispositivos frágeis.
 >
@@ -337,7 +335,7 @@ Dispositivos de baixo custo frequentemente sacrificam práticas de segurança em
 
 ---
 
-## FRP-SEC-039: Mecanismos Seguros de Atualização
+### FRP-SEC-039: Mecanismos Seguros de Atualização
 
 **Descrição**
 O sistema deve garantir que atualizações de firmware e software em dispositivos IoT sejam realizadas de forma segura, prevenindo adulterações, injeções maliciosas e a instalação de componentes não autorizados.
@@ -362,7 +360,7 @@ Atualizações são essenciais para corrigir vulnerabilidades e manter dispositi
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de assinaturas digitais (RSA/ECC), verificação de hash (SHA-256), OTA seguro com TLS, pipelines de testes antes da liberação.
 >
@@ -370,7 +368,7 @@ Atualizações são essenciais para corrigir vulnerabilidades e manter dispositi
 
 ---
 
-## FRP-SEC-052: Prevenção de Estouro de Buffer
+### FRP-SEC-052: Prevenção de Estouro de Buffer
 
 **Descrição**
 O sistema deve prevenir vulnerabilidades de estouro de buffer em software embarcado de dispositivos IoT, garantindo que dados de entrada não corrompam a memória nem permitam execução de código malicioso.
@@ -394,7 +392,7 @@ Em dispositivos IoT, a exploração de estouros de buffer pode permitir que atac
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** programação defensiva em C/C++, uso de compiladores com proteções (Stack Canaries, ASLR), adoção de linguagens seguras.
 >
@@ -402,7 +400,7 @@ Em dispositivos IoT, a exploração de estouros de buffer pode permitir que atac
 
 ---
 
-## FRP-SEC-058: Garantia de Software Seguro em IoT
+### FRP-SEC-058: Garantia de Software Seguro em IoT
 
 **Descrição**
 O sistema deve garantir que o software embarcado em dispositivos IoT seja desenvolvido, distribuído e atualizado de forma segura, prevenindo adulterações, vulnerabilidades e uso de componentes inseguros ou desatualizados.
@@ -428,7 +426,7 @@ O software é o núcleo de funcionamento dos dispositivos IoT. Se vulnerável, d
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de CI/CD com análise estática e dinâmica, assinatura digital (RSA/ECC), TLS 1.3 para OTA, controle de permissões em software embarcado.
 >
@@ -436,12 +434,9 @@ O software é o núcleo de funcionamento dos dispositivos IoT. Se vulnerável, d
 
 ---
 
+## Rede
 
-
----
-# Rede
-
-## FRP-SEC-008: Interação Segura em Ambientes Heterogêneos
+### FRP-SEC-008: Interação Segura em Ambientes Heterogêneos
 
 **Descrição**
 O sistema deve garantir a segurança das interações entre dispositivos IoT heterogêneos, prevenindo exploração de falhas resultantes de diferenças de hardware, software, protocolos de comunicação e configurações.
@@ -465,7 +460,7 @@ A heterogeneidade em ambientes IoT cria superfícies de ataque ampliadas: dispos
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de gateways seguros, protocolos interoperáveis padronizados (MQTT-S, CoAP, OPC UA), integração com frameworks de conformidade.
 >
@@ -473,7 +468,7 @@ A heterogeneidade em ambientes IoT cria superfícies de ataque ampliadas: dispos
 
 ---
 
-## FRP-SEC-009: Transferência e Armazenamento Seguros de Dados
+### FRP-SEC-009: Transferência e Armazenamento Seguros de Dados
 
 **Descrição**
 O sistema deve garantir a integridade e a confidencialidade dos dados em trânsito e em repouso, prevenindo que informações coletadas ou transmitidas por dispositivos IoT sejam expostas ou manipuladas por atacantes.
@@ -498,7 +493,7 @@ Dados manipulados ou expostos em dispositivos IoT podem comprometer decisões cr
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de TLS 1.3, criptografia de disco AES-256, HSMs para proteção de chaves, autenticação mútua com certificados digitais.
 >
@@ -506,8 +501,7 @@ Dados manipulados ou expostos em dispositivos IoT podem comprometer decisões cr
 
 ---
 
-
-## FRP-SEC-032: Configuração Segura de Rede
+### FRP-SEC-032: Configuração Segura de Rede
 
 **Descrição**
 O sistema deve proteger o processo de configuração de rede em dispositivos IoT, prevenindo alterações não autorizadas, inconsistentes ou repetidas que possam introduzir vulnerabilidades e comprometer a integridade da rede.
@@ -531,7 +525,7 @@ Configurações de rede aplicadas de forma repetitiva ou inadequada podem result
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** autenticação multifator para acesso administrativo, controle de versões de configuração, validação criptográfica em automações.
 >
@@ -539,8 +533,7 @@ Configurações de rede aplicadas de forma repetitiva ou inadequada podem result
 
 ---
 
-## FRP-SEC-036: Comunicação Segura em Ambientes Heterogêneos
-
+### FRP-SEC-036: Comunicação Segura em Ambientes Heterogêneos
 
 **Descrição**
 O sistema deve garantir que a comunicação entre dispositivos e sistemas heterogêneos em redes IoT seja realizada de forma segura, prevenindo manipulações, inconsistências e vulnerabilidades decorrentes do uso de diferentes protocolos e padrões.
@@ -563,7 +556,7 @@ A interoperabilidade entre dispositivos de diferentes fabricantes é fundamental
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de gateways com TLS, middleware seguro, adoção de protocolos padronizados como CoAP e MQTT, políticas de segurança uniformes.
 >
@@ -571,7 +564,7 @@ A interoperabilidade entre dispositivos de diferentes fabricantes é fundamental
 
 ---
 
-## FRP-SEC-038: Controle Seguro de Tráfego
+### FRP-SEC-038: Controle Seguro de Tráfego
 
 **Descrição**
 O sistema deve proteger o tráfego de dados entre dispositivos IoT, gateways, servidores e serviços em nuvem contra interceptação, manipulação e uso não autorizado, garantindo a integridade e a confidencialidade da comunicação.
@@ -595,7 +588,7 @@ Comunicações IoT inseguras podem ser interceptadas, manipuladas ou redireciona
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de TLS 1.3, DTLS para dispositivos leves, autenticação baseada em certificados digitais, monitoramento IDS/IPS.
 >
@@ -603,18 +596,18 @@ Comunicações IoT inseguras podem ser interceptadas, manipuladas ou redireciona
 
 ---
 
-## FRP-SEC-042: Adoção de Protocolos de Comunicação Seguros
+### FRP-SEC-042: Adoção de Protocolos de Comunicação Seguros
 
 **Descrição**
 O sistema deve utilizar protocolos de comunicação seguros para proteger os dados transmitidos entre dispositivos IoT, serviços e sistemas de back-end, garantindo confidencialidade, integridade e autenticidade.
 
 **Racional**
-A ausência ou o uso inadequado de protocolos seguros permite que atacantes interceptem, modifiquem ou falsifiquem dados em trânsito. Isso compromete não apenas a privacidade, mas também a integridade das decisões automatizadas que dependem dessas informações.
+A ausência ou o uso inadequado de protocolos seguros permite que atacantes interceptem, modifiquem ou falsifiquem dados em trânsito. Isso compromete não apenas a privacidade, mas também a integridade e autenticidade das comunicações, possibilitando ataques de *man-in-the-middle* e injeção de pacotes maliciosos.
 
 **Requisitos Concretos (Instanciados para IoT)**
 
-* O sistema deve implementar **criptografia forte** (TLS/SSL) em todas as comunicações IoT.
-* O sistema deve exigir **autenticação robusta** das partes envolvidas (certificados digitais, MFA).
+* O sistema deve implementar **criptografia moderna e segura** (TLS/SSL, DTLS).
+* O sistema deve usar **certificados digitais confiáveis** emitidos por autoridades certificadoras reconhecidas.
 * O sistema deve aplicar **verificação de integridade** com assinaturas digitais ou checksums.
 * O sistema deve adotar **políticas de gerenciamento seguro de chaves e certificados**, incluindo rotação periódica.
 
@@ -626,7 +619,7 @@ A ausência ou o uso inadequado de protocolos seguros permite que atacantes inte
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de TLS 1.3 ou DTLS para dispositivos leves, certificados digitais X.509, gerenciamento centralizado de chaves.
 >
@@ -634,7 +627,7 @@ A ausência ou o uso inadequado de protocolos seguros permite que atacantes inte
 
 ---
 
-## FRP-SEC-046: Proteção contra Redes Inseguras
+### FRP-SEC-046: Proteção contra Redes Inseguras
 
 **Descrição**
 O sistema deve proteger dispositivos IoT contra os riscos de operar em redes inseguras, prevenindo interceptação, manipulação de tráfego e propagação de malware por meio da aplicação de mecanismos robustos de segurança em nível de rede.
@@ -661,7 +654,7 @@ Dispositivos IoT muitas vezes se conectam a redes públicas ou mal segmentadas, 
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** TLS 1.3, VPNs (IPsec, WireGuard), segmentação em VLANs, firewalls de camada 7, IDS/IPS com análise de tráfego.
 >
@@ -669,7 +662,7 @@ Dispositivos IoT muitas vezes se conectam a redes públicas ou mal segmentadas, 
 
 ---
 
-## FRP-SEC-047: Desativação de Portas Não Utilizadas
+### FRP-SEC-047: Desativação de Portas Não Utilizadas
 
 **Descrição**
 O sistema deve garantir que todas as portas de rede não utilizadas em dispositivos IoT e infraestrutura associada sejam desativadas, prevenindo que se tornem pontos de entrada para acessos não autorizados ou manipulação de tráfego.
@@ -694,7 +687,7 @@ Portas abertas e desnecessárias expõem dispositivos IoT a riscos adicionais, p
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** hardening de dispositivos, firewalls integrados, configuração de ACLs, aplicação de patches.
 >
@@ -702,21 +695,20 @@ Portas abertas e desnecessárias expõem dispositivos IoT a riscos adicionais, p
 
 ---
 
-## FRP-SEC-048: Criptografia Robusta na Comunicação
+### FRP-SEC-048: Criptografia Robusta na Comunicação
 
 **Descrição**
 O sistema deve utilizar criptografia forte e atualizada em todas as comunicações de dispositivos IoT, prevenindo interceptação, adulteração e acesso não autorizado a dados em trânsito.
 
 **Racional**
-Sem criptografia adequada, os dados transmitidos em redes IoT podem ser interceptados e modificados por atacantes. Isso compromete não apenas a confidencialidade, mas também a integridade e autenticidade das comunicações, possibilitando ataques de *man-in-the-middle* e injeção de pacotes maliciosos.
+Sem criptografia adequada, os dados transmitidos em redes IoT podem ser interceptados e modificados por atacantes. Isso compromete não apenas a privacidade, mas também a integridade e autenticidade das comunicações, possibilitando ataques de *man-in-the-middle* e injeção de pacotes maliciosos.
 
 **Requisitos Concretos (Instanciados para IoT)**
 
 * O sistema deve implementar **criptografia moderna e segura** (TLS/SSL, DTLS).
 * O sistema deve usar **certificados digitais confiáveis** emitidos por autoridades certificadoras reconhecidas.
-* O sistema deve aplicar **gerenciamento seguro de chaves criptográficas** (armazenamento seguro, rotação periódica, uso de HSMs).
-* O sistema deve realizar **verificação de integridade dos dados** (assinaturas digitais, checksums).
-* O sistema deve passar por **auditorias e atualizações regulares** para manter a criptografia resistente a novas ameaças.
+* O sistema deve aplicar **verificação de integridade** com assinaturas digitais ou checksums.
+* O sistema deve adotar **políticas de gerenciamento seguro de chaves e certificados**, incluindo rotação periódica.
 
 **Exemplos de Aplicação**
 
@@ -726,10 +718,8 @@ Sem criptografia adequada, os dados transmitidos em redes IoT podem ser intercep
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** TLS 1.3, DTLS para IoT de baixo consumo, PKI para autenticação de dispositivos, armazenamento seguro de chaves.
 >
 > **Teste:** simulação de ataques *man-in-the-middle*, auditoria de protocolos utilizados, verificação da rotação periódica de chaves, inspeção de certificados digitais.
-
----

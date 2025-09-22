@@ -4,9 +4,9 @@ Ataques negação de serviço (DoS) negar serviços a usuários válidos — por
 
 ---
 
-# Aplicação
+## Aplicação
 
-## NFRP-SEC-050: Políticas Seguras de Bloqueio de Conta
+### NFRP-SEC-050: Políticas Seguras de Bloqueio de Conta
 
 **Descrição**
 O sistema deve implementar mecanismos robustos de bloqueio de conta para proteger contra ataques de força bruta sem comprometer a disponibilidade de usuários legítimos, prevenindo que o recurso seja explorado como forma de ataque de negação de serviço.
@@ -29,7 +29,7 @@ Tentativas de login excessivas podem indicar ataques de força bruta, mas polít
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** políticas de bloqueio progressivo, rate limiting, monitoramento SIEM, mecanismos de recuperação baseados em MFA.
 >
@@ -37,9 +37,9 @@ Tentativas de login excessivas podem indicar ataques de força bruta, mas polít
 
 ---
 
-# Dispositivo
+## Dispositivo
 
-## NFRP-SEC-003: Restrições de Energia
+### NFRP-SEC-003: Restrições de Energia
 
 **Descrição**
 Dispositivos IoT devem ser projetados para operar de forma eficiente sob restrições de energia, de modo que a limitação de consumo não comprometa a disponibilidade ou provoque falhas que resultem em indisponibilidade do serviço.
@@ -63,48 +63,17 @@ A escassez de energia pode causar interrupções no funcionamento de dispositivo
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de protocolos otimizados para baixo consumo, algoritmos de duty cycle, integração com fontes de energia renovável (ex.: painéis solares).
 >
 > **Teste:** medições de consumo sob diferentes cenários de carga, simulação de falhas de energia, verificação de tempo de operação e disponibilidade.
 
 
----
-
-## NFRP-SEC-003: Restrições de Energia
-
-**Descrição**
-O sistema deve garantir que dispositivos IoT operem de forma eficiente sob restrições de energia, evitando que limitações de consumo provoquem falhas ou indisponibilidade dos serviços.
-
-**Racional**
-Sensores e atuadores IoT frequentemente funcionam em ambientes com energia limitada (bateria, energia solar). O consumo ineficiente pode causar interrupções, degradação de desempenho ou até paralisação total, o que equivale a uma forma de negação de serviço mesmo sem ataque direto.
-
-**Requisitos Concretos (Instanciados para IoT)**
-
-* O sistema deve otimizar o consumo de energia em operações de comunicação e processamento.
-* O sistema deve utilizar protocolos de baixo consumo, como **BLE, Zigbee ou LPWAN**.
-* O sistema deve implementar gerenciamento de energia adaptativo, ajustando consumo conforme as condições de operação.
-* O sistema deve suportar técnicas de recuperação de energia (ex.: solar, cinética).
-* O sistema deve monitorar periodicamente o estado de energia e acionar manutenção preventiva quando necessário.
-
-**Exemplos de Aplicação**
-
-* Redes de sensores ambientais em áreas remotas que precisam operar meses sem manutenção.
-* Dispositivos de rastreamento logístico que funcionam longos períodos sem recarga.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
-### **Considerações de Implementação e Teste**
-
-> **Implementação:** protocolos otimizados para baixo consumo, duty cycling, integração de módulos de recuperação de energia.
->
-> **Teste:** medições de consumo em cenários reais, simulação de falhas de energia, verificação da disponibilidade sob diferentes condições de carga.
 
 ---
 
-## NFRP-SEC-017: Mitigação de Limitações Computacionais
+### NFRP-SEC-017: Mitigação de Limitações Computacionais
 
 **Descrição**
 O sistema deve ser projetado para operar de forma segura mesmo em dispositivos com baixo poder computacional, utilizando algoritmos e protocolos otimizados que equilibrem segurança, desempenho e consumo de recursos.
@@ -128,14 +97,15 @@ Dispositivos IoT geralmente possuem limitações severas de processamento e mem�
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de algoritmos de criptografia leve (ex.: ECC, AES-CCM), protocolos de autenticação otimizados, técnicas de duty cycle.
 >
 > **Teste:** medições de desempenho sob diferentes cargas, testes de estresse para avaliar resistência a DoS, validação de eficiência de algoritmos em hardware limitado.
+
 ---
 
-## FRP-SEC-021: Proteção contra Dano Físico
+### FRP-SEC-021: Proteção contra Dano Físico
 
 **Descrição**
 O sistema deve proteger dispositivos IoT contra danos físicos resultantes de causas naturais, vandalismo ou ataques direcionados, prevenindo interrupções de serviço, perda de dados ou comprometimento da integridade do sistema.
@@ -160,7 +130,7 @@ Danos físicos ao hardware podem causar indisponibilidade imediata ou falhas cr�
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de gabinetes selados, sensores anti-violação, redundância física em locais críticos, materiais robustos.
 >
@@ -168,7 +138,7 @@ Danos físicos ao hardware podem causar indisponibilidade imediata ou falhas cr�
 
 ---
 
-## FRP-SEC-023: Proteção contra Ataques de Privação do Sono
+### FRP-SEC-023: Proteção contra Ataques de Privação do Sono
 
 **Descrição**
 O sistema deve prevenir ataques de privação do sono, garantindo que dispositivos IoT possam entrar corretamente em estados de suspensão e modos de economia de energia, mesmo na presença de tráfego ou comandos maliciosos.
@@ -193,7 +163,7 @@ Dispositivos IoT dependentes de bateria são alvos fáceis para ataques de priva
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de duty cycling, autenticação em requisições de *wake-up*, integração de IDS para análise de tráfego suspeito.
 >
@@ -201,7 +171,7 @@ Dispositivos IoT dependentes de bateria são alvos fáceis para ataques de priva
 
 ---
 
-## NFRP-SEC-043: Resiliência Física do Sistema de Energia
+### NFRP-SEC-043: Resiliência Física do Sistema de Energia
 
 **Descrição**
 O sistema deve garantir resiliência da infraestrutura energética que suporta dispositivos IoT, prevenindo interrupções no fornecimento de energia e protegendo contra ataques, falhas ou desastres que possam comprometer a disponibilidade.
@@ -227,7 +197,7 @@ Dispositivos IoT dependem de fornecimento contínuo de energia elétrica. Vulner
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de UPS e geradores redundantes, integração com sistemas SCADA de energia, design de hardware eficiente.
 >
@@ -236,9 +206,9 @@ Dispositivos IoT dependem de fornecimento contínuo de energia elétrica. Vulner
 
 
 
-# Rede
+## Rede
 
-## NFRP-SEC-018: Mitigação de Baixo Alcance de Transmissão
+### NFRP-SEC-018: Mitigação de Baixo Alcance de Transmissão
 
 **Descrição**
 O sistema deve ser projetado para operar de forma confiável mesmo em cenários de baixo alcance de transmissão, utilizando protocolos, topologias e técnicas que aumentem a resiliência e a disponibilidade da comunicação.
@@ -248,7 +218,7 @@ Dispositivos com alcance limitado de transmissão estão mais suscetíveis a ata
 
 **Requisitos Concretos (Instanciados para IoT)**
 
-* O sistema deve utilizar **protocolos de comunicação eficientes e resilientes** a perdas, como Zigbee, Z-Wave ou Thread.
+* O sistema deve utilizar **protocolos de comunicação eficientes** que minimizem overhead.
 * O sistema deve realizar **planejamento de rede** considerando ambiente físico e interferências.
 * O sistema deve selecionar **tecnologias adequadas ao alcance necessário** (ex.: LoRaWAN, Sigfox, Wi-Fi, Bluetooth).
 * O sistema deve adotar **topologias de rede apropriadas**, como redes mesh para estender cobertura.
@@ -263,7 +233,7 @@ Dispositivos com alcance limitado de transmissão estão mais suscetíveis a ata
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** seleção de protocolos de baixo alcance (BLE, Zigbee) ou longo alcance (LoRaWAN), configuração de topologia mesh, balanceamento de potência de transmissão.
 >
@@ -271,7 +241,7 @@ Dispositivos com alcance limitado de transmissão estão mais suscetíveis a ata
 
 ---
 
-## NFRP-SEC-029: Mitigação de Riscos em Arquitetura Centralizada
+### NFRP-SEC-029: Mitigação de Riscos em Arquitetura Centralizada
 
 **Descrição**
 O sistema deve reduzir a dependência de arquiteturas centralizadas, garantindo resiliência e continuidade de operação mesmo em caso de falhas ou ataques ao servidor central de controle.
@@ -295,7 +265,7 @@ A centralização do controle e processamento em um único ponto cria vulnerabil
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de arquiteturas distribuídas (fog/edge computing), clusters redundantes, redes segmentadas, TLS 1.3 para comunicações seguras.
 >
@@ -304,7 +274,7 @@ A centralização do controle e processamento em um único ponto cria vulnerabil
 ---
 
 
-## NFRP-SEC-030: Mitigação de Interferência de Canal
+### NFRP-SEC-030: Mitigação de Interferência de Canal
 
 **Descrição**
 O sistema deve proteger os canais de comunicação sem fio contra interferências intencionais ou acidentais, garantindo a integridade e a disponibilidade das comunicações entre dispositivos IoT.
@@ -328,7 +298,7 @@ Dispositivos IoT que dependem de canais sem fio são suscetíveis a interferênc
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** integração de análise de espectro, protocolos adaptativos, hardware com múltiplas antenas, blindagem EM.
 >
@@ -336,7 +306,7 @@ Dispositivos IoT que dependem de canais sem fio são suscetíveis a interferênc
 
 ---
 
-## NFRP-SEC-031: Mitigação de Sobrecarga de Comunicação
+### NFRP-SEC-031: Mitigação de Sobrecarga de Comunicação
 
 
 **Descrição**
@@ -362,7 +332,7 @@ Quando a quantidade de pacotes transmitidos excede a capacidade da rede ou dos s
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de protocolos leves (CoAP, MQTT-SN), compressão adaptativa, rate limiting no firmware, integração com IDS/IPS.
 >
@@ -370,7 +340,7 @@ Quando a quantidade de pacotes transmitidos excede a capacidade da rede ou dos s
 
 ---
 
-## NFRP-SEC-049: Mitigação de Ataques de Desautenticação de Wi-Fi
+### NFRP-SEC-049: Mitigação de Ataques de Desautenticação de Wi-Fi
 
 **Descrição**
 O sistema deve proteger dispositivos IoT contra ataques de desautenticação em redes Wi-Fi, garantindo conectividade contínua e resiliência mesmo diante de tentativas maliciosas de desconexão forçada.
@@ -394,7 +364,7 @@ Em ambientes domésticos ou corporativos, a desautenticação de Wi-Fi pode desc
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** adoção de WPA3, monitoramento IDS/IPS para tráfego Wi-Fi, segregação de VLANs para IoT, chaves digitais renováveis.
 >

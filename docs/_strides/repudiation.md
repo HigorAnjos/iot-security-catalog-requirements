@@ -4,9 +4,9 @@ Associado aos usuários que negam a execução de uma ação sem ter alguma mane
 
 ---
 
-# Aplicação
+## Aplicação
 
-## FRP-SEC-059: Monitoramento Ativo de Dispositivos IoT
+### FRP-SEC-059: Monitoramento Ativo de Dispositivos IoT
 
 **Descrição**
 O sistema deve implementar monitoramento ativo e contínuo de dispositivos IoT, registrando atividades e detectando comportamentos suspeitos em tempo real, para garantir visibilidade, rastreabilidade e resposta rápida a incidentes de segurança.
@@ -30,7 +30,7 @@ Sem monitoramento ativo, é impossível garantir a detecção de anomalias ou at
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** integração com sistemas SIEM, uso de IDS/IPS, técnicas de ML para detecção de anomalias, dashboards de monitoramento centralizado.
 >
@@ -38,7 +38,7 @@ Sem monitoramento ativo, é impossível garantir a detecção de anomalias ou at
 
 ---
 
-## FRP-SEC-062: Garantia de Não Repúdio em IoT
+### FRP-SEC-062: Garantia de Não Repúdio em IoT
 
 **Descrição**
 O sistema deve garantir que todas as ações realizadas em dispositivos, redes e serviços IoT sejam registradas e autenticadas de forma a impedir que usuários, dispositivos ou serviços neguem posteriormente sua execução ou participação.
@@ -63,7 +63,7 @@ Em ambientes IoT, a ausência de mecanismos de não repúdio pode comprometer a 
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de PKI, certificados X.509, blockchain ou registros imutáveis para auditoria, TLS 1.3 com suporte a Perfect Forward Secrecy.
 >

@@ -4,9 +4,9 @@ Envolve acessar ilegalmente e, em seguida, usando as informações de autentica�
 
 ---
 
-# Aplicacao
+## Aplicação
 
-## FRP-SEC-001: Autenticação Forte
+### FRP-SEC-001: Autenticação Forte
 
 **Descrição**
 O sistema deve garantir autenticação forte para dispositivos, usuários e sistemas IoT, prevenindo que atacantes obtenham acesso não autorizado por meio de credenciais fracas, contas padrão ou ausência de verificação multifator.
@@ -30,13 +30,13 @@ A ausência de autenticação forte permite que atacantes falsifiquem identidade
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de MFA (TOTP, biometria, certificados), hashing seguro de credenciais (Argon2, bcrypt), controle de sessões e revogação de tokens.
 >
 > **Teste:** testes de força bruta e dicionário, auditorias de armazenamento de credenciais, simulação de bypass de MFA, análise de logs de autenticação.
 
-## FRP-SEC-004: Canal de Voz Seguro
+### FRP-SEC-004: Canal de Voz Seguro
 
 **Descrição**
 O sistema deve proteger canais de voz em dispositivos IoT contra interceptação, falsificação e uso não autorizado, garantindo a autenticidade dos comandos de voz e a confidencialidade das comunicações de áudio.
@@ -60,7 +60,7 @@ Dispositivos IoT com microfones integrados, como assistentes virtuais, brinquedo
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** criptografia TLS para tráfego de voz, integração com biometria de voz, políticas de controle de acesso baseadas em identidade.
 >
@@ -68,8 +68,7 @@ Dispositivos IoT com microfones integrados, como assistentes virtuais, brinquedo
 
 ---
 
-
-## FRP-SEC-012: Gestão Segura de Senhas
+### FRP-SEC-012: Gestão Segura de Senhas
 
 **Descrição**
 O sistema deve garantir que senhas sejam fortes, únicas e armazenadas de forma segura, prevenindo acesso não autorizado a contas, dispositivos e informações sensíveis.
@@ -95,7 +94,7 @@ Senhas fracas, padrão ou mal armazenadas são um dos vetores mais comuns de ata
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de algoritmos de hashing modernos (ex.: Argon2, bcrypt), políticas de complexidade de senha, integração com MFA.
 >
@@ -103,7 +102,7 @@ Senhas fracas, padrão ou mal armazenadas são um dos vetores mais comuns de ata
 
 ---
 
-## FRP-SEC-040: Autenticação Robusta em IoT
+### FRP-SEC-040: Autenticação Robusta em IoT
 
 **Descrição**
 O sistema deve implementar mecanismos adequados e robustos de autenticação para garantir que apenas dispositivos, usuários e serviços autorizados tenham acesso a recursos e funcionalidades da rede IoT.
@@ -126,7 +125,7 @@ A ausência ou inadequação de mecanismos de autenticação expõe a rede IoT a
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de PKI para autenticação de dispositivos, MFA para usuários, cofres de credenciais, integração com IAM.
 >
@@ -134,7 +133,7 @@ A ausência ou inadequação de mecanismos de autenticação expõe a rede IoT a
 
 ---
 
-## FRP-SEC-041: Exigência de Senhas Fortes
+### FRP-SEC-041: Exigência de Senhas Fortes
 
 **Descrição**
 O sistema deve exigir o uso de senhas fortes e exclusivas para autenticação de usuários, dispositivos e serviços em ambientes IoT, prevenindo que credenciais frágeis sejam exploradas por atacantes.
@@ -159,7 +158,7 @@ Senhas fracas ou padrão são facilmente adivinhadas ou obtidas em ataques de fo
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** aplicação de políticas de complexidade de senha, MFA via TOTP ou biometria, integração com cofres de credenciais.
 >
@@ -167,7 +166,7 @@ Senhas fracas ou padrão são facilmente adivinhadas ou obtidas em ataques de fo
 
 ---
 
-## FRP-SEC-051: Mitigação de Quebra de Autenticação
+### FRP-SEC-051: Mitigação de Quebra de Autenticação
 
 **Descrição**
 O sistema deve implementar mecanismos robustos para prevenir a quebra de autenticação, garantindo que apenas usuários, dispositivos e serviços devidamente verificados tenham acesso aos recursos da rede IoT.
@@ -191,7 +190,7 @@ A falta de autenticação forte ou políticas adequadas expõe dispositivos IoT 
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** MFA (senha + token ou biometria), bloqueio progressivo de conta, personalização de credenciais, WAF para validação de entradas.
 >
@@ -199,12 +198,9 @@ A falta de autenticação forte ou políticas adequadas expõe dispositivos IoT 
 
 ---
 
+## Rede
 
-
-
-# Rede 
-
-## FRP-SEC-006: Proteção contra Falsificação de Dispositivo
+### FRP-SEC-006: Proteção contra Falsificação de Dispositivo
 
 **Descrição**
 O sistema deve prevenir que dispositivos falsificados se passem por dispositivos legítimos na rede IoT, garantindo que apenas dispositivos devidamente autenticados e autorizados possam se conectar e trocar informações.
@@ -228,7 +224,7 @@ Na falsificação de dispositivo, atacantes manipulam identificadores como ender
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** autenticação baseada em PKI, uso de TLS/DTLS, integração com sistemas de IAM (Identity and Access Management).
 >
@@ -236,7 +232,7 @@ Na falsificação de dispositivo, atacantes manipulam identificadores como ender
 
 ---
 
-## FRP-SEC-035: Proteção contra Nós Falsos ou Maliciosos
+### FRP-SEC-035: Proteção contra Nós Falsos ou Maliciosos
 
 **Descrição**
 O sistema deve proteger redes IoT contra a inserção de nós falsos ou maliciosos, garantindo que apenas dispositivos autenticados e autorizados possam participar da comunicação e do fluxo de dados.
@@ -262,7 +258,7 @@ Nós maliciosos podem ser introduzidos em redes IoT para coletar, manipular ou r
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de PKI, TLS/DTLS, segmentação lógica (VLANs), ACLs de rede, validação de firmware assinado.
 >
@@ -270,7 +266,7 @@ Nós maliciosos podem ser introduzidos em redes IoT para coletar, manipular ou r
 
 ---
 
-## FRP-SEC-044: Proteção contra Falsificação de Sinal
+### FRP-SEC-044: Proteção contra Falsificação de Sinal
 
 **Descrição**
 O sistema deve proteger dispositivos IoT contra sinais falsificados ou manipulados, garantindo que apenas transmissões legítimas sejam aceitas e utilizadas para controle ou troca de informações.
@@ -293,7 +289,7 @@ A falsificação de sinais permite que atacantes transmitam comandos não autori
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de PKI para autenticação de sinais, criptografia em camadas, IDS/IPS para análise de tráfego, filtros RF.
 >
@@ -303,9 +299,9 @@ A falsificação de sinais permite que atacantes transmitam comandos não autori
 
 ---
 
-# Dispositivo
+## Dispositivo
 
-## FRP-SEC-025: Proteção contra Clonagem de Etiquetas
+### FRP-SEC-025: Proteção contra Clonagem de Etiquetas
 
 **Descrição**
 O sistema deve proteger contra clonagem de etiquetas de identificação em dispositivos IoT, garantindo que apenas etiquetas legítimas e não replicadas sejam aceitas em processos de autenticação, rastreamento e controle de acesso.
@@ -329,9 +325,8 @@ A clonagem de etiquetas RFID/NFC permite que atacantes falsifiquem identidades e
 **Relacionamentos com Outros Padrões**
 *Não aplicável no momento.*
 
-### **Considerações de Implementação e Teste**
+**Considerações de Implementação e Teste**
 
 > **Implementação:** uso de RFID/NFC criptografado, integração de autenticação multifator, implementação de tags dinâmicas.
 >
 > **Teste:** simulações de clonagem de etiquetas, análise de logs de acesso, auditoria de protocolos criptográficos de comunicação entre leitores e tags.
-

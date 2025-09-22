@@ -22,7 +22,6 @@ theme:
     - navigation.sections
     - navigation.top
     - header.autohide
-    - toc.integrate
 
   palette:
     - scheme: default
