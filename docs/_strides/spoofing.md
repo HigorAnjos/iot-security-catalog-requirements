@@ -64,7 +64,10 @@ Dispositivos IoT com microfones integrados, como assistentes virtuais, brinquedo
 * Brinquedos conectados que usam autenticação de voz para impedir interação com estranhos.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-040: Autenticação Robusta em IoT
+* FRP-SEC-041: Exigência de Senhas Fortes
+* FRP-SEC-045: Prevenção de Acesso Não Autorizado
+* FRP-SEC-048: Criptografia Robusta na Comunicação
 
 **Considerações de Implementação e Teste**
 
@@ -100,7 +103,10 @@ Senhas fracas, padrão ou mal armazenadas são um dos vetores mais comuns de ata
 * Gateways residenciais que oferecem autenticação multifator para acesso remoto.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-041: Exigência de Senhas Fortes
+* FRP-SEC-040: Autenticação Robusta em IoT
+* FRP-SEC-051: Mitigação de Quebra de Autenticação
+* FRP-SEC-045: Prevenção de Acesso Não Autorizado
 
 **Considerações de Implementação e Teste**
 
@@ -133,7 +139,10 @@ A ausência ou inadequação de mecanismos de autenticação expõe a rede IoT a
 * Plataformas em nuvem que exigem autenticação multifator para administradores e operadores.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-001: Autenticação Forte
+* FRP-SEC-041: Exigência de Senhas Fortes
+* FRP-SEC-051: Mitigação de Quebra de Autenticação
+* FRP-SEC-045: Prevenção de Acesso Não Autorizado
 
 **Considerações de Implementação e Teste**
 
@@ -168,7 +177,10 @@ Senhas fracas ou padrão são facilmente adivinhadas ou obtidas em ataques de fo
 * Gateways de rede que exigem MFA além de senha para acesso administrativo.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-001: Autenticação Forte
+* FRP-SEC-040: Autenticação Robusta em IoT
+* FRP-SEC-051: Mitigação de Quebra de Autenticação
+* NFRP-SEC-050: Políticas Seguras de Bloqueio de Conta
 
 **Considerações de Implementação e Teste**
 
@@ -202,7 +214,9 @@ A falta de autenticação forte ou políticas adequadas expõe dispositivos IoT 
 * Gateways industriais que rejeitam credenciais padrão e aplicam bloqueio de conta após múltiplas falhas de login.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-040: Autenticação Robusta em IoT
+* FRP-SEC-041: Exigência de Senhas Fortes
+* NFRP-SEC-050: Políticas Seguras de Bloqueio de Conta
 
 **Considerações de Implementação e Teste**
 
@@ -239,7 +253,9 @@ A clonagem de etiquetas RFID/NFC permite que atacantes falsifiquem identidades e
 * Rastreamento de cargas logísticas com etiquetas RFID criptografadas que resistem à clonagem.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-006: Proteção contra Falsificação de Dispositivo
+* FRP-SEC-035: Proteção contra Nós Falsos ou Maliciosos
+* FRP-SEC-044: Proteção contra Falsificação de Sinal
 
 **Considerações de Implementação e Teste**
 
@@ -275,7 +291,10 @@ Na falsificação de dispositivo, atacantes manipulam identificadores como ender
 * Redes industriais que bloqueiam dispositivos com endereços MAC clonados.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-040: Autenticação Robusta em IoT
+* FRP-SEC-048: Criptografia Robusta na Comunicação
+* FRP-SEC-046: Proteção contra Redes Inseguras
+* FRP-SEC-036: Comunicação Segura em Ambientes Heterogêneos
 
 **Considerações de Implementação e Teste**
 
@@ -311,7 +330,10 @@ Nós maliciosos podem ser introduzidos em redes IoT para coletar, manipular ou r
 * Gateways industriais que rejeitam conexões de dispositivos com firmware não verificado.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-006: Proteção contra Falsificação de Dispositivo
+* FRP-SEC-048: Criptografia Robusta na Comunicação
+* FRP-SEC-046: Proteção contra Redes Inseguras
+* FRP-SEC-036: Comunicação Segura em Ambientes Heterogêneos
 
 **Considerações de Implementação e Teste**
 
@@ -344,7 +366,9 @@ A falsificação de sinais permite que atacantes transmitam comandos não autori
 * Sistemas de medidores inteligentes que rejeitam sinais sem certificados digitais válidos.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-006: Proteção contra Falsificação de Dispositivo
+* FRP-SEC-035: Proteção contra Nós Falsos ou Maliciosos
+* FRP-SEC-048: Criptografia Robusta na Comunicação
 
 **Considerações de Implementação e Teste**
 
