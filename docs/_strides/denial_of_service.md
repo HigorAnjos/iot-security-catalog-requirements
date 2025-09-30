@@ -8,6 +8,8 @@ Ataques negação de serviço (DoS) negar serviços a usuários válidos — por
 
 ### NFRP-SEC-050: Políticas Seguras de Bloqueio de Conta
 
+<cvss-critical score="9.2" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H">CVSS 9.2</cvss-critical>
+
 **Descrição**
 O sistema deve implementar mecanismos robustos de bloqueio de conta para proteger contra ataques de força bruta sem comprometer a disponibilidade de usuários legítimos, prevenindo que o recurso seja explorado como forma de ataque de negação de serviço.
 
@@ -41,6 +43,8 @@ Tentativas de login excessivas podem indicar ataques de força bruta, mas polít
 
 ### NFRP-SEC-003: Restrições de Energia
 
+<cvss-high score="8.7" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N">CVSS 8.7</cvss-high>
+
 **Descrição**
 O sistema deve garantir que dispositivos IoT operem de forma eficiente sob restrições de energia, evitando que limitações de consumo provoquem falhas ou indisponibilidade dos serviços.
 
@@ -73,6 +77,8 @@ Sensores e atuadores IoT frequentemente funcionam em ambientes com energia limit
 
 ### NFRP-SEC-017: Mitigação de Limitações Computacionais
 
+<cvss-high score="8.8" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:H/SC:N/SI:N/SA:N">CVSS 8.8</cvss-high>
+
 **Descrição**
 O sistema deve ser projetado para operar de forma segura mesmo em dispositivos com baixo poder computacional, utilizando algoritmos e protocolos otimizados que equilibrem segurança, desempenho e consumo de recursos.
 
@@ -104,6 +110,8 @@ Dispositivos IoT geralmente possuem limitações severas de processamento e mem�
 ---
 
 ### FRP-SEC-021: Proteção contra Dano Físico
+
+<cvss-medium score="5.2" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:P/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:H/SC:N/SI:N/SA:N">CVSS 5.2</cvss-medium>
 
 **Descrição**
 O sistema deve proteger dispositivos IoT contra danos físicos resultantes de causas naturais, vandalismo ou ataques direcionados, prevenindo interrupções de serviço, perda de dados ou comprometimento da integridade do sistema.
@@ -138,6 +146,8 @@ Danos físicos ao hardware podem causar indisponibilidade imediata ou falhas cr�
 
 ### FRP-SEC-023: Proteção contra Ataques de Privação do Sono
 
+<cvss-high score="8.7" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N">CVSS 8.7</cvss-high>
+
 **Descrição**
 O sistema deve prevenir ataques de privação do sono, garantindo que dispositivos IoT possam entrar corretamente em estados de suspensão e modos de economia de energia, mesmo na presença de tráfego ou comandos maliciosos.
 
@@ -170,6 +180,8 @@ Dispositivos IoT dependentes de bateria são alvos fáceis para ataques de priva
 ---
 
 ### NFRP-SEC-043: Resiliência Física do Sistema de Energia
+
+<cvss-medium score="6.8" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:P/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:L/SA:H">CVSS 6.8</cvss-medium>
 
 **Descrição**
 O sistema deve garantir resiliência da infraestrutura energética que suporta dispositivos IoT, prevenindo interrupções no fornecimento de energia e protegendo contra ataques, falhas ou desastres que possam comprometer a disponibilidade.
@@ -208,6 +220,8 @@ Dispositivos IoT dependem de fornecimento contínuo de energia elétrica. Vulner
 
 ### NFRP-SEC-018: Mitigação de Baixo Alcance de Transmissão
 
+<cvss-high score="7.1" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:A/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N">CVSS 7.1</cvss-high>
+
 **Descrição**
 O sistema deve ser projetado para operar de forma confiável mesmo em cenários de baixo alcance de transmissão, utilizando protocolos, topologias e técnicas que aumentem a resiliência e a disponibilidade da comunicação.
 
@@ -240,6 +254,8 @@ Dispositivos com alcance limitado de transmissão estão mais suscetíveis a ata
 ---
 
 ### NFRP-SEC-029: Mitigação de Riscos em Arquitetura Centralizada
+
+<cvss-critical score="9.2" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:H/VA:H/SC:H/SI:L/SA:N">CVSS 9.2</cvss-critical>
 
 **Descrição**
 O sistema deve reduzir a dependência de arquiteturas centralizadas, garantindo resiliência e continuidade de operação mesmo em caso de falhas ou ataques ao servidor central de controle.
@@ -274,6 +290,8 @@ A centralização do controle e processamento em um único ponto cria vulnerabil
 
 ### NFRP-SEC-030: Mitigação de Interferência de Canal
 
+<cvss-high score="7.1" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:A/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:H/SC:L/SI:N/SA:N">CVSS 7.1</cvss-high>
+
 **Descrição**
 O sistema deve proteger os canais de comunicação sem fio contra interferências intencionais ou acidentais, garantindo a integridade e a disponibilidade das comunicações entre dispositivos IoT.
 
@@ -305,6 +323,8 @@ Dispositivos IoT que dependem de canais sem fio são suscetíveis a interferênc
 ---
 
 ### NFRP-SEC-031: Mitigação de Sobrecarga de Comunicação
+
+<cvss-critical score="9.2" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:H/SC:H/SI:L/SA:N">CVSS 9.2</cvss-critical>
 
 
 **Descrição**
@@ -339,6 +359,8 @@ Quando a quantidade de pacotes transmitidos excede a capacidade da rede ou dos s
 ---
 
 ### NFRP-SEC-049: Mitigação de Ataques de Desautenticação de Wi-Fi
+
+<cvss-critical score="9.2" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:L/SI:N/SA:H">CVSS 9.2</cvss-critical>
 
 **Descrição**
 O sistema deve proteger dispositivos IoT contra ataques de desautenticação em redes Wi-Fi, garantindo conectividade contínua e resiliência mesmo diante de tentativas maliciosas de desconexão forçada.

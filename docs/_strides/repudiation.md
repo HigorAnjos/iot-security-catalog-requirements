@@ -8,6 +8,8 @@ Associado aos usuários que negam a execução de uma ação sem ter alguma mane
 
 ### FRP-SEC-059: Monitoramento Ativo de Dispositivos IoT
 
+<cvss-critical score="10.0" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H">CVSS 10.0</cvss-critical>
+
 **Descrição**
 O sistema deve implementar monitoramento ativo e contínuo de dispositivos IoT, registrando atividades e detectando comportamentos suspeitos em tempo real, para garantir visibilidade, rastreabilidade e resposta rápida a incidentes de segurança.
 
@@ -39,6 +41,8 @@ Sem monitoramento ativo, é impossível garantir a detecção de anomalias ou at
 ---
 
 ### FRP-SEC-062: Garantia de Não Repúdio em IoT
+
+<cvss-critical score="9.3" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:H/VA:L/SC:L/SI:H/SA:L">CVSS 9.3</cvss-critical>
 
 **Descrição**
 O sistema deve garantir que todas as ações realizadas em dispositivos, redes e serviços IoT sejam registradas e autenticadas de forma a impedir que usuários, dispositivos ou serviços neguem posteriormente sua execução ou participação.

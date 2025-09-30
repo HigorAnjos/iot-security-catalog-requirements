@@ -8,6 +8,8 @@ Um usuário sem privilégios obtém acesso privilegiado e, portanto, tem acesso 
 
 ### FRP-SEC-027: Controle de Acesso Robusto
 
+<cvss-critical score="10.0" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:L/SC:H/SI:H/SA:L">CVSS 10.0</cvss-critical>
+
 **Descrição**
 O sistema deve implementar mecanismos robustos de controle de acesso para garantir que apenas usuários e dispositivos autorizados possam interagir com recursos, funcionalidades e dados de sistemas IoT.
 
@@ -39,6 +41,8 @@ Controles de acesso fracos permitem que invasores explorem lacunas na autentica�
 ---
 
 ### FRP-SEC-037: Proteção de Servidores IoT
+
+<cvss-critical score="9.9" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:N">CVSS 9.9</cvss-critical>
 
 **Descrição**
 O sistema deve proteger servidores IoT e infraestrutura de back-end contra configurações inseguras, vulnerabilidades e acessos não autorizados, garantindo que dados e dispositivos conectados permaneçam íntegros e confiáveis.
@@ -74,6 +78,8 @@ Servidores IoT são alvos críticos, pois concentram processamento, armazenament
 
 ### FRP-SEC-045: Prevenção de Acesso Não Autorizado
 
+<cvss-critical score="10.0" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H">CVSS 10.0</cvss-critical>
+
 **Descrição**
 O sistema deve prevenir que entidades não autorizadas acessem recursos de dispositivos e redes IoT, garantindo que apenas usuários e dispositivos autenticados e autorizados tenham acesso aos recursos que lhes são atribuídos.
 
@@ -104,6 +110,8 @@ O acesso não autorizado a sistemas IoT compromete dados sensíveis, dispositivo
 ---
 
 ### FRP-SEC-054: Gerenciamento Seguro de Acesso
+
+<cvss-critical score="10.0" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H">CVSS 10.0</cvss-critical>
 
 **Descrição**
 O sistema deve implementar controles de acesso robustos para garantir que apenas entidades autenticadas e autorizadas possam acessar os recursos apropriados, aplicando rigorosamente o princípio do menor privilégio.
@@ -140,6 +148,8 @@ Sem gerenciamento adequado de acesso, usuários ou dispositivos podem obter perm
 
 ### FRP-SEC-055: Gestão Segura de Componentes de Terceiros
 
+<cvss-critical score="10.0" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H">CVSS 10.0</cvss-critical>
+
 **Descrição**
 O sistema deve avaliar, monitorar e manter seguros os componentes de terceiros utilizados em dispositivos e serviços IoT, prevenindo que vulnerabilidades externas introduzam riscos à segurança geral do ecossistema.
 
@@ -171,6 +181,8 @@ Muitos ataques a dispositivos IoT exploram falhas já conhecidas em bibliotecas,
 ---
 
 ### FRP-SEC-056: Configuração Segura de Interfaces IoT
+
+<cvss-critical score="10.0" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:L/SC:H/SI:H/SA:L">CVSS 10.0</cvss-critical>
 
 **Descrição**
 O sistema deve proteger interfaces de administração e configuração de dispositivos IoT, garantindo que apenas usuários autenticados e autorizados possam acessar funções críticas, prevenindo falhas de autenticação, uso de credenciais padrão ou exposição de portas desnecessárias.
@@ -206,6 +218,8 @@ Interfaces de configuração inseguras são frequentemente exploradas como porta
 
 ### FRP-SEC-005: Configuração Segura de Fábrica
 
+<cvss-high score="8.8" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:H/VA:L/SC:N/SI:N/SA:N">CVSS 8.8</cvss-high>
+
 **Descrição**
 O sistema deve garantir que dispositivos IoT não permaneçam com credenciais ou configurações padrão de fábrica que possam ser exploradas para acesso não autorizado ou uso malicioso.
 
@@ -238,6 +252,8 @@ Configurações padrão em dispositivos IoT (como senhas de fábrica ou serviço
 
 ### FRP-SEC-013: Proteção de Interface Física
 
+<cvss-high score="7.0" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:P/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N">CVSS 7.0</cvss-high>
+
 **Descrição**
 O sistema deve proteger dispositivos IoT contra acessos físicos não autorizados por meio de portas, interfaces de configuração e pontos de acesso físico, prevenindo manipulação ou comprometimento da segurança do dispositivo.
 
@@ -248,7 +264,6 @@ Interfaces físicas desprotegidas representam um vetor direto de ataque: advers�
 
 * O dispositivo deve possuir **proteção física contra acesso não autorizado** (trancas, gabinetes, instalação segura).
 * O dispositivo deve **desativar ou proteger portas de conexão não utilizadas**.
-* O sistema deve proteger **interfaces de configuração** com autenticação forte, autorização baseada em função e comunicação criptografada.
 * O sistema deve implementar **controles de acesso físico**, incluindo monitoramento e registro de atividades.
 * O sistema deve ser submetido a **auditorias e testes de penetração regulares** para identificar vulnerabilidades físicas.
 
@@ -269,6 +284,8 @@ Interfaces físicas desprotegidas representam um vetor direto de ataque: advers�
 ---
 
 ### FRP-SEC-020: Proteção contra Acesso Indevido ao Console
+
+<cvss-high score="7.0" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:P/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N">CVSS 7.0</cvss-high>
 
 **Descrição**
 O sistema deve impedir que atacantes obtenham acesso não autorizado ao console de administração de dispositivos IoT por meio de portas seriais ou interfaces físicas, prevenindo modificações indevidas de configurações, manipulação de credenciais e comprometimento da privacidade.
@@ -303,6 +320,8 @@ Interfaces de console (ex.: UART, JTAG) são frequentemente negligenciadas em di
 ---
 
 ### FRP-SEC-026: Proteção contra Acesso Físico Não Autorizado
+
+<cvss-high score="8.5" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:P/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:L/SC:H/SI:H/SA:L">CVSS 8.5</cvss-high>
 
 **Descrição**
 O sistema deve proteger dispositivos IoT contra acesso físico não autorizado, prevenindo que adversários capturem ou manipulem o hardware e garantindo a segurança de dados sensíveis mesmo em cenários de comprometimento físico.

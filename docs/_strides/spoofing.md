@@ -8,6 +8,8 @@ Envolve acessar ilegalmente e, em seguida, usando as informações de autentica�
 
 ### FRP-SEC-001: Autenticação Forte
 
+<cvss-critical score="9.3" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:L/SC:N/SI:N/SA:N">CVSS 9.3</cvss-critical>
+
 **Descrição**
 O sistema deve garantir autenticação forte para dispositivos, usuários e sistemas IoT, prevenindo que atacantes obtenham acesso não autorizado por meio de credenciais fracas, contas padrão ou ausência de verificação multifator.
 
@@ -28,7 +30,7 @@ A ausência de autenticação forte permite que atacantes falsifiquem identidade
 * Dispositivos médicos conectados que revalidam credenciais antes de operações críticas.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+- [*FRP-SEC-041: Exigência de Senhas Fortes*](https://iot-security-catalog-requirements.readthedocs.io/pt-br/latest/_strides/spoofing/#frp-sec-041-exigencia-de-senhas-fortes)
 
 **Considerações de Implementação e Teste**
 
@@ -37,6 +39,10 @@ A ausência de autenticação forte permite que atacantes falsifiquem identidade
 > **Teste:** testes de força bruta e dicionário, auditorias de armazenamento de credenciais, simulação de bypass de MFA, análise de logs de autenticação.
 
 ### FRP-SEC-004: Canal de Voz Seguro
+
+<cvss-critical score="9.3" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:L/SC:N/SI:N/SA:N">CVSS 9.3</cvss-critical>
+
+ 
 
 **Descrição**
 O sistema deve proteger canais de voz em dispositivos IoT contra interceptação, falsificação e uso não autorizado, garantindo a autenticidade dos comandos de voz e a confidencialidade das comunicações de áudio.
@@ -62,13 +68,15 @@ Dispositivos IoT com microfones integrados, como assistentes virtuais, brinquedo
 
 **Considerações de Implementação e Teste**
 
-> **Implementação:** criptografia TLS para tráfego de voz, integração com biometria de voz, políticas de controle de acesso baseadas em identidade.
+> **Implementação:** criptografia TLS para tráfego de voz, integração com *Voice Biometric* para verificar a identidade de uma pessoa cadastrada, políticas de controle de acesso baseadas em identidade.
 >
-> **Teste:** simulação de spoofing de voz, testes com gravações reproduzidas para falsificar comandos, inspeção de tráfego para identificar interceptações.
+> **Teste:** simulação de spoofing de voz, testes com gravações reproduzidas para falsificar comandos de voz, inspeção de tráfego para identificar interceptações.
 
 ---
 
 ### FRP-SEC-012: Gestão Segura de Senhas
+
+<cvss-critical score="9.3" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:L/SC:L/SI:N/SA:N">CVSS 9.3</cvss-critical>
 
 **Descrição**
 O sistema deve garantir que senhas sejam fortes, únicas e armazenadas de forma segura, prevenindo acesso não autorizado a contas, dispositivos e informações sensíveis.
@@ -104,6 +112,8 @@ Senhas fracas, padrão ou mal armazenadas são um dos vetores mais comuns de ata
 
 ### FRP-SEC-040: Autenticação Robusta em IoT
 
+<cvss-critical score="9.9" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:N">CVSS 9.9</cvss-critical>
+
 **Descrição**
 O sistema deve implementar mecanismos adequados e robustos de autenticação para garantir que apenas dispositivos, usuários e serviços autorizados tenham acesso a recursos e funcionalidades da rede IoT.
 
@@ -134,6 +144,8 @@ A ausência ou inadequação de mecanismos de autenticação expõe a rede IoT a
 ---
 
 ### FRP-SEC-041: Exigência de Senhas Fortes
+
+<cvss-critical score="9.9" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:N">CVSS 9.9</cvss-critical>
 
 **Descrição**
 O sistema deve exigir o uso de senhas fortes e exclusivas para autenticação de usuários, dispositivos e serviços em ambientes IoT, prevenindo que credenciais frágeis sejam exploradas por atacantes.
@@ -167,6 +179,8 @@ Senhas fracas ou padrão são facilmente adivinhadas ou obtidas em ataques de fo
 ---
 
 ### FRP-SEC-051: Mitigação de Quebra de Autenticação
+
+<cvss-critical score="10.0" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H">CVSS 10.0</cvss-critical>
 
 **Descrição**
 O sistema deve implementar mecanismos robustos para prevenir a quebra de autenticação, garantindo que apenas usuários, dispositivos e serviços devidamente verificados tenham acesso aos recursos da rede IoT.
@@ -203,6 +217,8 @@ A falta de autenticação forte ou políticas adequadas expõe dispositivos IoT 
 
 ### FRP-SEC-025: Proteção contra Clonagem de Etiquetas
 
+<cvss-high score="8.4" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:A/AC:L/AT:N/PR:N/UI:N/VC:L/VI:H/VA:L/SC:H/SI:L/SA:N">CVSS 8.4</cvss-high>
+
 **Descrição**
 O sistema deve proteger contra clonagem de etiquetas de identificação em dispositivos IoT, garantindo que apenas etiquetas legítimas e não replicadas sejam aceitas em processos de autenticação, rastreamento e controle de acesso.
 
@@ -237,6 +253,8 @@ A clonagem de etiquetas RFID/NFC permite que atacantes falsifiquem identidades e
 
 ### FRP-SEC-006: Proteção contra Falsificação de Dispositivo
 
+<cvss-critical score="9.3" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:L/SC:N/SI:N/SA:N">CVSS 9.3</cvss-critical>
+
 **Descrição**
 O sistema deve prevenir que dispositivos falsificados se passem por dispositivos legítimos na rede IoT, garantindo que apenas dispositivos devidamente autenticados e autorizados possam se conectar e trocar informações.
 
@@ -268,6 +286,8 @@ Na falsificação de dispositivo, atacantes manipulam identificadores como ender
 ---
 
 ### FRP-SEC-035: Proteção contra Nós Falsos ou Maliciosos
+
+<cvss-critical score="9.3" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:L/SC:N/SI:N/SA:N">CVSS 9.3</cvss-critical>
 
 **Descrição**
 O sistema deve proteger redes IoT contra a inserção de nós falsos ou maliciosos, garantindo que apenas dispositivos autenticados e autorizados possam participar da comunicação e do fluxo de dados.
@@ -302,6 +322,8 @@ Nós maliciosos podem ser introduzidos em redes IoT para coletar, manipular ou r
 ---
 
 ### FRP-SEC-044: Proteção contra Falsificação de Sinal
+
+<cvss-critical score="9.3" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:H/VA:L/SC:L/SI:H/SA:L">CVSS 9.3</cvss-critical>
 
 **Descrição**
 O sistema deve proteger dispositivos IoT contra sinais falsificados ou manipulados, garantindo que apenas transmissões legítimas sejam aceitas e utilizadas para controle ou troca de informações.

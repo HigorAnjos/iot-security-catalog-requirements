@@ -40,6 +40,8 @@ Links maliciosos são um vetor comum de ataques. Em ambientes IoT, dispositivos 
 
 ### FRP-SEC-057: Gestão Segura de Dados
 
+<cvss-critical score="10.0" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:L/SC:H/SI:H/SA:L">CVSS 10.0</cvss-critical>
+
 **Descrição**
 O sistema deve garantir que os dados coletados, processados e armazenados por dispositivos e serviços IoT sejam tratados com segurança durante todo o seu ciclo de vida, prevenindo vazamentos e acessos não autorizados.
 
@@ -72,6 +74,8 @@ A falta de boas práticas de gestão de dados pode expor informações pessoais 
 
 ### FRP-SEC-065: Prevenção de Enumeração de Usuários
 
+<cvss-medium score="6.9" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:L/SI:N/SA:N">CVSS 6.9</cvss-medium>
+
 **Descrição**
 O sistema deve proteger os mecanismos de autenticação e APIs contra a enumeração de nomes de usuários, evitando que atacantes identifiquem contas válidas por meio de mensagens de erro, respostas diferenciadas ou padrões de comportamento do sistema.
 
@@ -103,6 +107,8 @@ Quando um sistema expõe, ainda que de forma indireta, a existência de usuário
 ---
 
 ### FRP-SEC-066: Criptografia Robusta na Aplicação IoT
+
+<cvss-critical score="10.0" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:L/SC:H/SI:H/SA:L">CVSS 10.0</cvss-critical>
 
 **Descrição**
 O sistema deve implementar criptografia forte e adequada em nível de aplicação para proteger dados em trânsito e em repouso, garantindo que não sejam expostos ou manipulados por atacantes devido a algoritmos obsoletos ou ausência de mecanismos criptográficos.
@@ -138,6 +144,8 @@ Sem criptografia robusta, dados sensíveis transmitidos ou armazenados em dispos
 
 ### NFRP-SEC-007: Proteção contra Vazamento de Emanações Eletromagnéticas
 
+<cvss-medium score="5.6" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:P/AC:H/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:H/SI:N/SA:N">CVSS 5.6</cvss-medium>
+
 **Descrição**
 O sistema deve proteger dispositivos IoT contra a exposição não intencional de informações por meio de emanações eletromagnéticas que possam ser exploradas por atacantes para inferir dados processados ou transmitidos.
 
@@ -171,6 +179,8 @@ Dispositivos IoT podem vazar informações através de campos eletromagnéticos 
 
 ### NFRP-SEC-015: Proteção contra Canais Laterais
 
+<cvss-medium score="4.1" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:P/AC:H/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N">CVSS 4.1</cvss-medium>
+
 **Descrição**
 O sistema deve prevenir o vazamento de informações sensíveis por meio de canais laterais, como padrões de consumo de energia, emissões eletromagnéticas ou tempos de resposta, que possam ser explorados para inferir dados confidenciais.
 
@@ -202,6 +212,8 @@ Ataques de canal lateral permitem que adversários obtenham informações valios
 ---
 
 ### FRP-SEC-028: Criptografia Forte em Dispositivos IoT
+
+<cvss-critical score="10.0" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:L/SC:H/SI:H/SA:L">CVSS 10.0</cvss-critical>
 
 **Descrição**
 O sistema deve proteger dados sensíveis em dispositivos IoT utilizando mecanismos de criptografia fortes, tanto para dados em repouso quanto em trânsito, prevenindo sua exposição ou uso indevido por adversários.
@@ -239,6 +251,8 @@ A ausência ou fraqueza de criptografia em dispositivos IoT permite que atacante
 
 ### FRP-SEC-033: Proteção contra Vazamento ou Violação de Dados
 
+<cvss-critical score="9.9" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:L/SC:H/SI:H/SA:N">CVSS 9.9</cvss-critical>
+
 **Descrição**
 O sistema deve proteger dados sensíveis em redes IoT contra vazamento, violação ou acesso não autorizado, assegurando confidencialidade, integridade e disponibilidade das informações em trânsito e em repouso.
 
@@ -273,6 +287,8 @@ Vazamentos de dados comprometem diretamente a privacidade de usuários e a segur
 ---
 
 ### FRP-SEC-034: Proteção contra Escuta Clandestina
+
+<cvss-high score="8.4" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:A/AC:L/AT:N/PR:N/UI:N/VC:H/VI:L/VA:N/SC:H/SI:L/SA:N">CVSS 8.4</cvss-high>
 
 **Descrição**
 O sistema deve proteger as comunicações IoT contra interceptações não autorizadas, garantindo que dados transmitidos permaneçam confidenciais e inacessíveis a atacantes, mesmo que capturados durante a transmissão.

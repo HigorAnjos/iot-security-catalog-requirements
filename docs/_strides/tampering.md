@@ -8,6 +8,8 @@ Envolve a modificação mal-intencionada de dados. Os exemplos incluem alteraç�
 
 ### FRP-SEC-053: Garantia de Consistência de Dados
 
+<cvss-critical score="9.2" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:L/SC:N/SI:H/SA:L">CVSS 9.2</cvss-critical>
+
 **Descrição**
 O sistema deve proteger contra inconsistências de dados em ambientes IoT, assegurando a integridade, precisão e confiabilidade das informações coletadas, processadas e armazenadas.
 
@@ -40,6 +42,8 @@ Dados corrompidos, contraditórios ou incompletos comprometem a confiabilidade d
 
 ### FRP-SEC-060: Garantia de Qualidade de Código em IoT
 
+<cvss-critical score="10.0" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H">CVSS 10.0</cvss-critical>
+
 **Descrição**
 O sistema deve ser desenvolvido com práticas de codificação seguras e robustas, garantindo que o código-fonte não introduza vulnerabilidades decorrentes de má estruturação, falta de validação de entrada ou uso inadequado de recursos críticos.
 
@@ -70,6 +74,8 @@ Código mal estruturado, sem revisões e sem validações adequadas, aumenta a s
 ---
 
 ### FRP-SEC-061: Prevenção de Código Malicioso em Aplicativos IoT
+
+<cvss-critical score="10.0" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H">CVSS 10.0</cvss-critical>
 
 **Descrição**
 O sistema deve prevenir a introdução e execução de código malicioso em aplicações IoT, assegurando que apenas software legítimo e verificado seja implantado e executado nos dispositivos e sistemas relacionados.
@@ -102,6 +108,8 @@ A inclusão de código malicioso em aplicativos IoT pode resultar em vazamento d
 ---
 
 ### FRP-SEC-063: Redução da Superfície de Ataque em IoT
+
+<cvss-critical score="10.0" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H">CVSS 10.0</cvss-critical>
 
 **Descrição**
 O sistema deve reduzir a superfície de ataque disponível, limitando funcionalidades, serviços e pontos de entrada apenas ao necessário para a operação segura dos dispositivos e aplicações IoT.
@@ -138,6 +146,8 @@ Quanto maior a superfície de ataque, maior a probabilidade de vulnerabilidades 
 
 ### FRP-SEC-064: Prevenção de Injeção em Banco de Dados
 
+<cvss-critical score="10.0" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H">CVSS 10.0</cvss-critical>
+
 **Descrição**
 O sistema deve proteger-se contra injeções em banco de dados, garantindo que comandos maliciosos não possam ser inseridos ou executados por meio de entradas de usuário, preservando a integridade e a confidencialidade dos dados.
 
@@ -173,6 +183,8 @@ Ataques de injeção em SQL exploram falhas na manipulação de entradas, permit
 
 ### FRP-SEC-010: Firmware Seguro 
 
+<cvss-critical score="9.3" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N">CVSS 9.3</cvss-critical>
+
 **Descrição**
 O sistema deve garantir que o firmware de dispositivos IoT seja projetado, distribuído e mantido de forma segura, prevenindo exploração de vulnerabilidades que possam comprometer a integridade, a confidencialidade ou a disponibilidade do dispositivo e dos dados que ele manipula.
 
@@ -204,6 +216,8 @@ O firmware é o software de baixo nível que controla os dispositivos IoT. Vulne
 ---
 
 ### FRP-SEC-011: Inicialização Segura
+
+<cvss-critical score="9.3" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N">CVSS 9.3</cvss-critical>
 
 **Descrição**
 O sistema deve garantir a integridade e a autenticidade do processo de inicialização dos dispositivos IoT, prevenindo que firmware adulterado, configurações modificadas ou hardware não autorizado sejam carregados durante o boot.
@@ -237,6 +251,8 @@ A fase de inicialização é crítica: qualquer comprometimento nesse estágio p
 
 ### FRP-SEC-019: Proteção contra Injeção de Código Malicioso
 
+<cvss-critical score="9.3" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N">CVSS 9.3</cvss-critical>
+
 **Descrição**
 O sistema deve prevenir a injeção e execução de código malicioso em dispositivos IoT, garantindo que apenas software e firmware legítimos e íntegros possam ser instalados e executados.
 
@@ -269,6 +285,8 @@ A injeção de código malicioso pode dar controle remoto total ao atacante, com
 ---
 
 ### FRP-SEC-022: Proteção contra Violação Física
+
+<cvss-high score="7.0" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:P/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N">CVSS 7.0</cvss-high>
 
 **Descrição**
 O sistema deve prevenir e detectar tentativas de violação física em dispositivos IoT, protegendo dados sensíveis, firmware e componentes de hardware contra adulteração, modificação ou uso malicioso.
@@ -304,6 +322,8 @@ A violação física permite que adversários manipulem dispositivos, insiram im
 
 ### NFRP-SEC-024: Mitigação de Riscos em Sistemas de Baixo Custo
 
+<cvss-critical score="9.9" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:L/SC:H/SI:L/SA:N">CVSS 9.9</cvss-critical>
+
 **Descrição**
 O sistema deve considerar riscos adicionais ao utilizar dispositivos IoT de baixo custo, adotando medidas complementares para compensar a falta de proteções nativas, prevenindo adulterações, comprometimento de dados ou exploração por atacantes.
 
@@ -336,6 +356,8 @@ Dispositivos de baixo custo frequentemente sacrificam práticas de segurança em
 ---
 
 ### FRP-SEC-039: Mecanismos Seguros de Atualização
+
+<cvss-critical score="9.3" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N">CVSS 9.3</cvss-critical>
 
 **Descrição**
 O sistema deve garantir que atualizações de firmware e software em dispositivos IoT sejam realizadas de forma segura, prevenindo adulterações, injeções maliciosas e a instalação de componentes não autorizados.
@@ -370,6 +392,8 @@ Atualizações são essenciais para corrigir vulnerabilidades e manter dispositi
 
 ### FRP-SEC-052: Prevenção de Estouro de Buffer
 
+<cvss-critical score="10.0" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H">CVSS 10.0</cvss-critical>
+
 **Descrição**
 O sistema deve prevenir vulnerabilidades de estouro de buffer em software embarcado de dispositivos IoT, garantindo que dados de entrada não corrompam a memória nem permitam execução de código malicioso.
 
@@ -401,6 +425,8 @@ Em dispositivos IoT, a exploração de estouros de buffer pode permitir que atac
 ---
 
 ### FRP-SEC-058: Garantia de Software Seguro em IoT
+
+<cvss-critical score="10.0" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H">CVSS 10.0</cvss-critical>
 
 **Descrição**
 O sistema deve garantir que o software embarcado em dispositivos IoT seja desenvolvido, distribuído e atualizado de forma segura, prevenindo adulterações, vulnerabilidades e uso de componentes inseguros ou desatualizados.
@@ -438,6 +464,8 @@ O software é o núcleo de funcionamento dos dispositivos IoT. Se vulnerável, d
 
 ### FRP-SEC-008: Interação Segura em Ambientes Heterogêneos
 
+<cvss-medium score="6.9" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N">CVSS 6.9</cvss-medium>
+
 **Descrição**
 O sistema deve garantir a segurança das interações entre dispositivos IoT heterogêneos, prevenindo exploração de falhas resultantes de diferenças de hardware, software, protocolos de comunicação e configurações.
 
@@ -469,6 +497,8 @@ A heterogeneidade em ambientes IoT cria superfícies de ataque ampliadas: dispos
 ---
 
 ### FRP-SEC-009: Transferência e Armazenamento Seguros de Dados
+
+<cvss-critical score="9.3" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:L/SC:N/SI:N/SA:N">CVSS 9.3</cvss-critical>
 
 **Descrição**
 O sistema deve garantir a integridade e a confidencialidade dos dados em trânsito e em repouso, prevenindo que informações coletadas ou transmitidas por dispositivos IoT sejam expostas ou manipuladas por atacantes.
@@ -503,6 +533,8 @@ Dados manipulados ou expostos em dispositivos IoT podem comprometer decisões cr
 
 ### FRP-SEC-032: Configuração Segura de Rede
 
+<cvss-critical score="9.2" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:H/VA:H/SC:H/SI:L/SA:N">CVSS 9.2</cvss-critical>
+
 **Descrição**
 O sistema deve proteger o processo de configuração de rede em dispositivos IoT, prevenindo alterações não autorizadas, inconsistentes ou repetidas que possam introduzir vulnerabilidades e comprometer a integridade da rede.
 
@@ -535,6 +567,8 @@ Configurações de rede aplicadas de forma repetitiva ou inadequada podem result
 
 ### FRP-SEC-036: Comunicação Segura em Ambientes Heterogêneos
 
+<cvss-critical score="9.9" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:L/SC:H/SI:H/SA:N">CVSS 9.9</cvss-critical>
+
 **Descrição**
 O sistema deve garantir que a comunicação entre dispositivos e sistemas heterogêneos em redes IoT seja realizada de forma segura, prevenindo manipulações, inconsistências e vulnerabilidades decorrentes do uso de diferentes protocolos e padrões.
 
@@ -565,6 +599,8 @@ A interoperabilidade entre dispositivos de diferentes fabricantes é fundamental
 ---
 
 ### FRP-SEC-038: Controle Seguro de Tráfego
+
+<cvss-critical score="9.9" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:L/SC:H/SI:H/SA:N">CVSS 9.9</cvss-critical>
 
 **Descrição**
 O sistema deve proteger o tráfego de dados entre dispositivos IoT, gateways, servidores e serviços em nuvem contra interceptação, manipulação e uso não autorizado, garantindo a integridade e a confidencialidade da comunicação.
@@ -598,6 +634,8 @@ Comunicações IoT inseguras podem ser interceptadas, manipuladas ou redireciona
 
 ### FRP-SEC-042: Adoção de Protocolos de Comunicação Seguros
 
+<cvss-critical score="9.9" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:L/SC:H/SI:H/SA:N">CVSS 9.9</cvss-critical>
+
 **Descrição**
 O sistema deve utilizar protocolos de comunicação seguros para proteger os dados transmitidos entre dispositivos IoT, serviços e sistemas de back-end, garantindo confidencialidade, integridade e autenticidade.
 
@@ -628,6 +666,8 @@ A ausência ou o uso inadequado de protocolos seguros permite que atacantes inte
 ---
 
 ### FRP-SEC-046: Proteção contra Redes Inseguras
+
+<cvss-critical score="10.0" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H">CVSS 10.0</cvss-critical>
 
 **Descrição**
 O sistema deve proteger dispositivos IoT contra os riscos de operar em redes inseguras, prevenindo interceptação, manipulação de tráfego e propagação de malware por meio da aplicação de mecanismos robustos de segurança em nível de rede.
@@ -664,6 +704,8 @@ Dispositivos IoT muitas vezes se conectam a redes públicas ou mal segmentadas, 
 
 ### FRP-SEC-047: Desativação de Portas Não Utilizadas
 
+<cvss-critical score="10.0" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H">CVSS 10.0</cvss-critical>
+
 **Descrição**
 O sistema deve garantir que todas as portas de rede não utilizadas em dispositivos IoT e infraestrutura associada sejam desativadas, prevenindo que se tornem pontos de entrada para acessos não autorizados ou manipulação de tráfego.
 
@@ -696,6 +738,8 @@ Portas abertas e desnecessárias expõem dispositivos IoT a riscos adicionais, p
 ---
 
 ### FRP-SEC-048: Criptografia Robusta na Comunicação
+
+<cvss-critical score="10.0" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:L/SC:H/SI:H/SA:L">CVSS 10.0</cvss-critical>
 
 **Descrição**
 O sistema deve utilizar criptografia forte e atualizada em todas as comunicações de dispositivos IoT, prevenindo interceptação, adulteração e acesso não autorizado a dados em trânsito.
