@@ -30,7 +30,11 @@ Controles de acesso fracos permitem que invasores explorem lacunas na autentica�
 * Sistemas de casa inteligente que exigem MFA para alterar configurações críticas.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-040: Autenticação Robusta em IoT
+* FRP-SEC-041: Exigência de Senhas Fortes
+* FRP-SEC-045: Prevenção de Acesso Não Autorizado
+* FRP-SEC-054: Gerenciamento Seguro de Acesso
+* FRP-SEC-056: Configuração Segura de Interfaces IoT
 
 **Considerações de Implementação e Teste**
 
@@ -66,7 +70,10 @@ Servidores IoT são alvos críticos, pois concentram processamento, armazenament
 * Gateways IoT que exigem MFA para acesso de administradores e aplicam TLS 1.3 em todas as conexões.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-045: Prevenção de Acesso Não Autorizado
+* FRP-SEC-056: Configuração Segura de Interfaces IoT
+* FRP-SEC-039: Mecanismos Seguros de Atualização
+* FRP-SEC-060: Garantia de Qualidade de Código em IoT
 
 **Considerações de Implementação e Teste**
 
@@ -99,7 +106,11 @@ O acesso não autorizado a sistemas IoT compromete dados sensíveis, dispositivo
 * Redes corporativas IoT isoladas em VLANs, com monitoramento ativo de tentativas de intrusão.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-040: Autenticação Robusta em IoT
+* FRP-SEC-041: Exigência de Senhas Fortes
+* FRP-SEC-056: Configuração Segura de Interfaces IoT
+* FRP-SEC-054: Gerenciamento Seguro de Acesso
+* FRP-SEC-065: Prevenção de Enumeração de Usuários
 
 **Considerações de Implementação e Teste**
 
@@ -136,7 +147,10 @@ Sem gerenciamento adequado de acesso, usuários ou dispositivos podem obter perm
 * APIs de gerenciamento de dispositivos protegidas por OAuth2 e tokens de acesso limitados.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-040: Autenticação Robusta em IoT
+* FRP-SEC-041: Exigência de Senhas Fortes
+* FRP-SEC-045: Prevenção de Acesso Não Autorizado
+* FRP-SEC-056: Configuração Segura de Interfaces IoT
 
 **Considerações de Implementação e Teste**
 
@@ -170,7 +184,9 @@ Muitos ataques a dispositivos IoT exploram falhas já conhecidas em bibliotecas,
 * Gateways IoT que monitoram e atualizam automaticamente drivers fornecidos por fabricantes externos.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-060: Garantia de Qualidade de Código em IoT
+* FRP-SEC-058: Garantia de Software Seguro em IoT
+* FRP-SEC-039: Mecanismos Seguros de Atualização
 
 **Considerações de Implementação e Teste**
 
@@ -204,7 +220,10 @@ Interfaces de configuração inseguras são frequentemente exploradas como porta
 * Câmeras IP que criptografam todo o tráfego de configuração e segmentam acessos por função (admin, operador, visualizador).
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-040: Autenticação Robusta em IoT
+* FRP-SEC-041: Exigência de Senhas Fortes
+* FRP-SEC-045: Prevenção de Acesso Não Autorizado
+* FRP-SEC-027: Controle de Acesso Robusto
 
 **Considerações de Implementação e Teste**
 
@@ -240,7 +259,10 @@ Configurações padrão em dispositivos IoT (como senhas de fábrica ou serviço
 * Câmeras de segurança que bloqueiam o uso de credenciais padrão conhecidas em ataques massivos de botnets.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-041: Exigência de Senhas Fortes
+* FRP-SEC-056: Configuração Segura de Interfaces IoT
+* FRP-SEC-010: Firmware Seguro
+* FRP-SEC-011: Inicialização Segura
 
 **Considerações de Implementação e Teste**
 
@@ -273,7 +295,9 @@ Interfaces físicas desprotegidas representam um vetor direto de ataque: advers�
 * Dispositivos industriais instalados em gabinetes lacrados e monitorados contra violação.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-020: Proteção contra Acesso Indevido ao Console
+* FRP-SEC-026: Proteção contra Acesso Físico Não Autorizado
+* FRP-SEC-027: Controle de Acesso Robusto
 
 **Considerações de Implementação e Teste**
 
@@ -309,7 +333,9 @@ Interfaces de console (ex.: UART, JTAG) são frequentemente negligenciadas em di
 * Dispositivos médicos que exigem MFA para acesso ao console administrativo.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-013: Proteção de Interface Física
+* FRP-SEC-022: Proteção contra Violação Física
+* FRP-SEC-005: Configuração Segura de Fábrica
 
 **Considerações de Implementação e Teste**
 
@@ -343,7 +369,9 @@ Dispositivos IoT muitas vezes operam em locais de fácil acesso ao público, tor
 * Gateways industriais com criptografia de dados local e autenticação de hardware.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-013: Proteção de Interface Física
+* FRP-SEC-022: Proteção contra Violação Física
+* FRP-SEC-005: Configuração Segura de Fábrica
 
 **Considerações de Implementação e Teste**
 

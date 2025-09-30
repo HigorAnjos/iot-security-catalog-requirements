@@ -28,7 +28,10 @@ Links maliciosos são um vetor comum de ataques. Em ambientes IoT, dispositivos 
 * Dispositivos médicos que bloqueiam URLs externas suspeitas em interfaces de monitoramento.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-009: Transferência e Armazenamento Seguros de Dados
+* FRP-SEC-038: Controle Seguro de Tráfego
+* FRP-SEC-046: Proteção contra Redes Inseguras
+* FRP-SEC-048: Criptografia Robusta na Comunicação
 
 **Considerações de Implementação e Teste**
 
@@ -62,7 +65,10 @@ A falta de boas práticas de gestão de dados pode expor informações pessoais 
 * Plataformas de cidades inteligentes que aplicam controles de acesso estritos a dados de tráfego e transporte.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-009: Transferência e Armazenamento Seguros de Dados
+* FRP-SEC-028: Criptografia Forte em Dispositivos IoT
+* FRP-SEC-066: Criptografia Robusta na Aplicação IoT
+* FRP-SEC-033: Proteção contra Vazamento ou Violação de Dados
 
 **Considerações de Implementação e Teste**
 
@@ -96,7 +102,10 @@ Quando um sistema expõe, ainda que de forma indireta, a existência de usuário
 * Serviços em nuvem para IoT que aplicam bloqueio automático após múltiplas tentativas inválidas.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-040: Autenticação Robusta em IoT
+* FRP-SEC-041: Exigência de Senhas Fortes
+* FRP-SEC-051: Mitigação de Quebra de Autenticação
+* FRP-SEC-045: Prevenção de Acesso Não Autorizado
 
 **Considerações de Implementação e Teste**
 
@@ -130,7 +139,10 @@ Sem criptografia robusta, dados sensíveis transmitidos ou armazenados em dispos
 * Sistemas de casas inteligentes que utilizam TLS 1.3 e certificados digitais para proteger comandos enviados a dispositivos.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-028: Criptografia Forte em Dispositivos IoT
+* FRP-SEC-009: Transferência e Armazenamento Seguros de Dados
+* FRP-SEC-048: Criptografia Robusta na Comunicação
+* FRP-SEC-033: Proteção contra Vazamento ou Violação de Dados
 
 **Considerações de Implementação e Teste**
 
@@ -166,7 +178,9 @@ Dispositivos IoT podem vazar informações através de campos eletromagnéticos 
 * Sensores industriais que, sem proteção adequada, podem permitir que terceiros monitorem padrões de produção via emanações.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* NFRP-SEC-015: Proteção contra Canais Laterais
+* FRP-SEC-028: Criptografia Forte em Dispositivos IoT
+* FRP-SEC-057: Gestão Segura de Dados
 
 **Considerações de Implementação e Teste**
 
@@ -201,7 +215,8 @@ Ataques de canal lateral permitem que adversários obtenham informações valios
 * Smartcards que introduzem ruído aleatório em tempos de resposta para resistir a ataques de *timing*.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* NFRP-SEC-007: Proteção contra Vazamento de Emanações Eletromagnéticas
+* FRP-SEC-028: Criptografia Forte em Dispositivos IoT
 
 **Considerações de Implementação e Teste**
 
@@ -236,7 +251,9 @@ A ausência ou fraqueza de criptografia em dispositivos IoT permite que atacante
 * Sensores industriais que utilizam chaves gerenciadas por HSM e criptografia AES-256 em seus registros de operação.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-066: Criptografia Robusta na Aplicação IoT
+* FRP-SEC-009: Transferência e Armazenamento Seguros de Dados
+* FRP-SEC-033: Proteção contra Vazamento ou Violação de Dados
 
 **Considerações de Implementação e Teste**
 
@@ -276,7 +293,9 @@ Vazamentos de dados comprometem diretamente a privacidade de usuários e a segur
 * Soluções de saúde IoT que armazenam registros médicos criptografados em conformidade com a LGPD/HIPAA.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-009: Transferência e Armazenamento Seguros de Dados
+* FRP-SEC-048: Criptografia Robusta na Comunicação
+* FRP-SEC-054: Gerenciamento Seguro de Acesso
 
 **Considerações de Implementação e Teste**
 
@@ -311,7 +330,9 @@ Dispositivos IoT utilizam principalmente canais sem fio, tornando-os suscetívei
 * Redes corporativas que isolam dispositivos IoT críticos em VLANs protegidas contra sniffing.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-048: Criptografia Robusta na Comunicação
+* FRP-SEC-009: Transferência e Armazenamento Seguros de Dados
+* FRP-SEC-036: Comunicação Segura em Ambientes Heterogêneos
 
 **Considerações de Implementação e Teste**
 

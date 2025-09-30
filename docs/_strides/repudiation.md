@@ -30,7 +30,10 @@ Sem monitoramento ativo, é impossível garantir a detecção de anomalias ou at
 * Hospitais que aplicam monitoramento contínuo em dispositivos médicos conectados, detectando acessos suspeitos.
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-054: Gerenciamento Seguro de Acesso
+* FRP-SEC-033: Proteção contra Vazamento ou Violação de Dados
+* FRP-SEC-009: Transferência e Armazenamento Seguros de Dados
+* FRP-SEC-038: Controle Seguro de Tráfego
 
 **Considerações de Implementação e Teste**
 
@@ -65,7 +68,10 @@ Em ambientes IoT, a ausência de mecanismos de não repúdio pode comprometer a 
 * Plataformas de cidades inteligentes que mantêm logs imutáveis de ações de dispositivos críticos (ex.: semáforos inteligentes).
 
 **Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
+* FRP-SEC-048: Criptografia Robusta na Comunicação
+* FRP-SEC-033: Proteção contra Vazamento ou Violação de Dados
+* FRP-SEC-054: Gerenciamento Seguro de Acesso
+* FRP-SEC-040: Autenticação Robusta em IoT
 
 **Considerações de Implementação e Teste**
 
