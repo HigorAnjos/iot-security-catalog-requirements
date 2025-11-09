@@ -3,7 +3,7 @@
 Envolve acessar ilegalmente e, em seguida, usando as informações de autenticação de outro usuário, como nome de usuário e senha
 
 ---
-# RPG-SEC-S01: Authentication & Identity Verification
+## RPG-SEC-S01: Authentication & Identity Verification
 
 **Descrição**
 Define os princípios de autenticação e verificação de identidade em sistemas IoT, assegurando que apenas entidades legítimas — usuários, dispositivos ou serviços — possam acessar recursos e interagir de forma segura.

@@ -4,7 +4,7 @@ Um usuário sem privilégios obtém acesso privilegiado e, portanto, tem acesso 
 
 ---
 
-# RPG-SEC-E01: Access Control & Privilege Management
+## RPG-SEC-E01: Access Control & Privilege Management
 
 **Descrição**
 Define os princípios de controle de acesso e gerenciamento de privilégios em sistemas IoT, garantindo que apenas entidades autenticadas e devidamente autorizadas possam interagir com recursos, dados e funções do sistema, de acordo com seu nível de permissão.

@@ -41,6 +41,7 @@ theme:
 markdown_extensions:
   - toc:
       permalink: true
+      toc_depth: 6
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.emoji:

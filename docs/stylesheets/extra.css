@@ -13,6 +13,56 @@
     display: none;
 }
 
+/* Keep primary navigation visible */
+.md-sidebar--primary {
+    display: block !important;
+}
+
+/* HIDE TOC from left navigation (primary sidebar) */
+.md-sidebar--primary .md-nav--secondary {
+    display: none !important;
+}
+
+.md-sidebar--primary [data-md-component="toc"] {
+    display: none !important;
+}
+
+/* FORCE TOC to show ONLY on right side */
+@media screen and (min-width: 76.25em) {
+    .md-sidebar--secondary {
+        display: block !important;
+        visibility: visible !important;
+        position: sticky !important;
+        top: 3.6rem !important;
+        height: auto !important;
+        width: 12.1rem !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .md-sidebar--secondary .md-sidebar__scrollwrap {
+        display: block !important;
+        overflow-y: auto !important;
+        max-height: calc(100vh - 6.4rem) !important;
+    }
+    
+    .md-sidebar--secondary .md-sidebar__inner {
+        display: block !important;
+        padding-top: 2.4rem !important;
+    }
+    
+    [data-md-component="toc"] {
+        display: block !important;
+    }
+    
+    .md-nav--secondary {
+        display: block !important;
+    }
+    
+    .md-nav--secondary > .md-nav__list {
+        display: block !important;
+    }
+}
+
 /* CVSS Score styling */
 .cvss-score {
     margin-bottom: 1.25rem;

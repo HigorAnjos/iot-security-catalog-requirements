@@ -4,7 +4,7 @@ Envolve a exposição de informações para os indivíduos que não devem para t
 
 ---
 
-# RPG-SEC-I01: Confidential Data Protection & Privacy
+## RPG-SEC-I01: Confidential Data Protection & Privacy
 
 **Descrição**
 Define os princípios de proteção da confidencialidade e privacidade de dados em ecossistemas IoT, assegurando que informações sensíveis, pessoais ou operacionais sejam protegidas contra acesso, interceptação ou exposição indevida durante todo o seu ciclo de vida.

@@ -4,7 +4,7 @@ Associado aos usuários que negam a execução de uma ação sem ter alguma mane
 
 ---
 
-# RPG-SEC-R01: Accountability & Non-Repudiation
+## RPG-SEC-R01: Accountability & Non-Repudiation
 
 **Descrição**
 Define os princípios de responsabilidade e não repúdio em sistemas IoT, assegurando que todas as ações realizadas por usuários, dispositivos e serviços possam ser autenticadas, registradas e verificadas, impedindo a negação posterior de autoria ou participação.

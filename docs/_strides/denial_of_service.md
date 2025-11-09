@@ -4,7 +4,7 @@ Ataques negação de serviço (DoS) negar serviços a usuários válidos — por
 
 ---
 
-# RPG-SEC-D01: Availability & Resilience
+## RPG-SEC-D01: Availability & Resilience
 
 **Descrição**
 Define os princípios de disponibilidade e resiliência em sistemas IoT, assegurando que dispositivos, redes e serviços mantenham funcionamento contínuo e confiável, mesmo diante de falhas, ataques ou condições adversas.
