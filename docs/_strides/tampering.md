@@ -4,6 +4,22 @@ Envolve a modificação mal-intencionada de dados. Os exemplos incluem alteraç�
 
 ---
 
+# RPG-SEC-T01: Data Integrity & Secure Transmission
+
+**Descrição**
+Define os princípios de integridade e transmissão segura de dados em sistemas IoT, assegurando que as informações coletadas, processadas e transmitidas permaneçam autênticas, íntegras e protegidas contra adulteração ou manipulação maliciosa.
+
+**Racional**
+A adulteração de dados — seja em armazenamento, firmware, software ou comunicação — compromete a confiabilidade e segurança do ecossistema IoT. Este grupo estabelece diretrizes para proteger o ciclo de vida dos dados e garantir que apenas informações válidas e verificáveis sejam aceitas e transmitidas.
+
+**Aplicabilidade**
+Aplicável a sistemas, dispositivos e redes que manipulam, armazenam ou transmitem dados sensíveis ou críticos em ambientes IoT.
+Inclui comunicações entre dispositivos (M2M), gateways e serviços de nuvem, bem como a integridade de firmware, software e bancos de dados.
+Não aplicável a dados temporários sem relevância operacional ou segurança.
+
+
+---
+
 ## Aplicação
 
 ### FRP-SEC-053: Garantia de Consistência de Dados
@@ -28,9 +44,6 @@ Dados corrompidos, contraditórios ou incompletos comprometem a confiabilidade d
 
 * Sistemas de saúde que cruzam dados de sensores redundantes para validar sinais vitais de pacientes.
 * Indústrias que utilizam CRC ou assinaturas digitais para validar integridade de dados coletados por sensores.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
 
 **Considerações de Implementação e Teste**
 
@@ -62,9 +75,6 @@ Código mal estruturado, sem revisões e sem validações adequadas, aumenta a s
 * Firmware IoT que utiliza bibliotecas de criptografia robustas e segue padrões de codificação segura.
 * Dispositivos de automação residencial cujo software passa por revisões formais de código antes da liberação.
 
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
 **Considerações de Implementação e Teste**
 
 > **Implementação:** integração de ferramentas SAST/DAST em CI/CD, uso de guias como OWASP Secure Coding, automação de revisão de código.
@@ -95,9 +105,6 @@ A inclusão de código malicioso em aplicativos IoT pode resultar em vazamento d
 
 * Gateways IoT que só aceitam instalação de pacotes assinados digitalmente pelo fabricante.
 * Dispositivos inteligentes que validam integridade de aplicativos antes da execução.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
 
 **Considerações de Implementação e Teste**
 
@@ -133,9 +140,6 @@ Quanto maior a superfície de ataque, maior a probabilidade de vulnerabilidades 
 * Dispositivos domésticos inteligentes que desabilitam serviços de depuração em produção.
 * Gateways IoT industriais que expõem apenas APIs estritamente necessárias e auditadas.
 
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
 **Considerações de Implementação e Teste**
 
 > **Implementação:** aplicar *hardening* de dispositivos IoT, configurar firewalls e IDS, utilizar *secure by design* eliminando recursos supérfluos.
@@ -167,9 +171,6 @@ Ataques de injeção em SQL exploram falhas na manipulação de entradas, permit
 
 * Plataforma de casa inteligente que utiliza *prepared statements* para registrar eventos em banco relacional.
 * Sistemas industriais IoT que monitoram logs de consultas SQL em tempo real para detectar injeções.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
 
 **Considerações de Implementação e Teste**
 
@@ -204,9 +205,6 @@ O firmware é o software de baixo nível que controla os dispositivos IoT. Vulne
 * Câmeras IP que recebem atualizações automáticas de firmware para corrigir falhas de segurança.
 * Sensores industriais que validam a integridade do firmware antes de inicializar.
 
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
 **Considerações de Implementação e Teste**
 
 > **Implementação:** assinar digitalmente o firmware, adotar boot seguro, mecanismos OTA (Over-The-Air) confiáveis, integração de análise estática e ferramentas SAST/DAST.
@@ -237,9 +235,6 @@ A fase de inicialização é crítica: qualquer comprometimento nesse estágio p
 
 * Dispositivos industriais que só inicializam após verificar a assinatura digital do firmware.
 * Smartphones ou câmeras IP que não carregam sistemas modificados sem chave de fabricante.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
 
 **Considerações de Implementação e Teste**
 
@@ -272,9 +267,6 @@ A injeção de código malicioso pode dar controle remoto total ao atacante, com
 
 * Dispositivos de automação residencial que verificam assinatura digital antes de instalar firmware.
 * Gateways industriais que rejeitam entradas inválidas e monitoram comportamento anômalo em tempo real.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
 
 **Considerações de Implementação e Teste**
 
@@ -309,49 +301,10 @@ A violação física permite que adversários manipulem dispositivos, insiram im
 * Dispositivos RFID em logística que apagam chaves ao detectar violação física.
 * Gateways IoT que desativam automaticamente funções críticas quando lacres são rompidos.
 
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
 **Considerações de Implementação e Teste**
 
 > **Implementação:** uso de TPMs, firmware assinado, gabinetes selados, sensores anti-intrusão.
->
 > **Teste:** auditorias de hardware, testes de extração de chaves criptográficas, simulações de ataque físico (decapping, glitching), validação de mecanismos anti-tampering.
-
----
-
-### NFRP-SEC-024: Mitigação de Riscos em Sistemas de Baixo Custo
-
-<cvss-critical score="9.9" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:L/SC:H/SI:L/SA:N">CVSS 9.9</cvss-critical>
-
-**Descrição**
-O sistema deve considerar riscos adicionais ao utilizar dispositivos IoT de baixo custo, adotando medidas complementares para compensar a falta de proteções nativas, prevenindo adulterações, comprometimento de dados ou exploração por atacantes.
-
-**Racional**
-Dispositivos de baixo custo frequentemente sacrificam práticas de segurança em troca de preço acessível, o que os torna mais vulneráveis a adulterações e ataques. Sem medidas adicionais, esses equipamentos podem comprometer toda a rede IoT, inclusive ativos críticos.
-
-**Requisitos Concretos (Instanciados para IoT)**
-
-* O sistema deve priorizar **dispositivos com certificações de segurança reconhecidas**.
-* O sistema deve adotar **medidas adicionais de proteção** para dispositivos de baixo custo (ex.: firewalls, segmentação de rede, VPNs).
-* O sistema deve realizar **monitoramento contínuo** para identificar anomalias ou atividades suspeitas.
-* O sistema deve garantir **atualizações de firmware e patches de segurança** sempre que disponíveis.
-* O sistema deve **isolar dispositivos críticos de dispositivos de baixo custo** em arquiteturas de rede.
-* O sistema deve realizar **avaliação de riscos periódica** sobre o uso de dispositivos de baixo custo em ambientes sensíveis.
-
-**Exemplos de Aplicação**
-
-* Câmeras IP de baixo custo em ambientes domésticos protegidas via segmentação de rede e firewall.
-* Sensores genéricos em ambientes industriais isolados da rede de controle principal.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
-**Considerações de Implementação e Teste**
-
-> **Implementação:** uso de firewalls locais, segmentação VLAN, gateways seguros, isolamento físico/lógico de dispositivos frágeis.
->
-> **Teste:** auditorias de firmware de dispositivos baratos, testes de penetração focados em bypass de autenticação, verificação da disponibilidade de atualizações de fabricante.
 
 ---
 
@@ -378,9 +331,6 @@ Atualizações são essenciais para corrigir vulnerabilidades e manter dispositi
 
 * Câmeras IP que instalam apenas firmware assinado digitalmente pelo fabricante.
 * Gateways IoT que baixam atualizações via TLS e validam integridade antes da aplicação.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
 
 **Considerações de Implementação e Teste**
 
@@ -412,9 +362,6 @@ Em dispositivos IoT, a exploração de estouros de buffer pode permitir que atac
 
 * Firmwares escritos em C que utilizam `strncpy` em vez de `strcpy` para prevenir escrita fora do limite de buffers.
 * Dispositivos médicos que usam Rust em módulos críticos para evitar falhas de segurança relacionadas à memória.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
 
 **Considerações de Implementação e Teste**
 
@@ -449,9 +396,6 @@ O software é o núcleo de funcionamento dos dispositivos IoT. Se vulnerável, d
 * Dispositivos IoT que recebem atualizações OTA assinadas digitalmente e transmitidas por TLS.
 * Gateways industriais que passam por auditorias semestrais de segurança de software e código.
 
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
 **Considerações de Implementação e Teste**
 
 > **Implementação:** uso de CI/CD com análise estática e dinâmica, assinatura digital (RSA/ECC), TLS 1.3 para OTA, controle de permissões em software embarcado.
@@ -485,9 +429,6 @@ A heterogeneidade em ambientes IoT cria superfícies de ataque ampliadas: dispos
 * Smart homes que integram dispositivos de fabricantes diferentes e usam um gateway seguro para unificar protocolos.
 * Ambientes industriais com sensores heterogêneos monitorados por um sistema central de segurança e gerenciamento.
 
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
 **Considerações de Implementação e Teste**
 
 > **Implementação:** uso de gateways seguros, protocolos interoperáveis padronizados (MQTT-S, CoAP, OPC UA), integração com frameworks de conformidade.
@@ -520,9 +461,6 @@ Dados manipulados ou expostos em dispositivos IoT podem comprometer decisões cr
 * Sensores de saúde que enviam sinais vitais criptografados para servidores hospitalares.
 * Dispositivos de energia que armazenam dados de consumo de forma criptografada para impedir manipulação de medidores inteligentes.
 
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
 **Considerações de Implementação e Teste**
 
 > **Implementação:** uso de TLS 1.3, criptografia de disco AES-256, HSMs para proteção de chaves, autenticação mútua com certificados digitais.
@@ -554,9 +492,6 @@ Configurações de rede aplicadas de forma repetitiva ou inadequada podem result
 * Gateways IoT que só aceitam alterações de rede mediante autenticação multifator de administradores.
 * Sensores em malhas industriais que validam automaticamente a integridade das configurações antes de aplicá-las.
 
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
 **Considerações de Implementação e Teste**
 
 > **Implementação:** autenticação multifator para acesso administrativo, controle de versões de configuração, validação criptográfica em automações.
@@ -586,9 +521,6 @@ A interoperabilidade entre dispositivos de diferentes fabricantes é fundamental
 
 * Gateways industriais que traduzem entre protocolos Modbus, OPC-UA e MQTT com criptografia TLS.
 * Redes de smart cities que utilizam middleware para integrar dispositivos BLE, Wi-Fi e LoRaWAN com políticas de segurança unificadas.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
 
 **Considerações de Implementação e Teste**
 
@@ -621,9 +553,6 @@ Comunicações IoT inseguras podem ser interceptadas, manipuladas ou redireciona
 * Sensores IoT que transmitem dados criptografados via TLS para servidores em nuvem.
 * Gateways industriais que rejeitam tráfego sem autenticação mútua.
 
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
 **Considerações de Implementação e Teste**
 
 > **Implementação:** uso de TLS 1.3, DTLS para dispositivos leves, autenticação baseada em certificados digitais, monitoramento IDS/IPS.
@@ -653,9 +582,6 @@ A ausência ou o uso inadequado de protocolos seguros permite que atacantes inte
 
 * Dispositivos médicos conectados que transmitem dados de pacientes via TLS 1.3.
 * Gateways industriais que validam certificados digitais de servidores antes de iniciar comunicações.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
 
 **Considerações de Implementação e Teste**
 
@@ -691,9 +617,6 @@ Dispositivos IoT muitas vezes se conectam a redes públicas ou mal segmentadas, 
 * Dispositivos de saúde conectados a VLANs isoladas em hospitais.
 * Sensores urbanos que transmitem dados por VPN quando conectados a redes públicas.
 
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
 **Considerações de Implementação e Teste**
 
 > **Implementação:** TLS 1.3, VPNs (IPsec, WireGuard), segmentação em VLANs, firewalls de camada 7, IDS/IPS com análise de tráfego.
@@ -726,9 +649,6 @@ Portas abertas e desnecessárias expõem dispositivos IoT a riscos adicionais, p
 * Câmeras IP configuradas para expor apenas a porta HTTPS, com todas as demais desativadas.
 * Gateways IoT industriais com firewalls internos bloqueando portas não essenciais.
 
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
 **Considerações de Implementação e Teste**
 
 > **Implementação:** hardening de dispositivos, firewalls integrados, configuração de ACLs, aplicação de patches.
@@ -759,9 +679,6 @@ Sem criptografia adequada, os dados transmitidos em redes IoT podem ser intercep
 
 * Sensores ambientais que enviam dados via MQTT protegido com TLS e certificados X.509.
 * Dispositivos médicos que usam DTLS para proteger pacotes UDP de telemetria.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
 
 **Considerações de Implementação e Teste**
 

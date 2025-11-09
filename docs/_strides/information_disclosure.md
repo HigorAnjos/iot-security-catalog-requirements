@@ -4,6 +4,21 @@ Envolve a exposição de informações para os indivíduos que não devem para t
 
 ---
 
+# RPG-SEC-I01: Confidential Data Protection & Privacy
+
+**Descrição**
+Define os princípios de proteção da confidencialidade e privacidade de dados em ecossistemas IoT, assegurando que informações sensíveis, pessoais ou operacionais sejam protegidas contra acesso, interceptação ou exposição indevida durante todo o seu ciclo de vida.
+
+**Racional**
+A exposição de dados compromete diretamente a confiança, a conformidade regulatória e a segurança operacional dos sistemas IoT. Este grupo estabelece diretrizes para prevenir vazamentos, espionagem e uso indevido de informações, garantindo a privacidade dos usuários e a proteção das comunicações e armazenamentos.
+
+**Aplicabilidade**
+Aplicável a todos os sistemas e dispositivos IoT que armazenam, processam ou transmitem dados sensíveis, pessoais ou estratégicos.
+Inclui proteção de comunicações, bancos de dados, APIs e dispositivos físicos.
+Não aplicável a informações públicas ou dados anonimizados sem valor de segurança ou privacidade.
+
+---
+
 ## Aplicação
 
 ### FRP-SEC-002: Proteção contra Links Maliciosos
@@ -26,9 +41,6 @@ Links maliciosos são um vetor comum de ataques. Em ambientes IoT, dispositivos 
 
 * Sensores industriais conectados que só permitem comunicação com domínios autorizados.
 * Dispositivos médicos que bloqueiam URLs externas suspeitas em interfaces de monitoramento.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
 
 **Considerações de Implementação e Teste**
 
@@ -61,9 +73,6 @@ A falta de boas práticas de gestão de dados pode expor informações pessoais 
 * Dispositivos de saúde que coletam apenas sinais vitais relevantes e armazenam os dados criptografados em nuvem.
 * Plataformas de cidades inteligentes que aplicam controles de acesso estritos a dados de tráfego e transporte.
 
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
 **Considerações de Implementação e Teste**
 
 > **Implementação:** criptografia AES-256 para armazenamento, TLS 1.3 para transmissão, RBAC/ABAC para acesso, conformidade com LGPD/GDPR.
@@ -94,9 +103,6 @@ Quando um sistema expõe, ainda que de forma indireta, a existência de usuário
 
 * APIs de dispositivos inteligentes que sempre retornam a mesma resposta para falha de login.
 * Serviços em nuvem para IoT que aplicam bloqueio automático após múltiplas tentativas inválidas.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
 
 **Considerações de Implementação e Teste**
 
@@ -129,9 +135,6 @@ Sem criptografia robusta, dados sensíveis transmitidos ou armazenados em dispos
 * Aplicativos de monitoramento de saúde que criptografam dados do paciente no dispositivo e durante a transmissão para a nuvem.
 * Sistemas de casas inteligentes que utilizam TLS 1.3 e certificados digitais para proteger comandos enviados a dispositivos.
 
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
 **Considerações de Implementação e Teste**
 
 > **Implementação:** uso de HSMs para chaves, TLS 1.3, bibliotecas criptográficas confiáveis, descontinuação de algoritmos fracos (MD5, SHA-1).
@@ -141,75 +144,6 @@ Sem criptografia robusta, dados sensíveis transmitidos ou armazenados em dispos
 ---
 
 ## Dispositivo
-
-### NFRP-SEC-007: Proteção contra Vazamento de Emanações Eletromagnéticas
-
-<cvss-medium score="5.6" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:P/AC:H/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:H/SI:N/SA:N">CVSS 5.6</cvss-medium>
-
-**Descrição**
-O sistema deve proteger dispositivos IoT contra a exposição não intencional de informações por meio de emanações eletromagnéticas que possam ser exploradas por atacantes para inferir dados processados ou transmitidos.
-
-**Racional**
-Dispositivos IoT podem vazar informações através de campos eletromagnéticos emitidos durante seu funcionamento. Pesquisas já demonstraram que é possível identificar hábitos de uso ou até mesmo conteúdos consumidos a partir dessas emanações, comprometendo a privacidade do usuário e a segurança do sistema.
-
-**Requisitos Concretos (Instanciados para IoT)**
-
-* O sistema deve utilizar **técnicas robustas de criptografia** para dados armazenados e transmitidos.
-* O sistema deve aplicar **atualizações de firmware regulares** para mitigar vulnerabilidades conhecidas.
-* O sistema deve implementar **autenticação forte** para restringir acesso a dados sensíveis.
-* O sistema deve realizar **monitoramento de rede** para detectar vazamentos de dados ou acessos suspeitos.
-* O sistema deve incluir **orientações de conscientização do usuário** sobre riscos de emanações e boas práticas de segurança.
-
-**Exemplos de Aplicação**
-
-* Dispositivos de energia residencial que podem vazar informações de consumo elétrico, inferindo atividades dos moradores.
-* Sensores industriais que, sem proteção adequada, podem permitir que terceiros monitorem padrões de produção via emanações.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
-**Considerações de Implementação e Teste**
-
-> **Implementação:** uso de filtros eletromagnéticos em hardware, isolamento físico, criptografia ponta a ponta, hardening de firmware.
->
-> **Teste:** testes de laboratório de emanações eletromagnéticas, simulações de ataques de *side-channel*, auditorias de firmware para verificar implementação de criptografia.
-
-
----
-
-### NFRP-SEC-015: Proteção contra Canais Laterais
-
-<cvss-medium score="4.1" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:P/AC:H/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N">CVSS 4.1</cvss-medium>
-
-**Descrição**
-O sistema deve prevenir o vazamento de informações sensíveis por meio de canais laterais, como padrões de consumo de energia, emissões eletromagnéticas ou tempos de resposta, que possam ser explorados para inferir dados confidenciais.
-
-**Racional**
-Ataques de canal lateral permitem que adversários obtenham informações valiosas sobre dados ou processos internos sem precisar interceptar a comunicação diretamente. Isso compromete a privacidade e pode expor chaves criptográficas, operações críticas ou hábitos de uso, enfraquecendo a segurança do ecossistema IoT.
-
-**Requisitos Concretos (Instanciados para IoT)**
-
-* O sistema deve adotar **métricas para priorizar recursos** de mitigação em áreas mais suscetíveis a vazamento.
-* O dispositivo deve implementar **normalização do consumo de energia**, evitando variações perceptíveis baseadas em operações.
-* O dispositivo deve utilizar **blindagem física e eletromagnética** contra vazamentos.
-* O sistema deve introduzir **ruído ou variação aleatória em tempos de resposta** para dificultar inferências.
-* O hardware e software devem ser projetados **com resiliência a canais laterais desde a fase de design**.
-
-**Exemplos de Aplicação**
-
-* Dispositivos criptográficos embarcados com blindagem contra análise eletromagnética.
-* Smartcards que introduzem ruído aleatório em tempos de resposta para resistir a ataques de *timing*.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
-**Considerações de Implementação e Teste**
-
-> **Implementação:** uso de técnicas de *constant-time execution*, blindagem EM, variação controlada de consumo de energia, ruído aleatório em hardware/firmware.
->
-> **Teste:** simulações de ataques de análise de energia (DPA/SPA), auditorias de ruído eletromagnético, testes de side-channel em laboratório.
-
----
 
 ### FRP-SEC-028: Criptografia Forte em Dispositivos IoT
 
@@ -234,9 +168,6 @@ A ausência ou fraqueza de criptografia em dispositivos IoT permite que atacante
 
 * Dispositivos médicos que armazenam sinais vitais criptografados localmente e os transmitem via TLS.
 * Sensores industriais que utilizam chaves gerenciadas por HSM e criptografia AES-256 em seus registros de operação.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
 
 **Considerações de Implementação e Teste**
 
@@ -275,9 +206,6 @@ Vazamentos de dados comprometem diretamente a privacidade de usuários e a segur
 * Plataformas de casa inteligente que criptografam comunicações entre dispositivos e nuvem.
 * Soluções de saúde IoT que armazenam registros médicos criptografados em conformidade com a LGPD/HIPAA.
 
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
 **Considerações de Implementação e Teste**
 
 > **Implementação:** TLS 1.3, AES-256, RBAC/ABAC, APIs com OAuth2 e validação de entrada, auditorias regulares.
@@ -309,9 +237,6 @@ Dispositivos IoT utilizam principalmente canais sem fio, tornando-os suscetívei
 
 * Smart homes que utilizam TLS em todas as comunicações entre sensores e servidores na nuvem.
 * Redes corporativas que isolam dispositivos IoT críticos em VLANs protegidas contra sniffing.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
 
 **Considerações de Implementação e Teste**
 

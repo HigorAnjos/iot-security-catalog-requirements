@@ -4,6 +4,21 @@ Um usuário sem privilégios obtém acesso privilegiado e, portanto, tem acesso 
 
 ---
 
+# RPG-SEC-E01: Access Control & Privilege Management
+
+**Descrição**
+Define os princípios de controle de acesso e gerenciamento de privilégios em sistemas IoT, garantindo que apenas entidades autenticadas e devidamente autorizadas possam interagir com recursos, dados e funções do sistema, de acordo com seu nível de permissão.
+
+**Racional**
+A elevação indevida de privilégios permite que atacantes obtenham controle total sobre sistemas IoT, manipulem configurações críticas e acessem informações sensíveis. Este grupo estabelece diretrizes para limitar privilégios, aplicar autenticação forte e garantir a separação de funções, prevenindo abusos de autoridade e acessos indevidos.
+
+**Aplicabilidade**
+Aplicável a todos os sistemas e dispositivos que realizam controle de acesso, autenticação, autorização ou gerenciamento de identidades e permissões.
+Inclui aplicações em servidores, APIs, gateways, interfaces administrativas e dispositivos físicos.
+Não aplicável a componentes sem controle de acesso direto ou funções que não possuam impacto de segurança ou integridade.
+
+---
+
 ## Aplicação
 
 ### FRP-SEC-027: Controle de Acesso Robusto
@@ -28,9 +43,6 @@ Controles de acesso fracos permitem que invasores explorem lacunas na autentica�
 
 * Gateways IoT que aplicam RBAC (Role-Based Access Control) para diferentes perfis de administradores e operadores.
 * Sistemas de casa inteligente que exigem MFA para alterar configurações críticas.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
 
 **Considerações de Implementação e Teste**
 
@@ -65,9 +77,6 @@ Servidores IoT são alvos críticos, pois concentram processamento, armazenament
 * Servidores de nuvem que processam dados de sensores industriais isolados em VPCs privadas.
 * Gateways IoT que exigem MFA para acesso de administradores e aplicam TLS 1.3 em todas as conexões.
 
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
 **Considerações de Implementação e Teste**
 
 > **Implementação:** aplicação de hardening em servidores, criptografia ponta a ponta, autenticação federada, monitoramento SIEM.
@@ -97,9 +106,6 @@ O acesso não autorizado a sistemas IoT compromete dados sensíveis, dispositivo
 
 * Sistemas de automação residencial que exigem 2FA para controle remoto de dispositivos críticos.
 * Redes corporativas IoT isoladas em VLANs, com monitoramento ativo de tentativas de intrusão.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
 
 **Considerações de Implementação e Teste**
 
@@ -135,9 +141,6 @@ Sem gerenciamento adequado de acesso, usuários ou dispositivos podem obter perm
 * Plataformas de nuvem IoT que utilizam RBAC/ABAC para restringir privilégios de usuários e dispositivos.
 * APIs de gerenciamento de dispositivos protegidas por OAuth2 e tokens de acesso limitados.
 
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
 **Considerações de Implementação e Teste**
 
 > **Implementação:** IAM com RBAC/ABAC, segregação de funções, autenticação federada, cofre de credenciais.
@@ -169,9 +172,6 @@ Muitos ataques a dispositivos IoT exploram falhas já conhecidas em bibliotecas,
 * Um fabricante de câmeras IoT que audita bibliotecas de criptografia de terceiros antes da integração.
 * Gateways IoT que monitoram e atualizam automaticamente drivers fornecidos por fabricantes externos.
 
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
 **Considerações de Implementação e Teste**
 
 > **Implementação:** SBOM (Software Bill of Materials), scanners de vulnerabilidades (ex.: OWASP Dependency-Check), acordos de nível de segurança com fornecedores.
@@ -202,9 +202,6 @@ Interfaces de configuração inseguras são frequentemente exploradas como porta
 
 * Roteadores IoT que exigem MFA e bloqueiam credenciais padrão em interfaces web de administração.
 * Câmeras IP que criptografam todo o tráfego de configuração e segmentam acessos por função (admin, operador, visualizador).
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
 
 **Considerações de Implementação e Teste**
 
@@ -239,9 +236,6 @@ Configurações padrão em dispositivos IoT (como senhas de fábrica ou serviço
 * Roteadores domésticos que obrigam a troca de senha de fábrica na primeira configuração.
 * Câmeras de segurança que bloqueiam o uso de credenciais padrão conhecidas em ataques massivos de botnets.
 
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
 **Considerações de Implementação e Teste**
 
 > **Implementação:** exigir tela de alteração de senha obrigatória, provisionamento seguro de firmware, integração com frameworks de segurança (ex.: NIST).
@@ -271,9 +265,6 @@ Interfaces físicas desprotegidas representam um vetor direto de ataque: advers�
 
 * Roteadores IoT com portas USB desativadas por padrão para impedir exploração local.
 * Dispositivos industriais instalados em gabinetes lacrados e monitorados contra violação.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
 
 **Considerações de Implementação e Teste**
 
@@ -308,9 +299,6 @@ Interfaces de console (ex.: UART, JTAG) são frequentemente negligenciadas em di
 * Roteadores IoT que desativam interfaces UART em produção.
 * Dispositivos médicos que exigem MFA para acesso ao console administrativo.
 
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
 **Considerações de Implementação e Teste**
 
 > **Implementação:** desabilitar JTAG/UART em produção, uso de gabinetes selados, exigência de MFA em consoles administrativos, criptografia em canais de debug.
@@ -341,9 +329,6 @@ Dispositivos IoT muitas vezes operam em locais de fácil acesso ao público, tor
 
 * Sensores urbanos protegidos por gabinetes lacrados e monitorados contra violação.
 * Gateways industriais com criptografia de dados local e autenticação de hardware.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
 
 **Considerações de Implementação e Teste**
 

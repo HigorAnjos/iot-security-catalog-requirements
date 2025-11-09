@@ -3,46 +3,55 @@
 Envolve acessar ilegalmente e, em seguida, usando as informações de autenticação de outro usuário, como nome de usuário e senha
 
 ---
+# RPG-SEC-S01: Authentication & Identity Verification
+
+**Descrição**
+Define os princípios de autenticação e verificação de identidade em sistemas IoT, assegurando que apenas entidades legítimas — usuários, dispositivos ou serviços — possam acessar recursos e interagir de forma segura.
+
+**Racional**
+A autenticação inadequada permite que atacantes falsifiquem identidades e comprometam o ecossistema IoT. Este grupo estabelece diretrizes para fortalecer a validação de identidade, reduzir o uso de credenciais inseguras e garantir confiança entre componentes conectados.
+
+**Aplicabilidade**
+Utilizado em sistemas e dispositivos que exigem autenticação de usuários, administradores ou comunicações entre dispositivos (M2M).
+---
 
 ## Aplicação
 
-### FRP-SEC-001: Autenticação Forte
+### FRP-SEC-041: Exigência de Senhas Fortes
 
-<cvss-critical score="9.3" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:L/SC:N/SI:N/SA:N">CVSS 9.3</cvss-critical>
+<cvss-critical score="9.9" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:N">CVSS 9.9</cvss-critical>
 
 **Descrição**
-O sistema deve garantir autenticação forte para dispositivos, usuários e sistemas IoT, prevenindo que atacantes obtenham acesso não autorizado por meio de credenciais fracas, contas padrão ou ausência de verificação multifator.
+O sistema deve exigir o uso de senhas fortes e exclusivas para autenticação de usuários, dispositivos e serviços em ambientes IoT, prevenindo que credenciais frágeis sejam exploradas por atacantes.
 
 **Racional**
-A ausência de autenticação forte permite que atacantes falsifiquem identidades e acessem dispositivos ou sistemas IoT de forma ilegítima. Esse risco é ampliado em ambientes distribuídos, onde a confiança entre dispositivos e usuários precisa ser garantida para preservar a integridade e a confidencialidade do ecossistema.
+Senhas fracas ou padrão são facilmente adivinhadas ou obtidas em ataques de força bruta e dicionário. Em IoT, onde muitos dispositivos permanecem acessíveis via rede, essa vulnerabilidade pode comprometer rapidamente não apenas o dispositivo, mas toda a infraestrutura conectada.
 
 **Requisitos Concretos (Instanciados para IoT)**
 
-* O sistema deve implementar **autenticação multifator (MFA)** em interações críticas.
-* O sistema deve exigir **senhas fortes e exclusivas**, desativando contas padrão.
-* O sistema deve **armazenar credenciais de forma segura**, utilizando criptografia robusta.
-* O sistema deve realizar **validação e revalidação periódica de credenciais**, incluindo expiração de sessões.
-* O sistema deve **monitorar e registrar tentativas de login** e atividades suspeitas de autenticação.
+* O sistema deve exigir **senhas fortes** (mínimo de 12 caracteres, incluindo maiúsculas, minúsculas, números e símbolos).
+* O sistema deve **obrigar a alteração de senhas padrão** na configuração inicial do dispositivo.
+* O sistema deve implementar **políticas de senha**, incluindo expiração periódica e prevenção de reutilização de senhas antigas.
+* O sistema deve suportar **autenticação multifator (MFA)** sempre que possível.
+* O sistema deve promover **educação dos usuários** sobre boas práticas de senhas.
+* O sistema deve oferecer ou recomendar **ferramentas de gerenciamento de senhas** seguras.
 
 **Exemplos de Aplicação**
 
-* Gateways IoT que exigem autenticação multifator para acesso remoto de administradores.
-* Dispositivos médicos conectados que revalidam credenciais antes de operações críticas.
-
-**Relacionamentos com Outros Padrões**
-- [*FRP-SEC-041: Exigência de Senhas Fortes*](https://iot-security-catalog-requirements.readthedocs.io/pt-br/latest/_strides/spoofing/#frp-sec-041-exigencia-de-senhas-fortes)
+* Câmeras IoT que não permitem login com senhas fracas e exigem troca imediata da senha padrão.
+* Gateways de rede que exigem MFA além de senha para acesso administrativo.
 
 **Considerações de Implementação e Teste**
 
-> **Implementação:** uso de MFA (TOTP, biometria, certificados), hashing seguro de credenciais (Argon2, bcrypt), controle de sessões e revogação de tokens.
+> **Implementação:** aplicação de políticas de complexidade de senha, MFA via TOTP ou biometria, integração com cofres de credenciais.
 >
-> **Teste:** testes de força bruta e dicionário, auditorias de armazenamento de credenciais, simulação de bypass de MFA, análise de logs de autenticação.
+> **Teste:** tentativas de login com senhas fracas, auditorias de senhas padrão em dispositivos, simulação de ataques de força bruta e dicionário.
+
+---
 
 ### FRP-SEC-004: Canal de Voz Seguro
 
 <cvss-critical score="9.3" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:L/SC:N/SI:N/SA:N">CVSS 9.3</cvss-critical>
-
- 
 
 **Descrição**
 O sistema deve proteger canais de voz em dispositivos IoT contra interceptação, falsificação e uso não autorizado, garantindo a autenticidade dos comandos de voz e a confidencialidade das comunicações de áudio.
@@ -62,9 +71,6 @@ Dispositivos IoT com microfones integrados, como assistentes virtuais, brinquedo
 
 * Smart speakers (Google Home, Amazon Echo) que validam comandos de voz antes da execução.
 * Brinquedos conectados que usam autenticação de voz para impedir interação com estranhos.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
 
 **Considerações de Implementação e Teste**
 
@@ -99,9 +105,6 @@ Senhas fracas, padrão ou mal armazenadas são um dos vetores mais comuns de ata
 * Câmeras de segurança IoT que bloqueiam o uso de senhas fracas e exigem troca da senha padrão no primeiro login.
 * Gateways residenciais que oferecem autenticação multifator para acesso remoto.
 
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
 **Considerações de Implementação e Teste**
 
 > **Implementação:** uso de algoritmos de hashing modernos (ex.: Argon2, bcrypt), políticas de complexidade de senha, integração com MFA.
@@ -132,49 +135,11 @@ A ausência ou inadequação de mecanismos de autenticação expõe a rede IoT a
 * Gateways IoT que validam certificados digitais de todos os dispositivos conectados antes de liberar comunicação.
 * Plataformas em nuvem que exigem autenticação multifator para administradores e operadores.
 
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
 **Considerações de Implementação e Teste**
 
 > **Implementação:** uso de PKI para autenticação de dispositivos, MFA para usuários, cofres de credenciais, integração com IAM.
 >
 > **Teste:** simulação de falsificação de dispositivos, tentativas de acesso com credenciais fracas, auditorias de conformidade regulatória.
-
----
-
-### FRP-SEC-041: Exigência de Senhas Fortes
-
-<cvss-critical score="9.9" href="https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:N">CVSS 9.9</cvss-critical>
-
-**Descrição**
-O sistema deve exigir o uso de senhas fortes e exclusivas para autenticação de usuários, dispositivos e serviços em ambientes IoT, prevenindo que credenciais frágeis sejam exploradas por atacantes.
-
-**Racional**
-Senhas fracas ou padrão são facilmente adivinhadas ou obtidas em ataques de força bruta e dicionário. Em IoT, onde muitos dispositivos permanecem acessíveis via rede, essa vulnerabilidade pode comprometer rapidamente não apenas o dispositivo, mas toda a infraestrutura conectada.
-
-**Requisitos Concretos (Instanciados para IoT)**
-
-* O sistema deve exigir **senhas fortes** (mínimo de 12 caracteres, incluindo maiúsculas, minúsculas, números e símbolos).
-* O sistema deve **obrigar a alteração de senhas padrão** na configuração inicial do dispositivo.
-* O sistema deve implementar **políticas de senha**, incluindo expiração periódica e prevenção de reutilização de senhas antigas.
-* O sistema deve suportar **autenticação multifator (MFA)** sempre que possível.
-* O sistema deve promover **educação dos usuários** sobre boas práticas de senhas.
-* O sistema deve oferecer ou recomendar **ferramentas de gerenciamento de senhas** seguras.
-
-**Exemplos de Aplicação**
-
-* Câmeras IoT que não permitem login com senhas fracas e exigem troca imediata da senha padrão.
-* Gateways de rede que exigem MFA além de senha para acesso administrativo.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
-**Considerações de Implementação e Teste**
-
-> **Implementação:** aplicação de políticas de complexidade de senha, MFA via TOTP ou biometria, integração com cofres de credenciais.
->
-> **Teste:** tentativas de login com senhas fracas, auditorias de senhas padrão em dispositivos, simulação de ataques de força bruta e dicionário.
 
 ---
 
@@ -201,9 +166,6 @@ A falta de autenticação forte ou políticas adequadas expõe dispositivos IoT 
 * Sistemas de automação residencial que exigem MFA para administração remota.
 * Gateways industriais que rejeitam credenciais padrão e aplicam bloqueio de conta após múltiplas falhas de login.
 
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
 **Considerações de Implementação e Teste**
 
 > **Implementação:** MFA (senha + token ou biometria), bloqueio progressivo de conta, personalização de credenciais, WAF para validação de entradas.
@@ -211,7 +173,6 @@ A falta de autenticação forte ou políticas adequadas expõe dispositivos IoT 
 > **Teste:** simulações de ataques de força bruta, auditorias de credenciais padrão, testes de injeção SQL/XSS em fluxos de autenticação, análise de logs de tentativas de login.
 
 ---
-
 
 ## Dispositivo
 
@@ -237,9 +198,6 @@ A clonagem de etiquetas RFID/NFC permite que atacantes falsifiquem identidades e
 
 * Controle de acesso físico com etiquetas NFC dinâmicas que alteram periodicamente sua chave de autenticação.
 * Rastreamento de cargas logísticas com etiquetas RFID criptografadas que resistem à clonagem.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
 
 **Considerações de Implementação e Teste**
 
@@ -274,9 +232,6 @@ Na falsificação de dispositivo, atacantes manipulam identificadores como ender
 * Gateways IoT que apenas aceitam conexões de sensores autenticados com certificados digitais.
 * Redes industriais que bloqueiam dispositivos com endereços MAC clonados.
 
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
 **Considerações de Implementação e Teste**
 
 > **Implementação:** autenticação baseada em PKI, uso de TLS/DTLS, integração com sistemas de IAM (Identity and Access Management).
@@ -310,9 +265,6 @@ Nós maliciosos podem ser introduzidos em redes IoT para coletar, manipular ou r
 * Redes de sensores em malha que validam certificados digitais de cada nó antes de permitir comunicação.
 * Gateways industriais que rejeitam conexões de dispositivos com firmware não verificado.
 
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
 **Considerações de Implementação e Teste**
 
 > **Implementação:** uso de PKI, TLS/DTLS, segmentação lógica (VLANs), ACLs de rede, validação de firmware assinado.
@@ -343,15 +295,11 @@ A falsificação de sinais permite que atacantes transmitam comandos não autori
 * Drones que validam criptograficamente sinais de comando para evitar sequestro por spoofing.
 * Sistemas de medidores inteligentes que rejeitam sinais sem certificados digitais válidos.
 
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
-
 **Considerações de Implementação e Teste**
 
 > **Implementação:** uso de PKI para autenticação de sinais, criptografia em camadas, IDS/IPS para análise de tráfego, filtros RF.
 >
 > **Teste:** simulações de spoofing de sinais, auditorias de logs de tráfego, testes de validação cruzada em sensores redundantes.
-
 
 
 ---

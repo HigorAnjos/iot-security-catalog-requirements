@@ -1,57 +1,110 @@
+<div style="text-align: center; margin-bottom: 2rem;">
+    <img src="assets/images/iot.png" alt="IoT Security Logo" style="width: 100%; margin: 0 auto;">
+</div>
+
 # Catálogo de Padrões de Requisitos de Segurança IoT
 
-Um catálogo é uma abstração para organizar sistematicamente padrões de software, geralmente abordando problemas mais comuns para um domínio particular de aplicação.
+> **Um guia prático e estruturado para identificar, aplicar e validar controles de segurança em sistemas IoT.**
 
 ---
 
-## Sobre o Catálogo
+## 💡 O que é este Catálogo?
 
-Este catálogo organiza **XX padrões de requisitos de segurança** específicos para ambientes IoT, classificados de acordo com a metodologia **STRIDE** (_Spoofing_, _Tampering_, _Repudiation_, _Information Disclosure_, _Denial of Service_, _Elevation of Privilege_).
+Um **catálogo de padrões** é uma coleção estruturada de soluções reutilizáveis que documentam abordagens comprovadas para resolver problemas recorrentes em um domínio específico. 
+
+Este catálogo organiza **padrões de requisitos de segurança** específicos para ambientes IoT, utilizando a metodologia **STRIDE** (desenvolvida pela Microsoft) para classificar ameaças e suas respectivas mitigações.
+
+### 🎯 Por que usar STRIDE?
+
+STRIDE oferece uma abordagem sistemática para análise de ameaças, categorizando-as em **6 tipos principais**:
+
+- **S**poofing (Falsificação de Identidade)
+- **T**ampering (Adulteração)
+- **R**epudiation (Repúdio)
+- **I**nformation Disclosure (Divulgação de Informações)
+- **D**enial of Service (Negação de Serviço)
+- **E**levation of Privilege (Elevação de Privilégio)
+
+Para cada categoria, este catálogo apresenta padrões adaptados às características únicas de dispositivos IoT (recursos limitados, exposição física, conectividade intermitente, etc.).
 
 ---
 
-## Estrutura de cada padrão
+## 🗂️ Explore por Categoria STRIDE
 
-### **Nome do Padrão**
-Um título curto e direto.
+Selecione uma categoria abaixo para explorar os padrões de segurança relacionados:
 
-> **Exemplo**: Autenticação Forte
+<div class="grid cards" markdown>
 
-### **Categoria STRIDE**
-Qual ameaça principal este padrão mitiga: **S**poofing, **T**ampering, **R**epudiation, **I**nformation Disclosure, **D**enial of Service, **E**levation of Privilege.
+- :material-account-question: **[Spoofing (Falsificação de Identidade)](_strides/spoofing.md)**
 
-### **Descrição**
-Explicação geral do requisito em linguagem natural.
+    Ameaças relacionadas à falsificação de identidade de usuários ou dispositivos
+    
+    *Padrões: Autenticação Forte*
 
-> **Exemplo**: O sistema deve exigir autenticação confiável de dispositivos e usuários antes de conceder acesso a recursos críticos.
+- :material-file-edit: **[Tampering (Adulteração)](_strides/tampering.md)**
 
-### **Racional**
-Por que este padrão é importante para IoT.
+    Modificação não autorizada de dados, código ou configurações
+    
+    *Padrões: Criptografia de Dados, Gestão de Chaves, Atualização Segura*
 
-> **Exemplo**: Dispositivos IoT muitas vezes são implantados em ambientes inseguros, sujeitos a captura física ou ataques de rede, aumentando o risco de spoofing.
+- :material-cancel: **[Repudiation (Repúdio)](_strides/repudiation.md)**
 
-### **Requisitos Concretos (Instanciados para IoT)**
-Lista de requisitos específicos que podem ser derivados desse padrão.
+    Negação de ações realizadas sem possibilidade de prova
+    
+    *Padrões: Registro e Auditoria*
 
-- Cada dispositivo deve usar certificados digitais X.509 emitidos pela PKI interna
-- Em dispositivos de baixo consumo, suportar autenticação baseada em DTLS-PSK
-- As chaves devem ser renovadas automaticamente a cada 90 dias
+- :material-eye-off: **[Information Disclosure (Divulgação de Informações)](_strides/information_disclosure.md)**
 
-### **Exemplos de Aplicação**
-Casos reais ou simulados em sistemas IoT.
+    Exposição não autorizada de informações confidenciais
+    
+    *Padrões: Criptografia de Dados, Gestão de Chaves, Privacidade de Dados*
 
-> **Exemplo**: Sensores de temperatura em uma fábrica que só transmitem dados após autenticação mútua com o servidor.
+- :material-server-off: **[Denial of Service (Negação de Serviço)](_strides/denial_of_service.md)**
 
-### **Relacionamentos com Outros Padrões**
-Padrões complementares ou dependentes.
+    Indisponibilidade de serviços ou recursos do sistema
+    
+    *Padrões: Monitoramento Contínuo, Disponibilidade Resiliente, Limitação de Recursos*
 
-> **Exemplo**: Relacionado a "Gerenciamento de Chaves" e "Controle de Acesso Baseado em Funções".
+- :material-shield-alert: **[Elevation of Privilege (Elevação de Privilégio)](_strides/elevation_of_privilege.md)**
 
-### **Considerações de Implementação e Teste**
+    Obtenção não autorizada de permissões elevadas
+    
+    *Padrões: Controle de Acesso, Monitoramento Contínuo, Atualização Segura*
 
-> Implementação: protocolos recomendados, limitações (ex.: impacto em dispositivos de baixo consumo).
+</div>
 
-> Teste: como validar (ex.: testes de penetração para bypass de autenticação, cenários de falha de chave).
+---
+
+## 📊 Entendendo os Níveis de Criticidade
+
+Cada padrão é classificado conforme seu impacto na segurança do sistema:
+
+| Nível | O que significa | Quando implementar |
+|:-----:|:----------------|:-------------------|
+| 🔴 **Alto** | Requisitos essenciais que mitigam ameaças críticas | **Obrigatório** - Implementar em todos os ambientes |
+| 🟡 **Médio** | Requisitos importantes para robustez da segurança | **Recomendado** - Especialmente em produção |
+| 🟢 **Baixo** | Requisitos complementares para proteção adicional | **Opcional** - Avaliar conforme análise de risco |
+
+**⚠️ Importante**: As criticidades são orientações gerais. Realize sua própria análise de risco considerando o contexto específico do seu sistema.
+
+---
+
+## 🚀 Como Usar este Catálogo
+
+### 1️⃣ Identifique as Ameaças
+Analise seu sistema IoT e identifique quais das 6 categorias STRIDE são relevantes.
+
+### 2️⃣ Explore os Padrões
+Navegue pelas categorias para descobrir os padrões de segurança aplicáveis.
+
+### 3️⃣ Priorize por Criticidade
+Comece pelos padrões marcados como 🔴 **Alto**, seguido pelos 🟡 **Médio**.
+
+### 4️⃣ Adapte ao seu Contexto
+Use os requisitos concretos como base e adapte-os às necessidades do seu projeto.
+
+### 5️⃣ Valide a Implementação
+Utilize as estratégias de teste sugeridas para verificar a efetividade dos controles.
 
 ---
 <!-- 

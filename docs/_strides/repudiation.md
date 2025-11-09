@@ -4,6 +4,21 @@ Associado aos usuários que negam a execução de uma ação sem ter alguma mane
 
 ---
 
+# RPG-SEC-R01: Accountability & Non-Repudiation
+
+**Descrição**
+Define os princípios de responsabilidade e não repúdio em sistemas IoT, assegurando que todas as ações realizadas por usuários, dispositivos e serviços possam ser autenticadas, registradas e verificadas, impedindo a negação posterior de autoria ou participação.
+
+**Racional**
+A ausência de mecanismos de não repúdio compromete a confiabilidade de eventos e transações em sistemas IoT. Este grupo estabelece diretrizes para garantir rastreabilidade, autenticidade e integridade de registros, fortalecendo a responsabilização e a transparência operacional.
+
+**Aplicabilidade**
+Aplicável em sistemas que processam eventos críticos, transações, comandos remotos e logs de auditoria, onde é necessário provar a origem e a integridade das ações realizadas.
+Não aplicável a eventos temporários ou sem impacto de segurança direta, onde a rastreabilidade não é um requisito.
+
+---
+
+
 ## Aplicação
 
 ### FRP-SEC-059: Monitoramento Ativo de Dispositivos IoT
@@ -28,9 +43,6 @@ Sem monitoramento ativo, é impossível garantir a detecção de anomalias ou at
 
 * Plataformas de cidades inteligentes que usam SIEM para monitorar tráfego de sensores em tempo real.
 * Hospitais que aplicam monitoramento contínuo em dispositivos médicos conectados, detectando acessos suspeitos.
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
 
 **Considerações de Implementação e Teste**
 
@@ -63,9 +75,6 @@ Em ambientes IoT, a ausência de mecanismos de não repúdio pode comprometer a 
 
 * Sensores de IoT industrial que assinam digitalmente os dados antes de enviá-los para análise em nuvem.
 * Plataformas de cidades inteligentes que mantêm logs imutáveis de ações de dispositivos críticos (ex.: semáforos inteligentes).
-
-**Relacionamentos com Outros Padrões**
-*Não aplicável no momento.*
 
 **Considerações de Implementação e Teste**
 
