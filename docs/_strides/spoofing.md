@@ -27,7 +27,7 @@ O sistema deve exigir o uso de senhas fortes e exclusivas para autenticação de
 **Racional**
 Senhas fracas ou padrão são facilmente adivinhadas ou obtidas em ataques de força bruta e dicionário. Em IoT, onde muitos dispositivos permanecem acessíveis via rede, essa vulnerabilidade pode comprometer rapidamente não apenas o dispositivo, mas toda a infraestrutura conectada.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve exigir **senhas fortes** (mínimo de 12 caracteres, incluindo maiúsculas, minúsculas, números e símbolos).
 * O sistema deve **obrigar a alteração de senhas padrão** na configuração inicial do dispositivo.
@@ -59,7 +59,7 @@ O sistema deve proteger canais de voz em dispositivos IoT contra interceptação
 **Racional**
 Dispositivos IoT com microfones integrados, como assistentes virtuais, brinquedos inteligentes e eletrodomésticos com comando de voz, são suscetíveis a ataques como voz intrusa ou mascaramento de voz. Essas vulnerabilidades podem expor informações privadas e permitir a execução de comandos falsos, comprometendo a privacidade e a segurança do ambiente IoT.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve utilizar **criptografia de ponta a ponta** nas comunicações de voz.
 * O sistema deve implementar **autenticação robusta de voz** para validar a identidade dos usuários.
@@ -90,7 +90,7 @@ O sistema deve garantir que senhas sejam fortes, únicas e armazenadas de forma 
 **Racional**
 Senhas fracas, padrão ou mal armazenadas são um dos vetores mais comuns de ataque. Em ambientes IoT, onde dispositivos podem estar expostos a redes públicas ou acessíveis remotamente, o uso de senhas inseguras permite que atacantes assumam identidades legítimas, comprometendo a confidencialidade e a integridade do sistema.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve exigir a **alteração imediata de senhas padrão** após a instalação.
 * O sistema deve exigir **senhas fortes** (mínimo de 12 caracteres, letras maiúsculas/minúsculas, números e símbolos).
@@ -123,7 +123,7 @@ O sistema deve implementar mecanismos adequados e robustos de autenticação par
 **Racional**
 A ausência ou inadequação de mecanismos de autenticação expõe a rede IoT a ataques de falsificação de identidade. Isso permite que atacantes assumam o papel de dispositivos ou usuários legítimos, acessem dados sensíveis ou manipulem serviços críticos.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve implementar **autenticação forte de dispositivos**, com uso de chaves criptográficas ou certificados digitais.
 * O sistema deve exigir **senhas complexas ou credenciais seguras** para usuários e serviços.
@@ -153,7 +153,7 @@ O sistema deve implementar mecanismos robustos para prevenir a quebra de autenti
 **Racional**
 A falta de autenticação forte ou políticas adequadas expõe dispositivos IoT a ataques em que adversários assumem identidades legítimas, explorando falhas de segurança e comprometendo dados e serviços. Isso pode incluir força bruta, credenciais padrão ou injeção de código para burlar autenticação.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve aplicar **autenticação multifator (MFA)** para acesso de usuários e dispositivos.
 * O sistema deve exigir **senhas fortes** e aplicar **políticas de bloqueio de conta** contra tentativas de força bruta.
@@ -186,7 +186,7 @@ O sistema deve proteger contra clonagem de etiquetas de identificação em dispo
 **Racional**
 A clonagem de etiquetas RFID/NFC permite que atacantes falsifiquem identidades e obtenham acesso não autorizado a sistemas ou recursos. Isso compromete a confiança em processos baseados em etiquetas, como rastreamento logístico, controle de ativos e autenticação de usuários.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve utilizar **etiquetas RFID/NFC com criptografia** para proteger dados transmitidos.
 * O sistema deve implementar **métodos de autenticação avançada**, como multifator ou biometria associada à etiqueta.
@@ -219,7 +219,7 @@ O sistema deve prevenir que dispositivos falsificados se passem por dispositivos
 **Racional**
 Na falsificação de dispositivo, atacantes manipulam identificadores como endereços MAC, IP ou IDs de hardware para enganar a rede e obter acesso indevido. Isso compromete a confiança no ecossistema IoT, podendo levar ao roubo de dados, uso não autorizado de recursos ou movimentação lateral em ataques.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve implementar **autenticação forte** de dispositivos (ex.: certificados digitais, autenticação mútua).
 * O sistema deve utilizar **criptografia robusta de comunicação** entre dispositivos IoT.
@@ -250,7 +250,7 @@ O sistema deve proteger redes IoT contra a inserção de nós falsos ou malicios
 **Racional**
 Nós maliciosos podem ser introduzidos em redes IoT para coletar, manipular ou redirecionar dados entre dispositivos legítimos. Sem autenticação forte e monitoramento, esses nós podem comprometer a confidencialidade, a integridade e a confiabilidade do ecossistema IoT.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve implementar **autenticação robusta de nós** (ex.: certificados digitais, MFA).
 * O sistema deve aplicar **criptografia forte** em todos os dados em trânsito.
@@ -283,7 +283,7 @@ O sistema deve proteger dispositivos IoT contra sinais falsificados ou manipulad
 **Racional**
 A falsificação de sinais permite que atacantes transmitam comandos não autorizados ou manipulem dados recebidos por dispositivos IoT. Sem autenticação robusta e mecanismos de validação, a rede pode ser enganada a executar ações incorretas ou expor informações sensíveis.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve implementar **autenticação forte de sinais e dispositivos** (certificados digitais, criptografia, verificação de integridade).
 * O sistema deve realizar **monitoramento contínuo da rede** para identificar padrões de tráfego suspeitos.

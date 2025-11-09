@@ -32,7 +32,7 @@ O sistema deve proteger contra inconsistências de dados em ambientes IoT, asseg
 **Racional**
 Dados corrompidos, contraditórios ou incompletos comprometem a confiabilidade de sistemas IoT, podendo levar a falhas operacionais, decisões incorretas ou até riscos à segurança. Estratégias de validação, redundância e monitoramento contínuo são necessárias para garantir a consistência.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve implementar **validação e verificação de dados recebidos** de dispositivos IoT.
 * O sistema deve utilizar **múltiplos sensores ou fontes redundantes** para assegurar consistência.
@@ -63,7 +63,7 @@ O sistema deve ser desenvolvido com práticas de codificação seguras e robusta
 **Racional**
 Código mal estruturado, sem revisões e sem validações adequadas, aumenta a superfície de ataque e pode facilitar falhas como estouro de buffer, injeções de código, manipulação de credenciais e uso de criptografia fraca. Em IoT, onde os dispositivos são limitados e muitas vezes expostos, essas falhas podem comprometer toda a rede.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve adotar **práticas de desenvolvimento seguro**, usando frameworks e bibliotecas confiáveis.
 * O sistema deve implementar **revisões de código regulares** (peer review ou análise estática).
@@ -93,7 +93,7 @@ O sistema deve prevenir a introdução e execução de código malicioso em apli
 **Racional**
 A inclusão de código malicioso em aplicativos IoT pode resultar em vazamento de dados, espionagem, indisponibilidade de serviços e até controle remoto por adversários. Como dispositivos IoT geralmente não têm defesas robustas, é essencial garantir a integridade do software desde o desenvolvimento até a execução.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve implementar **processos rigorosos de verificação e validação de código** (revisão, SAST, DAST, testes automatizados).
 * O sistema deve aplicar **isolamento de componentes críticos** para limitar impactos de código malicioso.
@@ -124,7 +124,7 @@ O sistema deve reduzir a superfície de ataque disponível, limitando funcionali
 **Racional**
 Quanto maior a superfície de ataque, maior a probabilidade de vulnerabilidades exploráveis. Em IoT, onde dispositivos frequentemente interagem com múltiplos serviços e nuvem, essa complexidade cria vetores adicionais para adulteração e ataques. Reduzir a superfície exposta melhora significativamente a segurança geral do sistema.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve **remover funcionalidades desnecessárias** e simplificar o design do software IoT.
 * O sistema deve **desativar interfaces e recursos não utilizados**.
@@ -158,7 +158,7 @@ O sistema deve proteger-se contra injeções em banco de dados, garantindo que c
 **Racional**
 Ataques de injeção em SQL exploram falhas na manipulação de entradas, permitindo que atacantes leiam, modifiquem ou apaguem registros. Em ambientes IoT, isso pode comprometer desde dados sensíveis até o funcionamento de dispositivos críticos conectados a sistemas de back-end.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve utilizar **consultas parametrizadas/prepared statements** em todas as interações com o banco.
 * O sistema deve aplicar **validação e saneamento de todas as entradas de dados**.
@@ -192,7 +192,7 @@ O sistema deve garantir que o firmware de dispositivos IoT seja projetado, distr
 **Racional**
 O firmware é o software de baixo nível que controla os dispositivos IoT. Vulnerabilidades nessa camada são altamente críticas, pois permitem que atacantes obtenham controle completo sobre o dispositivo. A falta de atualizações frequentes e a heterogeneidade do ecossistema IoT aumentam o risco de exploração.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O firmware deve ser submetido a **testes de segurança rigorosos** antes do lançamento.
 * O sistema deve oferecer **atualizações regulares e seguras de firmware** (patches e respostas rápidas a novas ameaças).
@@ -223,7 +223,7 @@ O sistema deve garantir a integridade e a autenticidade do processo de inicializ
 **Racional**
 A fase de inicialização é crítica: qualquer comprometimento nesse estágio pode permitir a execução de firmware malicioso ou configuração adulterada, comprometendo todo o dispositivo desde o primeiro momento. Um boot inseguro fornece aos atacantes controle total do dispositivo e pode neutralizar camadas posteriores de proteção.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve implementar **autenticação robusta de firmware** durante a inicialização.
 * O sistema deve realizar **verificação de integridade do firmware** a cada boot.
@@ -254,7 +254,7 @@ O sistema deve prevenir a injeção e execução de código malicioso em disposi
 **Racional**
 A injeção de código malicioso pode dar controle remoto total ao atacante, comprometendo não só o dispositivo, mas todo o ecossistema IoT. Um ataque bem-sucedido pode incluir instalação de firmware adulterado via atualização insegura ou exploração de falhas de entrada de dados, levando à perda de integridade, confidencialidade e disponibilidade.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve implementar **validação e saneamento rigoroso de entradas** para evitar injeção de código.
 * O sistema deve adotar **práticas seguras de programação**, prevenindo buffer overflows e uso inseguro de memória.
@@ -286,7 +286,7 @@ O sistema deve prevenir e detectar tentativas de violação física em dispositi
 **Racional**
 A violação física permite que adversários manipulem dispositivos, insiram impostores no sistema ou instalem firmware adulterado. Esse tipo de ataque compromete diretamente a integridade do dispositivo e pode abrir caminho para ataques em rede mais amplos.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve criptografar **dados sensíveis armazenados localmente**, tornando-os inúteis em caso de extração física.
 * O dispositivo deve estar em **locais fisicamente protegidos** ou em gabinetes/lacres de segurança.
@@ -318,7 +318,7 @@ O sistema deve garantir que atualizações de firmware e software em dispositivo
 **Racional**
 Atualizações são essenciais para corrigir vulnerabilidades e manter dispositivos IoT seguros. No entanto, mecanismos inseguros podem ser explorados para introduzir código malicioso ou corromper o dispositivo. Além disso, falhas de rede durante o processo podem introduzir riscos de integridade e disponibilidade.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * Todas as atualizações devem ser **assinadas digitalmente**, garantindo autenticidade e integridade.
 * Os dispositivos devem **verificar autenticidade e integridade** antes da instalação.
@@ -350,7 +350,7 @@ O sistema deve prevenir vulnerabilidades de estouro de buffer em software embarc
 **Racional**
 Em dispositivos IoT, a exploração de estouros de buffer pode permitir que atacantes assumam controle do dispositivo, executem código arbitrário ou corrompam dados críticos. Como esses sistemas muitas vezes não possuem proteções modernas de hardware, boas práticas de programação e validação de entradas são essenciais.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve aplicar **verificação de limites** em todas as operações de entrada e escrita em buffers.
 * O sistema deve utilizar **funções seguras de manipulação de memória** (ex.: `strncpy`, `memcpy_s`) em vez de funções inseguras.
@@ -381,7 +381,7 @@ O sistema deve garantir que o software embarcado em dispositivos IoT seja desenv
 **Racional**
 O software é o núcleo de funcionamento dos dispositivos IoT. Se vulnerável, desatualizado ou manipulado, ele abre espaço para ataques críticos, desde execução de código malicioso até perda de integridade do sistema. É essencial aplicar desenvolvimento seguro, atualizações regulares e mecanismos de validação de autenticidade.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve adotar **práticas de desenvolvimento seguro** (revisões de código, testes de segurança, padrões de codificação).
 * O sistema deve realizar **auditorias e testes de penetração periódicos** no software.
@@ -416,7 +416,7 @@ O sistema deve garantir a segurança das interações entre dispositivos IoT het
 **Racional**
 A heterogeneidade em ambientes IoT cria superfícies de ataque ampliadas: dispositivos de diferentes fabricantes podem não seguir as mesmas práticas de segurança, introduzindo vulnerabilidades que permitem manipulação de dados ou bypass de controles. Essa lacuna pode ser explorada para comprometer a integridade e a confiabilidade do ecossistema IoT.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve adotar **padrões de segurança consistentes** para todos os dispositivos conectados.
 * O sistema deve empregar **gateways e proxies seguros** para mediar a comunicação entre dispositivos heterogêneos.
@@ -447,7 +447,7 @@ O sistema deve garantir a integridade e a confidencialidade dos dados em trânsi
 **Racional**
 Dados manipulados ou expostos em dispositivos IoT podem comprometer decisões críticas de sistemas automatizados. Ataques como injeção de dados falsos em sensores podem direcionar comportamentos indesejados, causar falhas operacionais ou até explorar a infraestrutura inteira conectada.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve aplicar **criptografia robusta** para dados em trânsito e em repouso (ex.: TLS, criptografia de disco).
 * O sistema deve proteger **chaves criptográficas** usando hardware dedicado, como HSMs.
@@ -479,7 +479,7 @@ O sistema deve proteger o processo de configuração de rede em dispositivos IoT
 **Racional**
 Configurações de rede aplicadas de forma repetitiva ou inadequada podem resultar em falhas de segurança, exposição de portas, permissões incorretas e risco de acessos indevidos. Em ambientes IoT, onde a comunicação é crítica, a proteção da configuração é essencial para manter a integridade e a confiabilidade da rede.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve exigir **autenticação e autorização robustas** para qualquer alteração de configuração.
 * O sistema deve aplicar **monitoramento contínuo** de atividades de configuração e detectar tentativas suspeitas.
@@ -510,7 +510,7 @@ O sistema deve garantir que a comunicação entre dispositivos e sistemas hetero
 **Racional**
 A interoperabilidade entre dispositivos de diferentes fabricantes é fundamental para o ecossistema IoT, mas também introduz riscos: traduções de protocolo mal implementadas ou políticas inconsistentes podem abrir brechas de segurança. Sem padronização e mecanismos robustos de proteção, a rede pode se tornar vulnerável a manipulações e ataques.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve utilizar **gateways e middleware seguros** para traduzir protocolos e manter interoperabilidade.
 * O sistema deve aplicar **políticas de segurança uniformes** (criptografia, autenticação e controle de acesso) em toda a rede.
@@ -540,7 +540,7 @@ O sistema deve proteger o tráfego de dados entre dispositivos IoT, gateways, se
 **Racional**
 Comunicações IoT inseguras podem ser interceptadas, manipuladas ou redirecionadas, permitindo que adversários modifiquem dados, obtenham acesso não autorizado ou comprometam serviços críticos. A falta de protocolos seguros e monitoramento adequado expõe a rede a riscos de ataques de homem-no-meio (MitM) e adulteração de pacotes.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve aplicar **criptografia de ponta a ponta** em todas as comunicações.
 * O sistema deve utilizar **protocolos seguros** (ex.: HTTPS, TLS/DTLS).
@@ -571,7 +571,7 @@ O sistema deve utilizar protocolos de comunicação seguros para proteger os dad
 **Racional**
 A ausência ou o uso inadequado de protocolos seguros permite que atacantes interceptem, modifiquem ou falsifiquem dados em trânsito. Isso compromete não apenas a privacidade, mas também a integridade das decisões automatizadas que dependem dessas informações.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve implementar **criptografia forte** (TLS/SSL) em todas as comunicações IoT.
 * O sistema deve exigir **autenticação robusta** das partes envolvidas (certificados digitais, MFA).
@@ -601,7 +601,7 @@ O sistema deve proteger dispositivos IoT contra os riscos de operar em redes ins
 **Racional**
 Dispositivos IoT muitas vezes se conectam a redes públicas ou mal segmentadas, tornando-se pontos de entrada para atacantes explorarem falhas, interceptarem comunicações ou espalharem malware. A proteção contra redes inseguras envolve não apenas criptografia e autenticação, mas também segmentação, monitoramento e controle de tráfego.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve implementar **criptografia forte** (TLS/SSL) em todas as comunicações.
 * O sistema deve exigir **autenticação forte** (MFA, certificados digitais) para acesso à rede.
@@ -635,7 +635,7 @@ O sistema deve garantir que todas as portas de rede não utilizadas em dispositi
 **Racional**
 Portas abertas e desnecessárias expõem dispositivos IoT a riscos adicionais, permitindo que atacantes explorem serviços não protegidos. Essa vulnerabilidade aumenta a superfície de ataque e pode comprometer diretamente a integridade, a confidencialidade e a disponibilidade dos sistemas.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve **desativar todas as portas de rede não utilizadas** por padrão.
 * O sistema deve aplicar **configuração segura** desde a implantação inicial do dispositivo.
@@ -667,7 +667,7 @@ O sistema deve utilizar criptografia forte e atualizada em todas as comunicaçõ
 **Racional**
 Sem criptografia adequada, os dados transmitidos em redes IoT podem ser interceptados e modificados por atacantes. Isso compromete não apenas a confidencialidade, mas também a integridade e autenticidade das comunicações, possibilitando ataques de *man-in-the-middle* e injeção de pacotes maliciosos.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve implementar **criptografia moderna e segura** (TLS/SSL, DTLS).
 * O sistema deve usar **certificados digitais confiáveis** emitidos por autoridades certificadoras reconhecidas.

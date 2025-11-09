@@ -29,7 +29,7 @@ O sistema deve prevenir que usuários de dispositivos IoT acessem links malicios
 **Racional**
 Links maliciosos são um vetor comum de ataques. Em ambientes IoT, dispositivos estão frequentemente expostos em redes inseguras, e seu comprometimento pode servir de porta de entrada para invasores, ampliando o risco de perda de dados e controle indevido da infraestrutura.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve bloquear links maliciosos antes do acesso pelo usuário.
 * O sistema deve monitorar o tráfego de rede em tempo real para identificar padrões suspeitos.
@@ -60,7 +60,7 @@ O sistema deve garantir que os dados coletados, processados e armazenados por di
 **Racional**
 A falta de boas práticas de gestão de dados pode expor informações pessoais ou sensíveis, resultando em violações de privacidade, perdas financeiras e comprometimento de confiança. É essencial aplicar segurança desde a coleta até o armazenamento e o compartilhamento dos dados.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve adotar **práticas de coleta mínima de dados**, limitando-se ao estritamente necessário.
 * O sistema deve aplicar **criptografia de ponta a ponta** para dados transmitidos entre dispositivos e back-end.
@@ -91,7 +91,7 @@ O sistema deve proteger os mecanismos de autenticação e APIs contra a enumera�
 **Racional**
 Quando um sistema expõe, ainda que de forma indireta, a existência de usuários válidos, facilita ataques de força bruta, phishing direcionado ou exploração de credenciais. Essa falha é crítica em IoT, onde dispositivos e serviços muitas vezes têm autenticação simplificada.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve exibir **mensagens de erro genéricas** em tentativas de login falhas (“Credenciais inválidas”).
 * O sistema deve aplicar **mecanismos de proteção contra força bruta** (rate limiting, bloqueios temporários, MFA).
@@ -122,7 +122,7 @@ O sistema deve implementar criptografia forte e adequada em nível de aplicaçã
 **Racional**
 Sem criptografia robusta, dados sensíveis transmitidos ou armazenados em dispositivos IoT podem ser interceptados, modificados ou utilizados de forma maliciosa. Em sistemas distribuídos e altamente conectados, como IoT, isso aumenta o risco de espionagem, fraude e perda de confiança.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve adotar **algoritmos modernos de criptografia** (AES, RSA, SHA-256).
 * O sistema deve aplicar **gerenciamento seguro de chaves**, incluindo rotação e armazenamento protegido.
@@ -155,7 +155,7 @@ O sistema deve proteger dados sensíveis em dispositivos IoT utilizando mecanism
 **Racional**
 A ausência ou fraqueza de criptografia em dispositivos IoT permite que atacantes interceptem, leiam ou modifiquem dados sensíveis, incluindo credenciais, configurações e informações pessoais. Essa vulnerabilidade compromete diretamente a confidencialidade e a integridade da rede IoT.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve utilizar **algoritmos de criptografia fortes** (ex.: AES para dados, RSA/ECC para chaves).
 * O sistema deve adotar **gerenciamento seguro de chaves**, incluindo rotação periódica e uso de HSMs.
@@ -190,7 +190,7 @@ O sistema deve proteger dados sensíveis em redes IoT contra vazamento, violaç�
 **Racional**
 Vazamentos de dados comprometem diretamente a privacidade de usuários e a segurança operacional do ecossistema IoT. Brechas de configuração, APIs inseguras, armazenamento desprotegido e falhas em criptografia são vetores comuns de exploração que permitem acesso indevido a dados críticos.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve aplicar **criptografia robusta** em dados em trânsito e em repouso.
 * O sistema deve garantir **configuração segura** (senhas fortes, desativação de portas, permissões limitadas).
@@ -224,7 +224,7 @@ O sistema deve proteger as comunicações IoT contra interceptações não autor
 **Racional**
 Dispositivos IoT utilizam principalmente canais sem fio, tornando-os suscetíveis à interceptação de sinais. Sem criptografia e autenticação robustas, adversários podem monitorar comunicações, obter informações sensíveis e preparar ataques mais complexos, como homem-no-meio (MitM).
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve aplicar **criptografia de ponta a ponta** em todas as comunicações IoT.
 * O sistema deve implementar **autenticação forte de dispositivos e usuários** para evitar MitM.

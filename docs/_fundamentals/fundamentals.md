@@ -25,7 +25,7 @@ O sistema deve implementar mecanismos robustos de bloqueio de conta para protege
 **Racional**
 Tentativas de login excessivas podem indicar ataques de força bruta, mas políticas mal configuradas de bloqueio de conta também podem ser exploradas para impedir que usuários legítimos acessem seus dispositivos e serviços. O equilíbrio entre segurança e disponibilidade exige monitoramento, limitação de taxa e opções de recuperação de acesso.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve aplicar **políticas de bloqueio robustas** (ex.: bloqueio após 3–5 tentativas inválidas, desbloqueio temporizado).
 * O sistema deve **registrar e monitorar atividades de autenticação** para identificar padrões suspeitos.
@@ -55,7 +55,7 @@ O sistema deve prevenir e mitigar situações de sobrecarga de comunicação em 
 **Racional**
 Quando a quantidade de pacotes transmitidos excede a capacidade da rede ou dos servidores, o sistema sofre degradação de desempenho, perda de pacotes e até indisponibilidade. Além de problemas operacionais, a sobrecarga pode ser explorada por atacantes em ataques de negação de serviço.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve utilizar **protocolos de comunicação eficientes** que minimizem overhead.
 * O sistema deve aplicar **compressão de dados** antes da transmissão.
@@ -87,7 +87,7 @@ O sistema deve reduzir a dependência de arquiteturas centralizadas, garantindo 
 **Racional**
 A centralização do controle e processamento em um único ponto cria vulnerabilidades críticas: ataques ao servidor central podem paralisar toda a rede, comprometer dados ou impedir a execução de serviços essenciais. Distribuir funções, segmentar redes e adotar redundância são medidas essenciais para manter disponibilidade e confiabilidade.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve **distribuir funcionalidades de controle e processamento** entre dispositivos ou nós intermediários.
 * O sistema deve implementar **redundância e failover** para o servidor central.
@@ -118,7 +118,7 @@ O sistema deve considerar riscos adicionais ao utilizar dispositivos IoT de baix
 **Racional**
 Dispositivos de baixo custo frequentemente sacrificam práticas de segurança em troca de preço acessível, o que os torna mais vulneráveis a adulterações e ataques. Sem medidas adicionais, esses equipamentos podem comprometer toda a rede IoT, inclusive ativos críticos.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve priorizar **dispositivos com certificações de segurança reconhecidas**.
 * O sistema deve adotar **medidas adicionais de proteção** para dispositivos de baixo custo (ex.: firewalls, segmentação de rede, VPNs).
@@ -152,7 +152,7 @@ O sistema deve garantir que dispositivos IoT operem de forma eficiente sob restr
 **Racional**
 Sensores e atuadores IoT frequentemente funcionam em ambientes com energia limitada (bateria, energia solar). O consumo ineficiente pode causar interrupções, degradação de desempenho ou até paralisação total, o que equivale a uma forma de negação de serviço mesmo sem ataque direto.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve otimizar o consumo de energia em operações de comunicação e processamento.
 * O sistema deve utilizar protocolos de baixo consumo, como **BLE, Zigbee ou LPWAN**.
@@ -183,7 +183,7 @@ O sistema deve ser projetado para operar de forma segura mesmo em dispositivos c
 **Racional**
 Dispositivos IoT geralmente possuem limitações severas de processamento e memória. Isso os torna alvos mais fáceis para ataques de exaustão de recursos e dificulta a aplicação de medidas tradicionais de segurança. Sem mitigação, a fragilidade computacional pode levar à indisponibilidade do serviço e à exposição de informações sensíveis.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve utilizar **algoritmos de segurança leves e eficientes**, adaptados a dispositivos com recursos limitados.
 * O sistema deve empregar **protocolos de autenticação otimizados** para baixo consumo de CPU.
@@ -214,7 +214,7 @@ O sistema deve ser projetado para operar de forma confiável mesmo em cenários 
 **Racional**
 Dispositivos com alcance limitado de transmissão estão mais suscetíveis a ataques de proximidade e interrupções de comunicação. Isso pode levar a indisponibilidade parcial ou total da rede IoT, afetando sua confiabilidade e expondo pontos de ataque em ambientes sensíveis.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve utilizar **protocolos de comunicação eficientes e resilientes** a perdas, como Zigbee, Z-Wave ou Thread.
 * O sistema deve realizar **planejamento de rede** considerando ambiente físico e interferências.
@@ -248,7 +248,7 @@ O sistema deve proteger os canais de comunicação sem fio contra interferência
 **Racional**
 Dispositivos IoT que dependem de canais sem fio são suscetíveis a interferências eletromagnéticas e ataques de jamming, que podem bloquear ou degradar a comunicação. Sem mitigação, a rede IoT pode sofrer interrupções críticas, comprometendo sua confiabilidade e disponibilidade.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve identificar e utilizar **canais de comunicação livres e menos congestionados**.
 * O sistema deve aplicar **técnicas de mitigação**, como seleção dinâmica de canais, controle adaptativo de potência e protocolos de correção de erros.
@@ -281,7 +281,7 @@ O sistema deve proteger dispositivos IoT contra a exposição não intencional d
 **Racional**
 Dispositivos IoT podem vazar informações através de campos eletromagnéticos emitidos durante seu funcionamento. Pesquisas já demonstraram que é possível identificar hábitos de uso ou até mesmo conteúdos consumidos a partir dessas emanações, comprometendo a privacidade do usuário e a segurança do sistema.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve utilizar **técnicas robustas de criptografia** para dados armazenados e transmitidos.
 * O sistema deve aplicar **atualizações de firmware regulares** para mitigar vulnerabilidades conhecidas.
@@ -312,7 +312,7 @@ O sistema deve prevenir o vazamento de informações sensíveis por meio de cana
 **Racional**
 Ataques de canal lateral permitem que adversários obtenham informações valiosas sobre dados ou processos internos sem precisar interceptar a comunicação diretamente. Isso compromete a privacidade e pode expor chaves criptográficas, operações críticas ou hábitos de uso, enfraquecendo a segurança do ecossistema IoT.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve adotar **métricas para priorizar recursos** de mitigação em áreas mais suscetíveis a vazamento.
 * O dispositivo deve implementar **normalização do consumo de energia**, evitando variações perceptíveis baseadas em operações.
@@ -343,7 +343,7 @@ O sistema deve garantir resiliência da infraestrutura energética que suporta d
 **Racional**
 Dispositivos IoT dependem de fornecimento contínuo de energia elétrica. Vulnerabilidades no sistema de energia, como falhas físicas, flutuações de voltagem ou ataques, podem causar indisponibilidade e perda de confiabilidade dos serviços. Estratégias de redundância, eficiência e proteção física são essenciais para mitigar esse risco.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve possuir **fontes de energia redundantes** (baterias, geradores).
 * O sistema deve utilizar **reguladores de voltagem e UPS** para proteção contra flutuações.

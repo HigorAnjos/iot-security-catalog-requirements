@@ -31,7 +31,7 @@ O sistema deve implementar monitoramento ativo e contínuo de dispositivos IoT, 
 **Racional**
 Sem monitoramento ativo, é impossível garantir a detecção de anomalias ou ataques em dispositivos IoT. Isso compromete a capacidade de auditar eventos, atribuir responsabilidades e agir preventivamente contra ameaças, deixando a rede vulnerável a explorações prolongadas.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve implementar **monitoramento contínuo** de atividades, desempenho e segurança dos dispositivos.
 * O sistema deve aplicar **técnicas de análise comportamental e detecção de anomalias** (ex.: aprendizado de máquina).
@@ -62,7 +62,7 @@ O sistema deve garantir que todas as ações realizadas em dispositivos, redes e
 **Racional**
 Em ambientes IoT, a ausência de mecanismos de não repúdio pode comprometer a confiabilidade de transações, comandos e registros de atividades. Isso é especialmente crítico em cenários como IoT industrial, cidades inteligentes ou dispositivos médicos, onde a responsabilidade e a rastreabilidade são indispensáveis.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve implementar **assinaturas digitais** para garantir autenticidade e integridade de mensagens.
 * O sistema deve manter **logs de auditoria protegidos contra adulteração**, com carimbo de data e hora.

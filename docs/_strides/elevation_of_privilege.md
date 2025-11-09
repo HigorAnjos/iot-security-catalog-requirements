@@ -31,7 +31,7 @@ O sistema deve implementar mecanismos robustos de controle de acesso para garant
 **Racional**
 Controles de acesso fracos permitem que invasores explorem lacunas na autenticação ou autorização, elevando privilégios e acessando informações ou funções críticas. Em ambientes IoT, a falta de granularidade e monitoramento no controle de acesso pode comprometer a confidencialidade e a integridade de toda a rede.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve implementar **autenticação forte** (MFA, certificados digitais, biometria).
 * O sistema deve aplicar **políticas de autorização granulares**, concedendo apenas os acessos necessários por função.
@@ -62,7 +62,7 @@ O sistema deve proteger servidores IoT e infraestrutura de back-end contra confi
 **Racional**
 Servidores IoT são alvos críticos, pois concentram processamento, armazenamento e coordenação de dispositivos. Um servidor inseguro permite que atacantes elevem privilégios, obtenham acesso a dados confidenciais e manipulem dispositivos da rede, comprometendo a operação de todo o ecossistema.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O servidor deve estar configurado com **parâmetros de segurança fortes** (desativar serviços desnecessários, remover credenciais padrão, aplicar políticas restritivas).
 * O sistema deve aplicar **criptografia forte** para dados em trânsito e em repouso (TLS/SSL, AES).
@@ -95,7 +95,7 @@ O sistema deve prevenir que entidades não autorizadas acessem recursos de dispo
 **Racional**
 O acesso não autorizado a sistemas IoT compromete dados sensíveis, dispositivos e a própria rede. Sem autenticação forte, segmentação adequada e auditoria contínua, atacantes podem assumir privilégios de usuários legítimos, explorando dispositivos de forma indevida.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve implementar **autenticação forte** (senhas robustas, 2FA, certificados digitais).
 * O sistema deve aplicar **segmentação de rede** (VLANs, redes isoladas para IoT).
@@ -125,7 +125,7 @@ O sistema deve implementar controles de acesso robustos para garantir que apenas
 **Racional**
 Sem gerenciamento adequado de acesso, usuários ou dispositivos podem obter permissões excessivas ou não autorizadas, comprometendo dados, funcionalidades e até a integridade da rede IoT. Um controle fraco de APIs, credenciais mal gerenciadas e ausência de monitoramento são vetores comuns de ataque.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve exigir **autenticação forte** (senhas robustas, MFA).
 * O sistema deve aplicar o **princípio do menor privilégio** para todos os usuários e dispositivos.
@@ -159,7 +159,7 @@ O sistema deve avaliar, monitorar e manter seguros os componentes de terceiros u
 **Racional**
 Muitos ataques a dispositivos IoT exploram falhas já conhecidas em bibliotecas, módulos ou serviços de terceiros. Se não forem avaliados e atualizados, esses componentes tornam-se pontos fracos críticos, facilitando a escalada de privilégios, manipulação de dados e comprometimento de sistemas inteiros.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve realizar **avaliações de segurança** antes da integração de qualquer componente de terceiros.
 * O sistema deve **manter todos os componentes atualizados** com patches e correções de segurança.
@@ -190,7 +190,7 @@ O sistema deve proteger interfaces de administração e configuração de dispos
 **Racional**
 Interfaces de configuração inseguras são frequentemente exploradas como porta de entrada para ataques, permitindo controle indevido sobre dispositivos e comprometendo todo o ecossistema IoT. Sem autenticação forte, criptografia adequada e controles de acesso rigorosos, atacantes podem assumir privilégios administrativos e manipular dispositivos.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve implementar **autenticação forte** (MFA, senhas complexas) em interfaces web.
 * O sistema deve aplicar **controle de acesso baseado em funções (RBAC)** para limitar permissões.
@@ -223,7 +223,7 @@ O sistema deve garantir que dispositivos IoT não permaneçam com credenciais ou
 **Racional**
 Configurações padrão em dispositivos IoT (como senhas de fábrica ou serviços habilitados por padrão) são amplamente conhecidas e facilmente exploradas por atacantes. Se não forem alteradas imediatamente, representam um risco direto de escalonamento de privilégios, permitindo que invasores obtenham acesso indevido ao dispositivo e à rede onde ele está inserido.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve exigir a **alteração obrigatória de senhas padrão** no primeiro uso.
 * O sistema deve fornecer **instruções claras de configuração segura** ao usuário final.
@@ -254,7 +254,7 @@ O sistema deve proteger dispositivos IoT contra acessos físicos não autorizado
 **Racional**
 Interfaces físicas desprotegidas representam um vetor direto de ataque: adversários podem explorar portas de depuração, conexões não utilizadas ou interfaces de configuração mal protegidas para obter acesso privilegiado, manipular firmware ou alterar funcionalidades críticas do dispositivo.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O dispositivo deve possuir **proteção física contra acesso não autorizado** (trancas, gabinetes, instalação segura).
 * O dispositivo deve **desativar ou proteger portas de conexão não utilizadas**.
@@ -284,7 +284,7 @@ O sistema deve impedir que atacantes obtenham acesso não autorizado ao console 
 **Racional**
 Interfaces de console (ex.: UART, JTAG) são frequentemente negligenciadas em dispositivos IoT, ficando habilitadas com credenciais padrão ou sem autenticação. A exploração dessas interfaces permite controle total do hardware, leitura de firmware, modificação de parâmetros críticos e até instalação de backdoors permanentes.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O dispositivo deve estar em **ambientes fisicamente seguros**, acessíveis apenas a pessoal autorizado.
 * O sistema deve exigir a **alteração imediata de credenciais padrão** após instalação.
@@ -317,7 +317,7 @@ O sistema deve proteger dispositivos IoT contra acesso físico não autorizado, 
 **Racional**
 Dispositivos IoT muitas vezes operam em locais de fácil acesso ao público, tornando-os alvos para captura física. Um atacante que obtém acesso físico pode manipular configurações, extrair dados, instalar backdoors ou até substituir o dispositivo por um impostor. A proteção física e lógica é essencial para preservar a integridade do sistema.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve implementar **monitoramento de intrusão** com sensores e alarmes em dispositivos críticos.
 * O dispositivo deve possuir **proteções físicas** (fechaduras, lacres de segurança, gabinetes resistentes).

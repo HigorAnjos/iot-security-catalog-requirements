@@ -33,7 +33,7 @@ O sistema deve proteger dispositivos IoT contra danos físicos resultantes de ca
 **Racional**
 Danos físicos ao hardware podem causar indisponibilidade imediata ou falhas críticas em sistemas IoT, comprometendo sua confiabilidade. Dispositivos desprotegidos em ambientes abertos ou acessíveis ao público são especialmente vulneráveis, tornando necessária a adoção de proteções físicas, monitoramento e planos de recuperação.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O dispositivo deve ser instalado em **locais fisicamente seguros**, de difícil acesso ao público.
 * O dispositivo deve ser protegido por **gabinetes trancados ou invioláveis**.
@@ -65,7 +65,7 @@ O sistema deve prevenir ataques de privação do sono, garantindo que dispositiv
 **Racional**
 Dispositivos IoT dependentes de bateria são alvos fáceis para ataques de privação do sono, que os impedem de entrar em repouso, esgotando rapidamente a energia e causando indisponibilidade. Esse tipo de ataque compromete a confiabilidade e a disponibilidade de redes IoT, especialmente em ambientes críticos ou remotos.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve implementar **políticas de gerenciamento de energia eficientes** para garantir a entrada em modos de economia.
 * O sistema deve aplicar **filtragem de requisições** para limitar chamadas excessivas que mantenham o dispositivo acordado.
@@ -99,7 +99,7 @@ O sistema deve proteger dispositivos IoT contra ataques de desautenticação em 
 **Racional**
 Em ambientes domésticos ou corporativos, a desautenticação de Wi-Fi pode desconectar dispositivos IoT de suas redes, causando perda de serviço e expondo a rede a acessos indevidos. A mitigação exige o uso de protocolos modernos, monitoramento ativo e, quando possível, alternativas de comunicação redundantes.
 
-**Requisitos Concretos (Instanciados para IoT)**
+**Exemplos de Requisitos**
 
 * O sistema deve utilizar **Wi-Fi com WPA3**, resistente a ataques de desautenticação.
 * A rede deve implementar **monitoramento de tentativas de desautenticação** e alertas em tempo real.
