@@ -4,13 +4,14 @@ site_description: Catálogo de Padrões de Requisitos de Segurança para IoT, co
 
 nav:
   - Sobre: index.md
-  - STRIDE:
+  - Explore por Categoria STRIDE:
     - Spoofing: _strides/spoofing.md
     - Tampering: _strides/tampering.md
     - Repudiation: _strides/repudiation.md
     - Information Disclosure: _strides/information_disclosure.md
     - Denial of Service: _strides/denial_of_service.md
     - Elevation of Privilege: _strides/elevation_of_privilege.md
+    - Non-Functional Domain: _fundamentals/fundamentals.md
 
 plugins:
   - search

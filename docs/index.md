@@ -71,6 +71,12 @@ Selecione uma categoria abaixo para explorar os padrões de segurança relaciona
     
     *Padrões: Controle de Acesso, Monitoramento Contínuo, Atualização Segura*
 
+- :material-cog: **[Non-Functional Domain (Domínio Não-Funcional)](_fundamentals/fundamentals.md)**
+
+    Requisitos não-funcionais e contextuais para operação confiável
+    
+    *Padrões: Restrições Arquiteturais, Limitações Físicas, Resiliência*
+
 </div>
 
 ---
